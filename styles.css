@@ -1,0 +1,76 @@
+/* Basic, modern CSS with CSS variables and dark mode */
+:root{
+  --bg: #ffffff;
+  --fg: #111111;
+  --muted: #60636a;
+  --primary: #1a73e8;
+  --surface: #f5f7fb;
+  --border: #e5e7eb;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg: #0b0d12;
+    --fg: #e5e7eb;
+    --muted: #9aa0a6;
+    --primary: #8ab4f8;
+    --surface: #121621;
+    --border: #212636;
+  }
+}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;
+  background:var(--bg);
+  color:var(--fg);
+  line-height:1.6;
+}
+.no-js body{visibility:hidden}
+.container{max-width:1000px; margin:0 auto; padding:0 16px}
+.site-header{position:sticky; top:0; backdrop-filter: blur(6px); background: color-mix(in srgb, var(--bg), transparent 20%); border-bottom:1px solid var(--border);}
+.nav{display:flex; align-items:center; justify-content:space-between; height:64px}
+.brand{font-weight:700; text-decoration:none; color:var(--fg); letter-spacing:.5px}
+.nav-links{display:flex; gap:16px; list-style:none; padding:0; margin:0}
+.nav-links a{color:var(--fg); text-decoration:none}
+.nav-links a:hover{color:var(--primary)}
+#theme-toggle{background:transparent; border:1px solid var(--border); border-radius:10px; padding:6px 10px; cursor:pointer}
+
+.hero{display:grid; grid-template-columns: 1.2fr .8fr; gap:24px; align-items:center; padding:48px 0}
+.hero-text h1{font-size:40px; margin:0 0 8px}
+.hero-text .muted{color:var(--muted)}
+.hero-img{width:100%; border-radius:16px; border:1px solid var(--border); object-fit:cover}
+.cta{display:flex; gap:12px; margin-top:16px}
+.button{display:inline-block; padding:10px 14px; border-radius:12px; background:var(--primary); color:white; text-decoration:none; border:1px solid transparent}
+.button.ghost{background:transparent; border:1px solid var(--border); color:var(--fg)}
+
+section{padding:32px 0}
+h2{margin:0 0 12px; font-size:28px}
+.muted{color:var(--muted)}
+
+.grid{display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:16px}
+.card{border:1px solid var(--border); border-radius:16px; padding:16px; background:var(--surface); display:flex; gap:12px; flex-direction:column}
+.card img{width:100%; aspect-ratio: 16/9; object-fit:cover; border-radius:12px; border:1px solid var(--border)}
+.card h3{margin:4px 0}
+.card p{margin:0}
+.card .tags{display:flex; flex-wrap:wrap; gap:8px; margin-top:auto}
+.tag{border:1px solid var(--border); border-radius:999px; padding:4px 8px; font-size:12px; color:var(--muted)}
+
+.chips{display:flex; flex-wrap:wrap; gap:8px; list-style:none; padding:0}
+.chips li{border:1px solid var(--border); border-radius:999px; padding:6px 10px; background:var(--surface)}
+
+.contact{display:flex; gap:16px; list-style:none; padding:0}
+.contact a{color:var(--fg); text-decoration:none}
+.contact a:hover{color:var(--primary)}
+
+.site-footer{border-top:1px solid var(--border); padding:24px 0; text-align:center}
+
+.skip-link{position:absolute; left:-9999px}
+.skip-link:focus{left:16px; top:16px; background:var(--surface); border:1px solid var(--border); padding:8px 12px; border-radius:8px}
+
+@media (max-width: 900px){
+  .hero{grid-template-columns: 1fr}
+  .grid{grid-template-columns: 1fr 1fr}
+}
+@media (max-width: 600px){
+  .grid{grid-template-columns: 1fr}
+}
