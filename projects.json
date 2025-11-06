@@ -1,0 +1,37 @@
+[
+  {
+    "title": "Realtime Chat",
+    "summary": "A WebSocket-powered chat with typing indicators and message history.",
+    "image": "assets/sample-project-1.jpg",
+    "tags": [
+      "WebSocket",
+      "Node.js",
+      "Redis"
+    ],
+    "repo": "https://github.com/yourname/realtime-chat",
+    "demo": "https://yourname.github.io/realtime-chat/"
+  },
+  {
+    "title": "Image Classifier",
+    "summary": "CNN trained on a small dataset; exported to run in-browser via WebGPU.",
+    "image": "assets/sample-project-2.jpg",
+    "tags": [
+      "ML",
+      "WebGPU",
+      "Python"
+    ],
+    "repo": "https://github.com/yourname/image-classifier"
+  },
+  {
+    "title": "Trello Clone",
+    "summary": "Kanban board with drag-and-drop, offline cache, and optimistic updates.",
+    "image": "assets/sample-project-3.jpg",
+    "tags": [
+      "React",
+      "TypeScript",
+      "IndexedDB"
+    ],
+    "repo": "https://github.com/yourname/trello-clone",
+    "demo": "https://trello-clone.example.com"
+  }
+]

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name — Technical Portfolio</title>
+  <meta name="description" content="Technical portfolio of Your Name: projects, skills, and contact details." />
+
+  <!-- Social -->
+  <meta property="og:title" content="Your Name — Technical Portfolio" />
+  <meta property="og:description" content="Projects, skills, writing, and contact." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/thumbnail.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="assets/favicon.ico" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script>document.documentElement.classList.remove('no-js')</script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header container">
+    <nav class="nav">
+      <a class="brand" href="#">YN</a>
+      <button id="theme-toggle" aria-label="Toggle dark theme">🌓</button>
+      <ul class="nav-links">
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="content">
+    <section class="hero container">
+      <div class="hero-text">
+        <h1>Your Name</h1>
+        <p>Engineer • Builder • Problem Solver</p>
+        <p class="muted">I ship robust products and love turning ideas into working software.</p>
+        <div class="cta">
+          <a class="button" href="#projects">View Projects</a>
+          <a class="button ghost" href="assets/Resume.pdf" target="_blank" rel="noopener">Résumé</a>
+        </div>
+      </div>
+      <img src="assets/profile.jpg" alt="Portrait of Your Name" class="hero-img" />
+    </section>
+
+    <section id="projects" class="container">
+      <h2>Selected Projects</h2>
+      <div id="projects-grid" class="grid"></div>
+    </section>
+
+    <section id="skills" class="container">
+      <h2>Skills</h2>
+      <ul class="chips" aria-label="Skill list">
+        <li>JavaScript</li>
+        <li>TypeScript</li>
+        <li>Python</li>
+        <li>React</li>
+        <li>Node.js</li>
+        <li>PostgreSQL</li>
+        <li>Docker</li>
+        <li>AWS</li>
+        <li>CI/CD</li>
+      </ul>
+    </section>
+
+    <section id="about" class="container">
+      <h2>About</h2>
+      <p>
+        I'm a software engineer focused on crafting delightful, reliable experiences.
+        I care about developer ergonomics, performance, and clarity. Outside of work:
+        hiking, coffee, a bit of photography.
+      </p>
+    </section>
+
+    <section id="contact" class="container">
+      <h2>Contact</h2>
+      <ul class="contact">
+        <li><a href="mailto:you@example.com">you@example.com</a></li>
+        <li><a href="https://github.com/yourname" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/yourname" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://x.com/yourname" target="_blank" rel="noopener">X/Twitter</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer container">
+    <small>© <span id="year"></span> Your Name — MIT License</small>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
