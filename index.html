@@ -1,146 +1,18 @@
 <!doctype html>
-<html lang="en" class="no-js">
+<html lang="en">
 <head>
-  <base href="/<Portfolio>/" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Muhammad Anjum — Technical Portfolio</title>
-  <meta name="description" content="Portfolio of Muhammad Anjum — Aerospace engineering student, FSAE team leader, and researcher." />
-  <meta property="og:title" content="Muhammad Anjum — Technical Portfolio" />
-  <meta property="og:description" content="Experience, projects, education, and contact." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/thumbnail.png" />
-  <link rel="icon" href="assets/favicon.ico" />
-  <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/components.css" />
-  <script>document.documentElement.classList.remove('no-js')</script>
+  <title>Muhammad Anjum — Portfolio (Test Build)</title>
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/components.css" />
+  <style>.fallback{background:#fee;border:1px solid #f00;padding:8px;border-radius:8px;margin:12px 0;}</style>
 </head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header container">
-    <nav class="nav" aria-label="Primary">
-      <a class="brand" href="#home" aria-label="Home">MA</a>
-      <button id="theme-toggle" aria-label="Toggle dark theme" title="Toggle theme">🌓</button>
-      <ul class="nav-links" role="tablist" aria-label="Sections">
-        <li><a role="tab" aria-selected="false" href="#experience">Experience</a></li>
-        <li><a role="tab" aria-selected="false" href="#projects">Projects</a></li>
-        <li><a role="tab" aria-selected="false" href="#education">Education</a></li>
-        <li><a role="tab" aria-selected="false" href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main id="main" tabindex="-1">
-    <section id="view-home" class="view container" hidden>
-      <div class="hero">
-        <img src="assets/profile.jpg" alt="Portrait of Muhammad Anjum" class="hero-img" />
-        <div>
-          <h1>Muhammad Anjum</h1>
-          <p class="subtitle">Aerospace Engineering @ SDSU · FSAE Electric President</p>
-          <p class="muted">Researcher in unsteady aerodynamics; builder of high‑voltage tractive battery systems; organizer and team leader.</p>
-          <div class="cta">
-            <a class="button" href="#projects">Explore Projects</a>
-            <a class="button ghost" href="assets/Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="quick-stats">
-        <div class="stat"><span id="stat-years"></span><small>yrs experience</small></div>
-        <div class="stat"><span id="stat-projects"></span><small>projects</small></div>
-        <div class="stat"><span id="stat-awards"></span><small>awards</small></div>
-      </div>
-    </section>
-
-    <section id="view-experience" class="view container" hidden>
-      <header class="section-header">
-        <h2>Experience</h2>
-        <div class="filters">
-          <label>Filter:
-            <select id="exp-filter">
-              <option value="all">All</option>
-              <option value="leadership">Leadership</option>
-              <option value="aero">Aero</option>
-              <option value="hv">High Voltage</option>
-              <option value="ops">Operations</option>
-            </select>
-          </label>
-        </div>
-      </header>
-      <ol id="experience-timeline" class="timeline" aria-live="polite"></ol>
-    </section>
-
-    <section id="view-projects" class="view container" hidden>
-      <header class="section-header">
-        <h2>Projects</h2>
-        <div class="controls">
-          <input id="proj-search" type="search" placeholder="Search projects (press / to focus)" aria-label="Search projects" />
-          <div class="chips" id="tag-chips" aria-label="Filter by tag"></div>
-          <label>Sort:
-            <select id="proj-sort">
-              <option value="recent">Most recent</option>
-              <option value="alpha">A–Z</option>
-              <option value="stars">Favorites</option>
-            </select>
-          </label>
-        </div>
-      </header>
-      <div id="projects-grid" class="grid"></div>
-      <dialog id="project-modal" aria-label="Project details">
-        <article class="modal-body">
-          <button class="close" data-close aria-label="Close">✕</button>
-          <div id="modal-content"></div>
-        </article>
-      </dialog>
-    </section>
-
-    <section id="view-education" class="view container" hidden>
-      <h2>Education</h2>
-      <div id="education-cards" class="grid two"></div>
-      <details class="accord">
-        <summary>Relevant Coursework</summary>
-        <ul id="coursework-list" class="list"></ul>
-      </details>
-    </section>
-
-    <section id="view-contact" class="view container" hidden>
-      <h2>Contact</h2>
-      <div class="contact-grid">
-        <form id="contact-form">
-          <label>Name<input name="name" required /></label>
-          <label>Email<input name="email" type="email" required /></label>
-          <label>Message<textarea name="message" rows="5" required></textarea></label>
-          <div class="row">
-            <button type="submit" class="button">Send via Email</button>
-            <button type="button" id="copy-email" class="button ghost">Copy Address</button>
-          </div>
-          <p class="muted small">This form opens your email client (mailto). Or email me at <a id="mailto" href="mailto:muhammad.u.anjum@gmail.com">muhammad.u.anjum@gmail.com</a>.</p>
-        </form>
-        <aside>
-          <ul class="contact">
-            <li><a href="mailto:muhammad.u.anjum@gmail.com">muhammad.u.anjum@gmail.com</a></li>
-            <li><a href="https://linkedin.com/in/muhammad-u-anjum" target="_blank" rel="noopener">LinkedIn</a></li>
-            <li><a href="assets/Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></li>
-          </ul>
-        </aside>
-      </div>
-    </section>
-
-    <section id="view-resume" class="view container" hidden>
-      <h2>Résumé</h2>
-      <p class="muted">This layout is optimized for printing or exporting to PDF (File → Print).</p>
-      <div id="resume-target"></div>
-      <button class="button" onclick="window.print()">Print / Save as PDF</button>
-    </section>
-  </main>
-
-  <footer class="site-footer container">
-    <small>© <span id="year"></span> Muhammad Anjum · <a href="#home">Back to top</a></small>
-  </footer>
-
-  <div id="kbd-help" class="toast" hidden><strong>Shortcuts:</strong> / search · ? help · g e/p/d/c/h to navigate</div>
-
-  <script src="js/app.js" defer></script>
+<body class="container">
+  <div class="fallback" id="fallback" hidden>External CSS failed to load. Paths need adjustment.</div>
+  <h1>Test Build</h1>
+  <p>This build uses <code>/css/*</code> and <code>/js/*</code> root-absolute paths (best for a custom domain).</p>
+  <script>const serif=getComputedStyle(document.body).fontFamily.toLowerCase().includes('times'); if(serif) document.getElementById('fallback').hidden=false;</script>
+  <script src="/js/app.js" defer></script>
 </body>
 </html>
