@@ -3,16 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Muhammad Anjum — Portfolio (Test Build)</title>
-  <link rel="stylesheet" href="/css/base.css" />
-  <link rel="stylesheet" href="/css/components.css" />
-  <style>.fallback{background:#fee;border:1px solid #f00;padding:8px;border-radius:8px;margin:12px 0;}</style>
+  <title>Muhammad Anjum — Technical Portfolio</title>
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/components.css" />
 </head>
 <body class="container">
-  <div class="fallback" id="fallback" hidden>External CSS failed to load. Paths need adjustment.</div>
-  <h1>Test Build</h1>
-  <p>This build uses <code>/css/*</code> and <code>/js/*</code> root-absolute paths (best for a custom domain).</p>
-  <script>const serif=getComputedStyle(document.body).fontFamily.toLowerCase().includes('times'); if(serif) document.getElementById('fallback').hidden=false;</script>
-  <script src="/js/app.js" defer></script>
+  <h1>Portfolio (Relative Paths Build)</h1>
+  <p>If this page is styled, your domain is serving assets correctly with <strong>relative links</strong>.</p>
+  <script src="js/app.js" defer></script>
 </body>
 </html>
