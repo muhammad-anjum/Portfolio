@@ -1,4 +1,9 @@
-# Muhammad Anjum — Technical Portfolio (Interactive)
+# Muhammad Anjum — Technical Portfolio (Interactive, no build)
 
-Interactive single‑page portfolio (no build step). Update data in `/data/*.json` and assets in `/assets`. Deployed via GitHub Pages Actions. Hooray! Nice.
+- Hash-based routes: #home, #experience, #projects, #education, #contact, #resume
+- Relative paths for GitHub Pages + custom domain
+- Dark/light mode, search, tag filters, favorites (localStorage), case-study modal
+- Data-driven via /data/*.json; drop images/PDFs into /assets
 
+## Deploy
+Push to the repo and enable **Pages → GitHub Actions**. The included workflow auto-publishes on `main`.
