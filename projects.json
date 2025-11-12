@@ -1,37 +1,55 @@
 [
   {
+    "id": "p1",
     "title": "Realtime Chat",
-    "summary": "A WebSocket-powered chat with typing indicators and message history.",
+    "summary": "WebSocket chat with typing indicators, persistence, and moderation tools.",
+    "description": "A production\u2011grade chat built with Node.js, Redis pub/sub, JWT auth, and a modular frontend. Includes rate limiting, message editing, and emoji reactions.",
     "image": "assets/sample-project-1.jpg",
     "tags": [
       "WebSocket",
       "Node.js",
       "Redis"
     ],
+    "year": 2025,
     "repo": "https://github.com/yourname/realtime-chat",
-    "demo": "https://yourname.github.io/realtime-chat/"
+    "demo": "https://yourname.github.io/realtime-chat/",
+    "gallery": [
+      "assets/sample-project-1.jpg"
+    ]
   },
   {
+    "id": "p2",
     "title": "Image Classifier",
-    "summary": "CNN trained on a small dataset; exported to run in-browser via WebGPU.",
+    "summary": "CNN trained on small dataset; exported to run in\u2011browser via WebGPU.",
+    "description": "Built data pipeline in Python, trained with PyTorch, exported to ONNX, and ran in WebGPU with a lightweight inference wrapper.",
     "image": "assets/sample-project-2.jpg",
     "tags": [
       "ML",
       "WebGPU",
       "Python"
     ],
-    "repo": "https://github.com/yourname/image-classifier"
+    "year": 2024,
+    "repo": "https://github.com/yourname/image-classifier",
+    "gallery": [
+      "assets/sample-project-2.jpg"
+    ]
   },
   {
+    "id": "p3",
     "title": "Trello Clone",
-    "summary": "Kanban board with drag-and-drop, offline cache, and optimistic updates.",
+    "summary": "Kanban with drag\u2011and\u2011drop, offline cache, optimistic updates.",
+    "description": "React/TS app using IndexedDB for offline, react-beautiful-dnd for drag, and a tiny server for sync. Comprehensive test suite.",
     "image": "assets/sample-project-3.jpg",
     "tags": [
       "React",
       "TypeScript",
       "IndexedDB"
     ],
+    "year": 2023,
     "repo": "https://github.com/yourname/trello-clone",
-    "demo": "https://trello-clone.example.com"
+    "demo": "https://trello-clone.example.com",
+    "gallery": [
+      "assets/sample-project-3.jpg"
+    ]
   }
 ]
