@@ -8,3 +8,5 @@
 ## Deploy
 Push to the repo and enable **Pages → GitHub Actions**. The included workflow auto-publishes on `main`.
 nice
+git commit --allow-empty -m "Trigger GitHub Pages rebuild"
+git push
