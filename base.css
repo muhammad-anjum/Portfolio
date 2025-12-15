@@ -1062,3 +1062,7 @@ body[data-theme="dark"] .back-to-top {
     gap: 10px;
   }
 }
+/* Extra spacing between stacked extracurricular cards */
+.split-column .edu-card + .edu-card {
+  margin-top: 18px;   /* bump this up/down to taste */
+}
