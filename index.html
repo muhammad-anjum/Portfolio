@@ -2,15 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Muhammad Anjum – Portfolio</title>
+  <title>Muhammad Anjum — Technical Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Fonts --->
+  <!-- SEO -->
+  <meta name="description" content="Muhammad Anjum — aerospace engineering student focused on EVs, high-voltage energy storage, and technical leadership.">
+  <link rel="canonical" href="https://muhammadanjum.com">
+
+  <!-- OpenGraph / Social -->
+  <meta property="og:title" content="Muhammad Anjum — Technical Portfolio">
+  <meta property="og:description" content="Building dependable systems and thoughtful interfaces across EVs, aerospace, and technical leadership.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://muhammadanjum.com">
+  <meta property="og:image" content="https://muhammadanjum.com/og-image.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Muhammad Anjum — Technical Portfolio">
+  <meta name="twitter:description" content="Building dependable systems and thoughtful interfaces across EVs, aerospace, and technical leadership.">
+  <meta name="twitter:image" content="https://muhammadanjum.com/og-image.png">
+
+  <!-- Theme color -->
+  <meta name="theme-color" content="#f5f4f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#050509" media="(prefers-color-scheme: dark)">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
+  <!-- Styles (flat structure) -->
   <link rel="stylesheet" href="base.css">
 </head>
 <body>
@@ -28,7 +49,9 @@
 
       <nav class="site-nav">
         <a href="#about" class="nav-link">About</a>
+        <a href="#now" class="nav-link">Now</a>
         <a href="#experience" class="nav-link">Experience</a>
+        <a href="#skills" class="nav-link">Skills</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#education" class="nav-link">Education</a>
         <a href="#extracurriculars" class="nav-link">Extracurriculars</a>
@@ -41,6 +64,11 @@
     </div>
   </header>
 
+  <!-- Scroll progress bar -->
+  <div class="scroll-progress">
+    <div class="scroll-progress-bar"></div>
+  </div>
+
   <main id="top">
     <!-- Hero -->
     <section class="hero" id="about">
@@ -49,16 +77,17 @@
           <div class="hero-pill">Software Engineer · Student</div>
           <h1>Building dependable systems and thoughtful interfaces.</h1>
           <p class="hero-subtitle">
-            I’m a <span class="highlight">[Your Major]</span> student focused on backend systems,
-            high-performance code, and user-centered design. I like hard problems,
-            clean abstractions, and shipping useful things.
+            I’m an <span class="highlight">Aerospace Engineering</span> student at San Diego State University
+            with minors in <span class="highlight">Mathematics</span> and <span class="highlight">Computer Science</span>.
+            I focus on electric vehicles, high-voltage energy storage, and the tooling and software that make
+            complex teams move faster.
           </p>
 
           <div class="hero-actions">
-            <a href="YOUR_RESUME_LINK.pdf" class="btn primary" target="_blank" rel="noopener">
+            <a href="Muhammad Anjum - Resumé - 12:05:2025.pdf" class="btn primary" target="_blank" rel="noopener">
               View Resume
             </a>
-            <a href="https://github.com/YOUR_GITHUB" class="btn ghost" target="_blank" rel="noopener">
+            <a href="https://github.com/muhammad-anjum" class="btn ghost" target="_blank" rel="noopener">
               GitHub Profile
             </a>
           </div>
@@ -70,28 +99,28 @@
             </div>
             <div class="meta-item">
               <span class="meta-label">Grad year</span>
-              <span class="meta-value">2026</span>
+              <span class="meta-value">May 2027</span>
             </div>
             <div class="meta-item">
               <span class="meta-label">Focus</span>
-              <span class="meta-value">Systems · Controls · EVs</span>
+              <span class="meta-value">EVs · Energy Storage · Systems</span>
             </div>
           </div>
         </div>
 
         <aside class="hero-card">
           <div class="hero-card-header">
-            <span class="badge badge-available">Available Now</span>
-            <span class="hero-card-label">Internship / Co-op</span>
+            <span class="badge badge-available">Actively exploring</span>
+            <span class="hero-card-label">Internships / Co-ops</span>
           </div>
           <div class="hero-card-body">
             <div class="stat-row">
               <span class="stat-label">Current role</span>
-              <span class="stat-value">Undergraduate Student</span>
+              <span class="stat-value">Undergraduate Researcher & FSAE President</span>
             </div>
             <div class="stat-row">
-              <span class="stat-label">Primary interests</span>
-              <span class="stat-value">Embedded, simulation, full-stack</span>
+              <span class="stat-label">Domains</span>
+              <span class="stat-value">EV powertrain, aero, operations</span>
             </div>
             <div class="stat-row">
               <span class="stat-label">Years of experience</span>
@@ -100,14 +129,42 @@
             <div class="divider"></div>
             <div class="stat-row">
               <span class="stat-label">Tech stack</span>
-              <span class="stat-value">Python, C++, TypeScript, React</span>
+              <span class="stat-value">MATLAB, Python, C/Java, Solidworks, ANSYS</span>
             </div>
           </div>
         </aside>
       </div>
     </section>
 
-    <!-- Snapshot cards (Lucid-like) -->
+    <!-- Now section -->
+    <section class="section section-now" id="now">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="section-kicker">Now</p>
+          <h2>What I’m focused on right now.</h2>
+        </header>
+        <div class="now-grid reveal">
+          <article class="card now-card">
+            <h3>This month</h3>
+            <ul class="now-list">
+              <li>Leading Aztec Electric Racing’s energy storage roadmap and 250+ member operations.</li>
+              <li>Running aerodynamic and aeroelastic analyses in collaboration with SDSU faculty.</li>
+              <li>Iterating on this portfolio and documenting projects for future technical roles.</li>
+            </ul>
+          </article>
+          <article class="card now-card">
+            <h3>Learning & experiments</h3>
+            <ul class="now-list">
+              <li>Deeper work with MATLAB/Simulink and FEA tools for EV and aerospace structures.</li>
+              <li>Building internal tools for documentation, tracking, and recruiting workflows.</li>
+              <li>Reading on high-voltage systems safety and EV battery pack architectures.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Snapshot cards -->
     <section class="section" id="snapshot">
       <div class="container">
         <header class="section-header reveal">
@@ -118,68 +175,68 @@
         <div class="grid-3 snapshot-grid">
           <article class="card snapshot-card reveal">
             <header>
-              <p class="card-kicker">Core Skills</p>
-              <h3>Software Engineering</h3>
+              <p class="card-kicker">Systems & Software</p>
+              <h3>Engineering & Infrastructure</h3>
             </header>
             <ul class="stat-list">
               <li>
                 <span>Languages</span>
-                <span>C++ · Python · TypeScript</span>
+                <span>MATLAB · Java · C · Python</span>
               </li>
               <li>
-                <span>Areas</span>
-                <span>Backend · APIs · Tooling</span>
-              </li>
-              <li>
-                <span>Shipping</span>
-                <span>Prod features for class & teams</span>
-              </li>
-            </ul>
-            <button class="pill-cta" data-scroll-target="#projects">View relevant projects</button>
-          </article>
-
-          <article class="card snapshot-card reveal">
-            <header>
-              <p class="card-kicker">Hardware + Systems</p>
-              <h3>Controls & Embedded</h3>
-            </header>
-            <ul class="stat-list">
-              <li>
-                <span>Platforms</span>
-                <span>STM32 · Arduino · Raspberry Pi</span>
+                <span>Tools</span>
+                <span>Simulink · ANSYS · Solidworks</span>
               </li>
               <li>
                 <span>Focus</span>
-                <span>Real-time, CAN, safety</span>
-              </li>
-              <li>
-                <span>Applications</span>
-                <span>EV powertrain · telemetry</span>
+                <span>EVs, aero, documentation systems</span>
               </li>
             </ul>
-            <button class="pill-cta" data-scroll-target="#extracurriculars">See team work</button>
+            <button class="pill-cta" data-scroll-target="#projects">View technical projects</button>
           </article>
 
           <article class="card snapshot-card reveal">
             <header>
-              <p class="card-kicker">Beyond Coursework</p>
-              <h3>Leadership & Impact</h3>
+              <p class="card-kicker">EV & Hardware</p>
+              <h3>Energy Storage & Testing</h3>
             </header>
             <ul class="stat-list">
               <li>
-                <span>Roles</span>
-                <span>FSAE EV President · Mentor</span>
+                <span>Ownership</span>
+                <span>High-voltage tractive battery design</span>
+              </li>
+              <li>
+                <span>Systems</span>
+                <span>Cooling loops · wiring harnesses</span>
+              </li>
+              <li>
+                <span>Validation</span>
+                <span>Testbench, inspection, documentation</span>
+              </li>
+            </ul>
+            <button class="pill-cta" data-scroll-target="#experience">See detailed roles</button>
+          </article>
+
+          <article class="card snapshot-card reveal">
+            <header>
+              <p class="card-kicker">Leadership & Ops</p>
+              <h3>Team Building at Scale</h3>
+            </header>
+            <ul class="stat-list">
+              <li>
+                <span>Teams</span>
+                <span>AER, MTC, ASME</span>
               </li>
               <li>
                 <span>People</span>
-                <span>200+ students organized</span>
+                <span>250+ students led & organized</span>
               </li>
               <li>
-                <span>Outcomes</span>
-                <span>Workshops · recruiting · ops</span>
+                <span>Domains</span>
+                <span>Project management, recruiting, strategy</span>
               </li>
             </ul>
-            <button class="pill-cta" data-scroll-target="#extracurriculars">Explore leadership</button>
+            <button class="pill-cta" data-scroll-target="#skills">Browse core skills</button>
           </article>
         </div>
       </div>
@@ -196,45 +253,167 @@
         <div class="timeline">
           <article class="card timeline-item reveal">
             <div class="timeline-meta">
-              <span class="pill muted">May 2025 – Aug 2025</span>
-              <span class="pill subtle">Software Engineering Intern</span>
+              <span class="pill muted">07/2023 – Present</span>
+              <span class="pill subtle">President · VP · Energy Storage Lead</span>
             </div>
-            <h3>Company Name</h3>
-            <p class="timeline-location">City · Team / Group</p>
+            <h3>Aztec Electric Racing (FSAE EV)</h3>
+            <p class="timeline-location">San Diego, CA</p>
             <ul class="timeline-points">
-              <li>Implemented <strong>REST APIs</strong> and background jobs in <strong>Python</strong>/<strong>FastAPI</strong> used by internal tools.</li>
-              <li>Improved a data processing pipeline, cutting average runtime by <strong>30%</strong>.</li>
-              <li>Collaborated with designers to ship UI updates in <strong>React</strong> with type-safe models.</li>
+              <li>Lead a 250+ member FSAE EV team across project management, operations, and budget planning.</li>
+              <li>Created the team’s first operations framework for competition rules, sponsorships, safety, and recruiting.</li>
+              <li>Researched, designed, and fabricated the first high-voltage tractive battery with integrated control systems.</li>
+              <li>Built and iterated a full powertrain testbench, including cooling loop and wiring harness integration.</li>
+              <li>Established documentation and validation standards for future subsystem designs and manufacturing.</li>
             </ul>
             <div class="tag-row">
-              <span class="tag">Python</span>
-              <span class="tag">FastAPI</span>
-              <span class="tag">PostgreSQL</span>
-              <span class="tag">React</span>
+              <span class="tag">High-voltage systems</span>
+              <span class="tag">EV powertrain</span>
+              <span class="tag">Project management</span>
+              <span class="tag">Leadership</span>
             </div>
           </article>
 
           <article class="card timeline-item reveal">
             <div class="timeline-meta">
-              <span class="pill muted">Sep 2024 – Present</span>
-              <span class="pill subtle">Research Assistant</span>
+              <span class="pill muted">01/2025 – Present</span>
+              <span class="pill subtle">Undergraduate Researcher</span>
             </div>
-            <h3>Lab / Group Name</h3>
-            <p class="timeline-location">University · Department</p>
+            <h3>San Diego State University</h3>
+            <p class="timeline-location">San Diego, CA · Aerodynamics & Aeroelasticity</p>
             <ul class="timeline-points">
-              <li>Developing simulation tools for <strong>EV powertrain</strong> and <strong>vehicle dynamics</strong>.</li>
-              <li>Built visualizations to analyze telemetry and energy usage over race events.</li>
-              <li>Co-authored an internal report on testing methodology and validation.</li>
+              <li>Conduct aerodynamic research under Dr. Luciano Demasi, a highly cited aerospace engineering professor.</li>
+              <li>Analyze unsteady aerodynamics, wing structures, and aeroelastic effects using computational and experimental methods.</li>
+              <li>Author and format technical research papers in LaTeX for publication and internal review.</li>
             </ul>
             <div class="tag-row">
-              <span class="tag">Python</span>
-              <span class="tag">NumPy</span>
-              <span class="tag">Pandas</span>
-              <span class="tag">Matplotlib</span>
+              <span class="tag">Aerodynamics</span>
+              <span class="tag">Aeroelasticity</span>
+              <span class="tag">MATLAB</span>
+              <span class="tag">LaTeX</span>
             </div>
           </article>
 
-          <!-- Add more timeline-item cards as needed -->
+          <article class="card timeline-item reveal">
+            <div class="timeline-meta">
+              <span class="pill muted">07/2024 – Present</span>
+              <span class="pill subtle">Founder & President</span>
+            </div>
+            <h3>Muslim Tech Collaborative (MTC)</h3>
+            <p class="timeline-location">San Diego, CA</p>
+            <ul class="timeline-points">
+              <li>Founded and scaled a professional development network for Muslim students with 50+ active members.</li>
+              <li>Own all club operations, including marketing, recruitment, and funding strategy.</li>
+              <li>Partner with employers to host panels and career workshops focused on tech and engineering roles.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">Community building</span>
+              <span class="tag">Career development</span>
+              <span class="tag">Operations</span>
+            </div>
+          </article>
+
+          <article class="card timeline-item reveal">
+            <div class="timeline-meta">
+              <span class="pill muted">06/2023 – 08/2023</span>
+              <span class="pill subtle">Integrated Management System Intern</span>
+            </div>
+            <h3>NASA · Kennedy Space Center</h3>
+            <p class="timeline-location">Merritt Island, FL</p>
+            <ul class="timeline-points">
+              <li>Managed documentation workflows for NASA’s Integrated Management System team.</li>
+              <li>Maintained internal web applications supporting document control and compliance audits.</li>
+              <li>Drafted technical memos, data sheets, and process updates that improved efficiency and audit readiness.</li>
+              <li>Completed multiple NASA certifications in process management and technical documentation.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">Process management</span>
+              <span class="tag">Documentation</span>
+              <span class="tag">Internal tools</span>
+            </div>
+          </article>
+
+          <article class="card timeline-item reveal">
+            <div class="timeline-meta">
+              <span class="pill muted">06/2023 – 05/2024</span>
+              <span class="pill subtle">Project Manager</span>
+            </div>
+            <h3>ASME · SDSU Student Chapter</h3>
+            <p class="timeline-location">San Diego, CA</p>
+            <ul class="timeline-points">
+              <li>Directed a 4-part project plan for the student chapter, from design to competition.</li>
+              <li>Led general body meetings and set up project tracking and design documentation workflows.</li>
+              <li>Managed the IAM3D Drone Competition project, helping the team place 4th internationally.</li>
+              <li>Handled procurement, budgeting, and travel logistics for project teams.</li>
+            </ul>
+            <div class="tag-row">
+              <span class="tag">Project planning</span>
+              <span class="tag">Competition</span>
+              <span class="tag">Budgeting</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+      <div class="container">
+        <header class="section-header reveal">
+          <p class="section-kicker">Skills</p>
+          <h2>How I work and what I work with.</h2>
+        </header>
+
+        <div class="grid-3 snapshot-grid">
+          <article class="card reveal">
+            <header>
+              <p class="card-kicker">Technical & Engineering</p>
+              <h3>Hands-on engineering skills</h3>
+            </header>
+            <ul class="stat-list">
+              <li><span>Core</span><span>Machining, fabrication, PCB soldering</span></li>
+              <li><span>Systems</span><span>High-voltage packs, circuit analysis & testing</span></li>
+              <li><span>Embedded</span><span>Arduino circuits & software, automotive systems</span></li>
+            </ul>
+            <div class="skill-chips">
+              <button class="skill-chip" data-skillterm="high-voltage">High-voltage</button>
+              <button class="skill-chip" data-skillterm="battery">Battery</button>
+              <button class="skill-chip" data-skillterm="ev">EV</button>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <header>
+              <p class="card-kicker">Software & Tools</p>
+              <h3>Simulation & coding stack</h3>
+            </header>
+            <ul class="stat-list">
+              <li><span>Languages</span><span>MATLAB, Java, C, Python</span></li>
+              <li><span>Simulation</span><span>ANSYS FEA, Simulink, Solidworks</span></li>
+              <li><span>Productivity</span><span>Office Suite, LaTeX (MiKTeX)</span></li>
+            </ul>
+            <div class="skill-chips">
+              <button class="skill-chip" data-skillterm="matlab">MATLAB</button>
+              <button class="skill-chip" data-skillterm="solidworks">Solidworks</button>
+              <button class="skill-chip" data-skillterm="ansys">ANSYS</button>
+            </div>
+          </article>
+
+          <article class="card reveal">
+            <header>
+              <p class="card-kicker">Project & Business</p>
+              <h3>Leadership & operations</h3>
+            </header>
+            <ul class="stat-list">
+              <li><span>Management</span><span>Project management, team leadership</span></li>
+              <li><span>Operations</span><span>Supply chain, budgeting, cost reports</span></li>
+              <li><span>Communication</span><span>Technical documentation & reports</span></li>
+            </ul>
+            <div class="skill-chips">
+              <button class="skill-chip" data-skillterm="project">Project management</button>
+              <button class="skill-chip" data-skillterm="documentation">Documentation</button>
+              <button class="skill-chip" data-skillterm="leadership">Leadership</button>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -247,88 +426,46 @@
             <p class="section-kicker">Projects</p>
             <h2>Selected work.</h2>
           </div>
-          <div class="project-filters reveal">
-            <button class="chip chip-active" data-filter="all">All</button>
-            <button class="chip" data-filter="web">Web</button>
-            <button class="chip" data-filter="embedded">Embedded</button>
-            <button class="chip" data-filter="data">Data / ML</button>
+          <div class="project-controls reveal">
+            <div class="project-filters">
+              <button class="chip chip-active" data-filter="all">All</button>
+              <button class="chip" data-filter="ev">EV & Energy</button>
+              <button class="chip" data-filter="aero">Aero</button>
+              <button class="chip" data-filter="ops">Ops & Tools</button>
+            </div>
+            <div class="project-search-wrapper">
+              <input
+                type="search"
+                id="project-search"
+                class="project-search"
+                placeholder="Search projects by keyword…">
+            </div>
           </div>
         </header>
 
-        <div class="grid-3 project-grid">
-          <article class="card project-card reveal" data-category="web">
-            <div class="project-top-row">
-              <h3>Personal Portfolio</h3>
-              <span class="badge badge-outline">Web</span>
-            </div>
-            <p class="project-summary">
-              Responsive portfolio site (this one) built with semantic HTML, modern CSS, and vanilla JS for interactions.
-            </p>
-            <ul class="project-meta">
-              <li><span>Highlights</span><span>CSS grid, smooth scrolling, theme toggle</span></li>
-              <li><span>Stack</span><span>HTML · CSS · JS</span></li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/YOUR_GITHUB/YOUR_REPO" target="_blank" rel="noopener">View code →</a>
-            </div>
-          </article>
-
-          <article class="card project-card reveal" data-category="embedded">
-            <div class="project-top-row">
-              <h3>FSAE Telemetry Dashboard</h3>
-              <span class="badge badge-outline">Embedded</span>
-            </div>
-            <p class="project-summary">
-              Live dashboard for an electric race car, streaming CAN data and visualizing battery, speed, and lap times.
-            </p>
-            <ul class="project-meta">
-              <li><span>Highlights</span><span>Real-time charts, WebSocket backend</span></li>
-              <li><span>Stack</span><span>Python · FastAPI · React</span></li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/YOUR_GITHUB/TELEMETRY_REPO" target="_blank" rel="noopener">View code →</a>
-            </div>
-          </article>
-
-          <article class="card project-card reveal" data-category="data">
-            <div class="project-top-row">
-              <h3>Battery Degradation Model</h3>
-              <span class="badge badge-outline">Data / ML</span>
-            </div>
-            <p class="project-summary">
-              Modeled Li-ion degradation using race and lab data to explore energy capacity loss over time.
-            </p>
-            <ul class="project-meta">
-              <li><span>Highlights</span><span>Feature engineering, experiment design</span></li>
-              <li><span>Stack</span><span>Python · Scikit-learn</span></li>
-            </ul>
-            <div class="project-links">
-              <a href="https://github.com/YOUR_GITHUB/BATTERY_MODEL_REPO" target="_blank" rel="noopener">View code →</a>
-            </div>
-          </article>
-
-          <!-- Add more project-card articles with data-category attributes -->
+        <div id="project-list" class="grid-3 project-grid">
+          <!-- JS will render project cards here -->
         </div>
       </div>
     </section>
 
-    <!-- Education and Extracurriculars -->
+    <!-- Education + extracurriculars -->
     <section class="section section-split" id="education">
       <div class="container split-grid">
         <div class="split-column reveal">
           <header class="section-header">
             <p class="section-kicker">Education</p>
-            <h2>What I study.</h2>
+            <h2>Where I study.</h2>
           </header>
 
           <article class="card edu-card">
-            <h3>Your University Name</h3>
-            <p class="edu-degree">B.S. in [Your Major]</p>
-            <p class="edu-meta">Expected Graduation · 2026</p>
+            <h3>San Diego State University</h3>
+            <p class="edu-degree">B.S. in Aerospace Engineering</p>
+            <p class="edu-meta">Minors in Mathematics & Computer Science · Expected May 2027</p>
             <ul class="edu-points">
-              <li>Relevant coursework: Data Structures, Operating Systems, Control Systems, Vehicle Dynamics.</li>
-              <li>GPA: 3.8 / 4.0 (Dean’s List).</li>
-              <li>Technical electives focused on EV systems and software.</li>
+              <li>5× Dean’s List honoree.</li>
+              <li>Coursework spanning aerodynamics, structures, and engineering computation.</li>
+              <li>Blend of hands-on engineering and software for simulation and analysis.</li>
             </ul>
           </article>
         </div>
@@ -340,25 +477,35 @@
           </header>
 
           <article class="card edu-card">
-            <h3>FSAE Electric · President</h3>
-            <p class="edu-meta">2024 – Present</p>
+            <h3>Aztec Electric Racing (AER) · FSAE EV</h3>
+            <p class="edu-meta">President · Vice President · Energy Storage Lead · 2023 – Present</p>
             <ul class="edu-points">
-              <li>Lead a team of 200+ students designing and building an all-electric formula race car.</li>
-              <li>Coordinated recruitment, training, and project planning across multiple subsystems.</li>
-              <li>Organized technical workshops and onboarding materials for new members.</li>
+              <li>Lead all-electric Formula SAE team operations, budgeting, and multi-subsystem coordination.</li>
+              <li>Own energy storage design, testing, and documentation for the team’s first high-voltage accumulator.</li>
+              <li>Mentor new members on technical fundamentals, safety practices, and project execution.</li>
             </ul>
             <div class="tag-row">
-              <span class="tag">Leadership</span>
               <span class="tag">EV</span>
-              <span class="tag">Project Management</span>
+              <span class="tag">Leadership</span>
+              <span class="tag">Energy Storage</span>
             </div>
           </article>
 
           <article class="card edu-card">
-            <h3>Other Clubs / Roles</h3>
-            <p class="edu-meta">Hackathons · Tutoring · etc.</p>
+            <h3>Muslim Tech Collaborative (MTC)</h3>
+            <p class="edu-meta">Founder & President · 2024 – Present</p>
             <ul class="edu-points">
-              <li>Briefly describe another role or two you care about.</li>
+              <li>Created a professional development community for Muslim students with 50+ active members.</li>
+              <li>Coordinate employer partnerships, workshops, and networking events.</li>
+            </ul>
+          </article>
+
+          <article class="card edu-card">
+            <h3>ASME · SDSU Chapter</h3>
+            <p class="edu-meta">Project Manager · 2023 – 2024</p>
+            <ul class="edu-points">
+              <li>Managed multi-phase project plans and led the IAM3D Drone Competition team to a top-4 international finish.</li>
+              <li>Handled procurement, budgets, and travel logistics for student projects.</li>
             </ul>
           </article>
         </div>
@@ -374,26 +521,30 @@
             <h2>Let’s talk.</h2>
           </header>
           <p class="contact-text">
-            I’m open to internships, research roles, and collaborations.
-            The fastest way to reach me is by email, but I’m also active on GitHub and LinkedIn.
+            I’m open to internships, research positions, and collaborations around EVs, aerospace, and technical leadership.
+            Email is best, but feel free to reach out on LinkedIn as well.
           </p>
           <div class="contact-items">
-            <a href="mailto:youremail@domain.com" class="contact-item">
+            <a href="mailto:muhammad.u.anjum@gmail.com" class="contact-item">
               <span class="contact-label">Email</span>
               <span class="contact-value">muhammad.u.anjum@gmail.com</span>
             </a>
-            <a href="https://github.com/YOUR_GITHUB" target="_blank" rel="noopener" class="contact-item">
-              <span class="contact-label">GitHub</span>
-              <span class="contact-value">@YOUR_GITHUB</span>
+            <a href="tel:+19256408229" class="contact-item">
+              <span class="contact-label">Phone</span>
+              <span class="contact-value">(925) 640-8229</span>
             </a>
             <a href="https://www.linkedin.com/in/muhammad-u-anjum" target="_blank" rel="noopener" class="contact-item">
               <span class="contact-label">LinkedIn</span>
               <span class="contact-value">linkedin.com/in/muhammad-u-anjum</span>
             </a>
+            <a href="https://github.com/muhammad-anjum" target="_blank" rel="noopener" class="contact-item">
+              <span class="contact-label">GitHub</span>
+              <span class="contact-value">@muhammad-anjum</span>
+            </a>
           </div>
         </div>
 
-        <form class="contact-form" action="mailto:youremail@domain.com" method="post" enctype="text/plain">
+        <form class="contact-form" action="mailto:muhammad.u.anjum@gmail.com" method="post" enctype="text/plain">
           <label class="field">
             <span>Name</span>
             <input type="text" name="name" required>
@@ -417,10 +568,11 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <span>© <span id="year"></span> Muhammad Anjum. All rights reserved.</span>
-      <span class="footer-note">Built with pyaar.</span>
+      <span class="footer-note">Built with HTML, CSS, and JS. Deployed on GitHub Pages.</span>
     </div>
   </footer>
 
+  <!-- JS (flat structure) -->
   <script src="app.js"></script>
 </body>
 </html>
