@@ -1463,6 +1463,62 @@ button:hover .arrow {
   box-shadow: var(--shadow);
 }
 
+.case-hero-photo {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.case-hero-photo .case-image-button {
+  min-height: 440px;
+  border-radius: 0;
+}
+
+.case-hero-photo figcaption {
+  padding: 15px 18px 17px;
+}
+
+.case-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: clamp(48px, 8vw, 92px);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.case-stat {
+  display: grid;
+  gap: 5px;
+  padding: 24px clamp(12px, 2vw, 28px);
+  border-right: 1px solid var(--line);
+}
+
+.case-stat:first-child {
+  padding-left: 0;
+}
+
+.case-stat:last-child {
+  border-right: 0;
+}
+
+.case-stat strong {
+  font-family: var(--font);
+  font-size: clamp(1.65rem, 3vw, 2.85rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+}
+
+.case-stat span {
+  color: var(--faint);
+  font-size: 0.68rem;
+  letter-spacing: 0.07em;
+  line-height: 1.45;
+  text-transform: uppercase;
+}
+
 .case-battery {
   inset: 24% 10%;
 }
@@ -1535,6 +1591,202 @@ button:hover .arrow {
   line-height: 1.72;
 }
 
+.case-callout {
+  display: grid;
+  grid-template-columns: minmax(130px, 0.28fr) minmax(0, 0.72fr);
+  gap: 26px;
+  margin-top: 34px;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.case-callout strong {
+  color: var(--gold-bright);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.case-callout span {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.case-media-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 42px;
+}
+
+.case-figure {
+  margin: 42px 0 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+}
+
+.case-media-grid .case-figure {
+  margin-top: 0;
+}
+
+.case-image-button {
+  display: block;
+  width: 100%;
+  min-height: 300px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 19px 19px 0 0;
+  background: var(--surface-solid);
+  color: inherit;
+  cursor: zoom-in;
+}
+
+.case-image-button img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 300px;
+  max-height: 520px;
+  object-fit: cover;
+  transition: transform 600ms var(--ease), filter 300ms ease;
+}
+
+.case-image-button.contain img {
+  padding: clamp(18px, 3vw, 34px);
+  object-fit: contain;
+}
+
+.case-image-button.technical img {
+  min-height: 240px;
+}
+
+.case-image-button:hover img {
+  transform: scale(1.025);
+  filter: saturate(1.06);
+}
+
+.case-image-button::after {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 50%;
+  background: rgba(16, 16, 14, 0.72);
+  color: #fff;
+  content: "+";
+  font-size: 1.2rem;
+  line-height: 32px;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.case-image-button {
+  position: relative;
+}
+
+.case-image-button:hover::after,
+.case-image-button:focus-visible::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.case-figure figcaption,
+.case-hero-photo figcaption {
+  color: var(--faint);
+  font-size: 0.72rem;
+  line-height: 1.55;
+}
+
+.case-figure figcaption {
+  padding: 14px 16px 16px;
+}
+
+.case-metric-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin-top: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--line);
+}
+
+.case-metric-row span {
+  display: grid;
+  gap: 3px;
+  padding: 18px;
+  background: var(--surface);
+  color: var(--faint);
+  font-size: 0.69rem;
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.case-metric-row strong {
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  text-transform: none;
+}
+
+.image-dialog {
+  width: min(1120px, calc(100vw - 42px));
+  max-height: calc(100vh - 42px);
+  padding: 58px 18px 18px;
+  overflow: auto;
+  border: 1px solid var(--line-strong);
+  border-radius: 24px;
+  background: var(--surface);
+  color: var(--ink);
+  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.42);
+}
+
+.image-dialog::backdrop {
+  background: rgba(10, 10, 9, 0.78);
+  backdrop-filter: blur(10px);
+}
+
+.image-dialog img {
+  display: block;
+  width: 100%;
+  max-height: calc(100vh - 170px);
+  border-radius: 14px;
+  object-fit: contain;
+}
+
+.image-dialog p {
+  margin: 13px 4px 2px;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.image-dialog-close {
+  position: absolute;
+  top: 15px;
+  right: 16px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface-solid);
+  color: var(--ink);
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.72rem;
+  font-weight: 650;
+}
+
 .case-section .project-facts {
   margin-top: 0;
   padding-top: 0;
@@ -1559,7 +1811,7 @@ button:hover .arrow {
 }
 
 .case-next a {
-  font-family: var(--serif);
+  font-family: var(--font);
   font-size: clamp(1.5rem, 3vw, 3rem);
 }
 
@@ -1645,6 +1897,10 @@ button:hover .arrow {
     grid-template-columns: 1fr;
   }
 
+  .case-hero-photo .case-image-button {
+    min-height: 380px;
+  }
+
   .project-visual {
     min-height: 420px;
     border-top: 1px solid var(--line);
@@ -1669,6 +1925,26 @@ button:hover .arrow {
 
   .case-sidebar {
     position: static;
+  }
+
+  .case-stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .case-stat:nth-child(2) {
+    border-right: 0;
+  }
+
+  .case-stat:nth-child(n+3) {
+    border-top: 1px solid var(--line);
+  }
+
+  .case-stat:nth-child(3) {
+    padding-left: 0;
+  }
+
+  .case-media-grid {
+    grid-template-columns: 1fr;
   }
 
   .page-intro {
@@ -1807,6 +2083,24 @@ button:hover .arrow {
 
   .case-hero-visual {
     min-height: 340px;
+  }
+
+  .case-hero-photo .case-image-button {
+    min-height: 280px;
+  }
+
+  .case-image-button,
+  .case-image-button img {
+    min-height: 240px;
+  }
+
+  .case-callout,
+  .case-metric-row {
+    grid-template-columns: 1fr;
+  }
+
+  .case-metric-row span + span {
+    border-top: 1px solid var(--line);
   }
 
   .case-next {

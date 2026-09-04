@@ -176,6 +176,27 @@
     element.textContent = new Date().getFullYear()
   })
 
+  const imageDialog = document.querySelector("[data-lightbox-dialog]")
+  const dialogImage = imageDialog?.querySelector("[data-lightbox-image]")
+  const dialogCaption = imageDialog?.querySelector("[data-lightbox-caption]")
+
+  document.querySelectorAll("[data-lightbox]").forEach(button => {
+    button.addEventListener("click", () => {
+      const sourceImage = button.querySelector("img")
+      const caption = button.closest("figure")?.querySelector("figcaption")
+      if (!imageDialog || !dialogImage || !sourceImage) return
+      dialogImage.src = sourceImage.currentSrc || sourceImage.src
+      dialogImage.alt = sourceImage.alt
+      if (dialogCaption) dialogCaption.textContent = caption?.textContent || ""
+      if (typeof imageDialog.showModal === "function") imageDialog.showModal()
+    })
+  })
+
+  imageDialog?.querySelector("[data-lightbox-close]")?.addEventListener("click", () => imageDialog.close())
+  imageDialog?.addEventListener("click", event => {
+    if (event.target === imageDialog) imageDialog.close()
+  })
+
   if (!reduceMotion) {
     const canvas = document.createElement("canvas")
     canvas.className = "spark-canvas"
