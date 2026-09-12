@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A report-backed case study of Aztec Electric Racing's 352.8-volt tractive accumulator, led by Muhammad Anjum.">
+  <meta name="description" content="A detailed engineering case study of Aztec Electric Racing's first 352.8-volt tractive accumulator, designed around Formula SAE requirements and led by Muhammad Anjum.">
   <meta name="theme-color" content="#f5f1e8">
   <title>High-voltage tractive accumulator — Muhammad Anjum</title>
   <link rel="canonical" href="https://muhammadanjum.com/projects/tractive-accumulator.html">
@@ -32,84 +32,109 @@
           <div>
             <p class="eyebrow">Aztec Electric Racing · Energy storage</p>
             <h1>High-voltage tractive accumulator.</h1>
-            <p class="page-lede">A ground-up battery system for the team’s first Formula SAE Electric car—designed around safety, serviceability, and a rules-compliant path to technical inspection.</p>
-            <div class="tag-list"><span class="tag">352.8 V maximum</span><span class="tag">Six segments</span><span class="tag">Controls integration</span><span class="tag">Design validation</span></div>
+            <p class="page-lede">The team’s first high-voltage traction battery: researched, packaged, fabricated, wired, and documented around Formula SAE requirements.</p>
+            <div class="tag-list"><span class="tag">352.8 V maximum</span><span class="tag">Six segments</span><span class="tag">HV safety</span><span class="tag">Controls integration</span><span class="tag">Manufacturing</span></div>
           </div>
-          <figure class="case-hero-photo reveal">
-            <button class="case-image-button" type="button" data-lightbox aria-label="Enlarge assembled tractive accumulator">
-              <img src="../assets/media/projects/accumulator/assembled-accumulator.webp" alt="Completed high-voltage accumulator enclosure on a workshop table" width="1800" height="1350" loading="eager" decoding="async">
-            </button>
-            <figcaption>The assembled accumulator enclosure documented in the 2025 design report.</figcaption>
-          </figure>
+          <figure class="case-hero-photo reveal"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge assembled tractive accumulator"><img src="../assets/media/projects/accumulator/assembled-accumulator.webp" alt="Completed high-voltage accumulator enclosure on a workshop table" width="1800" height="1350" loading="eager" decoding="async"></button><figcaption>The assembled accumulator enclosure documented in the 2025 Energy Storage Design Report.</figcaption></figure>
         </div>
-        <div class="case-stat-grid reveal" aria-label="Accumulator project highlights">
-          <div class="case-stat"><strong>352.8 V</strong><span>maximum pack voltage</span></div>
-          <div class="case-stat"><strong>84</strong><span>commercial battery packs</span></div>
-          <div class="case-stat"><strong>6</strong><span>serviceable internal segments</span></div>
-          <div class="case-stat"><strong>≈30%</strong><span>lighter aluminum shell</span></div>
-        </div>
+        <div class="case-stat-grid reveal" aria-label="Accumulator project highlights"><div class="case-stat"><strong>352.8 V</strong><span>maximum pack voltage</span></div><div class="case-stat"><strong>84</strong><span>commercial battery packs</span></div><div class="case-stat"><strong>6 × 58.8 V</strong><span>isolated service segments</span></div><div class="case-stat"><strong>≈30%</strong><span>lighter aluminum shell</span></div></div>
+        <nav class="case-process-nav reveal" aria-label="Project phases"><a href="#requirements">Requirements</a><a href="#enclosure">Enclosure</a><a href="#manufacturing">Manufacturing</a><a href="#segments">Segments</a><a href="#controls">Controls</a><a href="#service">Service safety</a><a href="#infrastructure">Test infrastructure</a><a href="#verification">Verification</a></nav>
       </div>
     </section>
 
     <section class="section-compact">
       <div class="container case-layout">
-        <aside class="case-sidebar reveal">
-          <span class="section-number">Project facts</span>
-          <dl class="case-facts"><div><dt>Role</dt><dd>Energy Storage Team Lead</dd></div><div><dt>Organization</dt><dd>Aztec Electric Racing</dd></div><div><dt>Program</dt><dd>Formula SAE Electric</dd></div><div><dt>Result</dt><dd>First structural-inspection pass</dd></div></dl>
-        </aside>
+        <aside class="case-sidebar reveal"><span class="section-number">Project facts</span><dl class="case-facts"><div><dt>Role</dt><dd>President · Energy Storage Team Lead</dd></div><div><dt>Organization</dt><dd>Aztec Electric Racing</dd></div><div><dt>Program</dt><dd>Formula SAE Electric</dd></div><div><dt>Source</dt><dd>2025 Energy Storage Design Report</dd></div><div><dt>Result</dt><dd>First structural-inspection pass</dd></div></dl></aside>
 
         <div class="case-body">
-          <section class="case-section reveal">
-            <span class="section-number">01 · Design brief</span>
-            <h2>Package a new electrical system without treating the enclosure like a box.</h2>
-            <p>The accumulator had to protect and isolate the high-voltage system, integrate low-voltage controls, remain practical to assemble and service, and satisfy Formula SAE rules. The team replaced its outgoing steel concept with a purpose-built 6061 aluminum shell to cut mass and lower the vehicle’s center of gravity.</p>
-            <div class="case-callout"><strong>Structural intent</strong><span>Shell mounting tabs were designed for the report’s 40g lateral and 20g normal loading cases.</span></div>
+          <section class="case-section reveal" id="requirements">
+            <span class="section-number">01 · Research & requirements</span>
+            <h2>Start with the inspection envelope, not the cell count.</h2>
+            <p>A Formula SAE accumulator is simultaneously a structural enclosure, a high-voltage assembly, a low-voltage controls package, and a serviceable competition component. The design process began by translating rules and vehicle needs into three primary objectives: reduce enclosure mass and center-of-gravity height, clean up controls packaging for manufacturing and service, and produce a rules-compliant battery capable of passing technical inspection.</p>
+            <p>As Energy Storage Lead, Muhammad worked across those boundaries rather than treating them as separate projects. Mechanical choices changed insulation and wiring space. Segment voltage affected service procedures. Board placement affected harness length and lid clearance. The report was structured to keep those interfaces visible and give later teams a reference for design, fabrication, and validation.</p>
+            <div class="case-principles-grid"><article><strong>Contain</strong><span>Protect cells and components under vehicle and handling loads.</span></article><article><strong>Isolate</strong><span>Separate the high-voltage system from the conductive shell and low-voltage controls.</span></article><article><strong>Interrupt</strong><span>Keep service segments below 60 volts until the maintenance plug completes the pack.</span></article><article><strong>Verify</strong><span>Make hardware states observable and inspection evidence repeatable.</span></article></div>
+            <figure class="case-figure wide"><button class="case-image-button contain" type="button" data-lightbox aria-label="Enlarge accumulator system packaging model"><img src="../assets/media/projects/accumulator/system-packaging-cad.webp" alt="CAD section view of the accumulator's internal electrical and mechanical packaging" width="1001" height="813" loading="lazy" decoding="async"></button><figcaption>The system model tied the shell, six-segment stack, controls region, and connector interfaces into one packaging study.</figcaption></figure>
+          </section>
+
+          <section class="case-section reveal" id="enclosure">
+            <span class="section-number">02 · Enclosure design</span>
+            <h2>Use structure to solve mass, sealing, and service access together.</h2>
+            <p>The shell houses the cells, controls boards, protection devices, and five internal walls that create six segments. The team selected 6061 aluminum for strength, weldability, and mass reduction. Relative to the outgoing steel container, the report estimated the aluminum shell alone at roughly 30% lighter.</p>
+            <p>Low-profile mounting tabs reduced footprint while being designed around 40g lateral and 20g normal load cases. The enclosure exterior was simplified by removing unnecessary wall perforations. Above it, a matching aluminum lid followed the approximately 7.8-degree slope of the container so water would not collect on its surface.</p>
+            <p>Fourteen #6-32 fasteners were placed around bends and edges to compress a quarter-inch, 60-durometer polyurethane gasket. This was not decorative closure hardware: fastener spacing, lid stiffness, and gasket compression worked together to make the seal consistent.</p>
             <div class="case-media-grid">
-              <figure class="case-figure"><button class="case-image-button contain" type="button" data-lightbox aria-label="Enlarge accumulator enclosure CAD"><img src="../assets/media/projects/accumulator/enclosure-cad.webp" alt="CAD model of the aluminum accumulator enclosure" width="1271" height="846" loading="lazy" decoding="async"></button><figcaption>6061 aluminum enclosure CAD. The revised shell was estimated to be roughly 30% lighter than the previous steel container.</figcaption></figure>
-              <figure class="case-figure"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge accumulator lid and enclosure"><img src="../assets/media/projects/accumulator/lid-and-enclosure.webp" alt="Completed accumulator enclosure and sloped lid" width="1800" height="969" loading="lazy" decoding="async"></button><figcaption>The sloped lid used fourteen fasteners and a polyurethane gasket to close the enclosure.</figcaption></figure>
+              <figure class="case-figure"><button class="case-image-button contain" type="button" data-lightbox aria-label="Enlarge accumulator enclosure CAD"><img src="../assets/media/projects/accumulator/enclosure-cad.webp" alt="CAD model of the aluminum accumulator enclosure" width="1271" height="846" loading="lazy" decoding="async"></button><figcaption>6061 aluminum enclosure CAD with internal divisions and low-profile mounting tabs.</figcaption></figure>
+              <figure class="case-figure"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge accumulator lid and enclosure"><img src="../assets/media/projects/accumulator/lid-and-enclosure.webp" alt="Completed accumulator enclosure and sloped aluminum lid" width="1800" height="969" loading="lazy" decoding="async"></button><figcaption>The sloped lid, perimeter fasteners, and gasketed interface in the completed hardware.</figcaption></figure>
             </div>
           </section>
 
-          <section class="case-section reveal">
-            <span class="section-number">02 · Isolation &amp; segmentation</span>
-            <h2>Design the safety architecture into every interface.</h2>
-            <p>Nomex 410 lined the internal faces and lid, while FR-4 barriers separated high- and low-voltage regions. Eighty-four Energus packs were divided into six internal segments; each remained below 60 volts until the maintenance plug completed the series connection.</p>
+          <section class="case-section reveal" id="manufacturing">
+            <span class="section-number">03 · Fabrication</span>
+            <h2>Translate the CAD into datums, welds, and repeatable internal geometry.</h2>
+            <p>Fabrication established the accuracy of every system that followed. The shell panels, internal walls, mounting tabs, and lid interface had to retain alignment through cutting, fixturing, and welding. Distortion at this stage would accumulate later as misaligned segment guides, uneven gasket compression, and maintenance-plug tolerance.</p>
+            <p>The build sequence therefore moved from the external shell to the five internal partitions and guide features before electrical hardware was installed. Fit checks kept the segment channels square and preserved working clearance along the low-voltage region.</p>
             <div class="case-media-grid">
-              <figure class="case-figure portrait"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge Nomex liner installation"><img src="../assets/media/projects/accumulator/nomex-installation.webp" alt="Nomex electrical insulation being fitted to the accumulator enclosure" width="1200" height="1600" loading="lazy" decoding="async"></button><figcaption>Nomex liner installation inside the fabricated aluminum enclosure.</figcaption></figure>
-              <figure class="case-figure portrait"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge battery cell segments"><img src="../assets/media/projects/accumulator/cell-segments.webp" alt="Battery packs arranged into accumulator segments with copper busbars" width="1200" height="1600" loading="lazy" decoding="async"></button><figcaption>Segment assembly with copper busbars and positively locked hardware.</figcaption></figure>
+              <figure class="case-figure portrait"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge enclosure welding"><img src="../assets/media/projects/accumulator/enclosure-welding.webp" alt="Team member welding the aluminum accumulator enclosure" width="1350" height="1800" loading="lazy" decoding="async"></button><figcaption>Aluminum shell fabrication during welding.</figcaption></figure>
+              <figure class="case-figure portrait"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge fabricated segmented enclosure"><img src="../assets/media/projects/accumulator/fabricated-enclosure.webp" alt="Fabricated accumulator enclosure with six open internal bays" width="1350" height="1800" loading="lazy" decoding="async"></button><figcaption>The fabricated enclosure before cells, insulation, and controls were installed.</figcaption></figure>
             </div>
           </section>
 
-          <section class="case-section reveal">
-            <span class="section-number">03 · Controls architecture</span>
-            <h2>Consolidate the controls instead of burying them in wiring.</h2>
-            <p>A central accumulator PCB brought the BMS backend, precharge circuit, accumulator indicator-light driver, high-voltage DC-DC conversion, and related control functions onto one serviceable platform. That reduced point-to-point wiring and gave the low-voltage system a defined place in the package.</p>
+          <section class="case-section reveal" id="segments">
+            <span class="section-number">04 · Isolation & segment assembly</span>
+            <h2>Keep the pack serviceable before it ever becomes high voltage.</h2>
+            <p>Nomex 410 lined the conductive shell and lid. Overlap and edge treatment mattered because a nominally insulated panel can still expose metal at a seam, corner, or fastener. Above the segment stack, interlocking FR-4 sheets formed a secondary plane between the high-voltage cells and low-voltage controls.</p>
+            <p>Eighty-four Energus Li2x4p25RT packs were divided into six series segments of fourteen packs each. Before the maintenance plug was installed, each segment remained limited to 58.8 volts maximum. Once connected, the complete pack reached 302.4 volts nominal and 352.8 volts maximum.</p>
+            <p>Copper busbars joined each segment. M8.8 fasteners were tightened to the report’s 10 N·m requirement, and double-tab washers provided positive locking against vibration. The pack choice also brought factory cell-level fusing, integrated sensing, protected cells, threaded copper-plated terminals, and a compact 2×4 format suited to a single-layer enclosure.</p>
+            <div class="case-metric-row"><span><strong>14</strong> packs per segment</span><span><strong>58.8 V</strong> maximum per open segment</span><span><strong>10 N·m</strong> busbar-fastener torque</span></div>
             <div class="case-media-grid">
-              <figure class="case-figure"><button class="case-image-button contain" type="button" data-lightbox aria-label="Enlarge battery-management boards"><img src="../assets/media/projects/accumulator/bms-boards.webp" alt="Battery-management and vehicle-management circuit boards" width="1266" height="1104" loading="lazy" decoding="async"></button><figcaption>Custom battery- and vehicle-management boards used in the low-voltage controls system.</figcaption></figure>
-              <figure class="case-figure"><button class="case-image-button contain" type="button" data-lightbox aria-label="Enlarge central accumulator PCB"><img src="../assets/media/projects/accumulator/central-pcb.webp" alt="Central accumulator printed circuit board layout and assembled board" width="1234" height="1384" loading="lazy" decoding="async"></button><figcaption>The central PCB packaged core control functions and made the installation easier to trace and service.</figcaption></figure>
+              <figure class="case-figure portrait"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge Nomex liner installation"><img src="../assets/media/projects/accumulator/nomex-installation.webp" alt="Nomex electrical insulation being fitted to the accumulator enclosure" width="1200" height="1600" loading="lazy" decoding="async"></button><figcaption>Nomex installation around the internal metal surfaces and segment structure.</figcaption></figure>
+              <figure class="case-figure portrait"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge segment layout"><img src="../assets/media/projects/accumulator/segment-layout.webp" alt="Full accumulator segment layout with all battery packs visible" width="1350" height="1800" loading="lazy" decoding="async"></button><figcaption>The six-segment battery layout during assembly.</figcaption></figure>
+            </div>
+            <figure class="case-figure wide"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge connected cell segments"><img src="../assets/media/projects/accumulator/cell-segments.webp" alt="Battery packs arranged into accumulator segments with copper busbars" width="1200" height="1600" loading="lazy" decoding="async"></button><figcaption>Segment connections with copper busbars and positively locked hardware.</figcaption></figure>
+          </section>
+
+          <section class="case-section reveal" id="controls">
+            <span class="section-number">05 · Low-voltage controls</span>
+            <h2>Make the pack’s safety state visible and controllable.</h2>
+            <p>The low-voltage system determined whether the battery could operate safely. Custom Battery Monitoring System and Voltage Monitoring System boards fed a central accumulator PCB alongside the precharge, shutdown, DC-DC, 60-volt trigger, and Accumulator Indicator Light functions. External Deutsch connectors linked that local controls package to the vehicle’s master harness.</p>
+            <p>Consolidating those functions on a central board reduced point-to-point wiring, shortened signal paths, and gave troubleshooting a clear physical reference. It also kept high-voltage switching logic, indicator behavior, and BMS communication packaged above the isolated cell plane instead of distributed around the enclosure.</p>
+            <div class="case-media-grid">
+              <figure class="case-figure"><button class="case-image-button contain" type="button" data-lightbox aria-label="Enlarge BMS and VMS boards"><img src="../assets/media/projects/accumulator/bms-boards.webp" alt="Battery-management and vehicle-management circuit boards" width="1266" height="1104" loading="lazy" decoding="async"></button><figcaption>Custom monitoring boards used to observe cell and pack state.</figcaption></figure>
+              <figure class="case-figure"><button class="case-image-button contain" type="button" data-lightbox aria-label="Enlarge central accumulator PCB"><img src="../assets/media/projects/accumulator/central-pcb.webp" alt="Central accumulator printed circuit board layout and assembled board" width="1234" height="1384" loading="lazy" decoding="async"></button><figcaption>The central PCB integrated core control and safety functions on one serviceable platform.</figcaption></figure>
+            </div>
+            <figure class="case-figure wide"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge installed accumulator controls"><img src="../assets/media/projects/accumulator/assembled-controls.webp" alt="Installed accumulator controls and high-voltage wiring above the battery segments" width="1013" height="1800" loading="lazy" decoding="async"></button><figcaption>The installed controls layer, with monitoring boards, routed wiring, and high-voltage connections visible in the assembled pack.</figcaption></figure>
+          </section>
+
+          <section class="case-section reveal" id="service">
+            <span class="section-number">06 · Service safety</span>
+            <h2>Use a physical interface to define the energized state.</h2>
+            <p>The maintenance plug bridges the six isolated segments into the full 352.8-volt series pack. Removed, the highest available segment voltage is 58.8 volts; installed, its copper links complete the tractive-system path. That made the plug a safety boundary, not just a connector.</p>
+            <p>A one-piece bar would have inherited the accumulated positional error across all six segment interfaces. The design instead used independent capsules held by a common handle. Each capsule carried a solid copper link with press-fit female Amphenol connectors, allowing local movement to absorb tolerance stack while maintaining a single operator action.</p>
+            <p>Unique extrusions and matching cutouts keyed the assembly against incorrect orientation. Once the lid was fastened, it physically retained the handle, providing positive locking against loosening in service.</p>
+            <figure class="case-figure wide"><button class="case-image-button contain technical" type="button" data-lightbox aria-label="Enlarge maintenance plug CAD"><img src="../assets/media/projects/accumulator/maintenance-plug-cad.webp" alt="Exploded CAD view of the modular maintenance plug bar" width="801" height="305" loading="lazy" decoding="async"></button><figcaption>Exploded maintenance-plug CAD showing the common handle and tolerance-absorbing connector capsules.</figcaption></figure>
+          </section>
+
+          <section class="case-section reveal" id="infrastructure">
+            <span class="section-number">07 · Validation infrastructure</span>
+            <h2>Design the equipment around the battery, too.</h2>
+            <p>The team also developed a dedicated charge cart so the accumulator could be handled, serviced, and charged outside the chassis. A commercial 2,000-pound flat cart provided the base; a welded, hip-height work surface improved access, while a shelf and drawer kept electrical tools and supplies with the pack.</p>
+            <p>The electrical system combined the charger, auxiliary power, grounding, protected inlets, and covered outlets into a transportable setup. The report documents a later 220-volt charging option added to reduce turnaround between test cycles. A mechanical dead-man brake used opposing wheel chocks, springs, and bicycle-brake controls so the cart’s default unattended state was stopped.</p>
+            <div class="case-media-grid">
+              <figure class="case-figure"><button class="case-image-button contain technical" type="button" data-lightbox aria-label="Enlarge charge cart power schematic"><img src="../assets/media/projects/accumulator/charge-cart-power-schematic.webp" alt="Charge-cart power supply, rectification, regulation, and controller schematic" width="1133" height="720" loading="lazy" decoding="async"></button><figcaption>The cart’s power architecture separated grounded supply and auxiliary control functions.</figcaption></figure>
+              <figure class="case-figure"><button class="case-image-button contain technical" type="button" data-lightbox aria-label="Enlarge charge cart outlet layout"><img src="../assets/media/projects/accumulator/charge-cart-outlet-layout.webp" alt="Annotated charge-cart switch and outlet wiring layout" width="1800" height="1000" loading="lazy" decoding="async"></button><figcaption>The protected switch and outlet layout used for the portable charging setup.</figcaption></figure>
             </div>
           </section>
 
-          <section class="case-section reveal">
-            <span class="section-number">04 · Packaging</span>
-            <h2>Resolve mechanical, electrical, and service constraints in one model.</h2>
-            <p>The internal layout defined repeatable locations for battery segments, insulation, control boards, the shutdown circuit, and high-voltage connections. Guide-rail features aligned the internal structure while maintaining the separation between voltage domains.</p>
-            <figure class="case-figure wide"><button class="case-image-button contain" type="button" data-lightbox aria-label="Enlarge accumulator system packaging CAD"><img src="../assets/media/projects/accumulator/system-packaging-cad.webp" alt="CAD section view of the accumulator's internal electrical and mechanical packaging" width="1001" height="813" loading="lazy" decoding="async"></button><figcaption>System packaging CAD showing the enclosure, segment stack, and controls arrangement.</figcaption></figure>
-          </section>
-
-          <section class="case-section reveal">
-            <span class="section-number">05 · Maintenance plug</span>
-            <h2>Make service disconnection physical, keyed, and unmistakable.</h2>
-            <p>The maintenance plug bar used modular capsules to absorb manufacturing tolerance across the segment stack. Solid copper links and press-fit connectors completed the series path; unique keying prevented incorrect installation, and the closed lid positively retained the handle.</p>
-            <figure class="case-figure wide"><button class="case-image-button contain technical" type="button" data-lightbox aria-label="Enlarge maintenance plug CAD"><img src="../assets/media/projects/accumulator/maintenance-plug-cad.webp" alt="Exploded CAD view of the modular maintenance plug bar" width="801" height="305" loading="lazy" decoding="async"></button><figcaption>Exploded maintenance-plug CAD, including modular connector capsules and the keyed handle assembly.</figcaption></figure>
-          </section>
-
-          <section class="case-section reveal">
-            <span class="section-number">06 · Outcome</span>
-            <h2>Turn a first-generation system into an inspectable one.</h2>
-            <p>The completed design combined the team’s high-voltage hardware, low-voltage controls, enclosure, insulation, and service interfaces into one documented system. The accumulator went on to pass structural inspection—the first successful pass in team history.</p>
+          <section class="case-section reveal" id="verification">
+            <span class="section-number">08 · Integration & verification</span>
+            <h2>Build an inspectable system, not a sealed mystery.</h2>
+            <p>Final integration joined the enclosure, insulation, segments, maintenance plug, contactors, fuse, controls boards, indicator light, external connectors, and lid into a single inspectable assembly. The documentation preserved design intent, key hardware values, manufacturing sequence, and the questions an inspector or future subsystem lead would need answered.</p>
+            <p>The most important external result was concrete: the accumulator passed structural inspection, the first successful pass in team history. That outcome validated the work as more than a design report—it showed that a first-generation high-voltage system could be manufactured, presented, and accepted against competition requirements.</p>
             <div class="role-outcome"><strong>First</strong><span>successful accumulator structural-inspection pass in team history</span></div>
-            <figure class="case-figure wide"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge completed tractive accumulator"><img src="../assets/media/projects/accumulator/final-accumulator.webp" alt="Completed tractive accumulator photographed from the side" width="1800" height="858" loading="lazy" decoding="async"></button><figcaption>The completed high-voltage accumulator at the end of the documented build.</figcaption></figure>
+            <div class="case-media-grid">
+              <figure class="case-figure"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge completed tractive accumulator"><img src="../assets/media/projects/accumulator/final-accumulator.webp" alt="Completed tractive accumulator photographed from the side" width="1800" height="858" loading="lazy" decoding="async"></button><figcaption>The completed enclosure with external service and high-voltage interfaces.</figcaption></figure>
+              <figure class="case-figure portrait"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge accumulator team display"><img src="../assets/media/projects/accumulator/team-display.webp" alt="Completed accumulator displayed at a team event" width="1350" height="1800" loading="lazy" decoding="async"></button><figcaption>The finished accumulator presented as documented team hardware.</figcaption></figure>
+            </div>
           </section>
         </div>
       </div>
