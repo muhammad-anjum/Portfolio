@@ -1,17 +1,122 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Muhammad Anjum's powertrain testbench and pedal-controls case study for Aztec Electric Racing."><meta name="theme-color" content="#f5f1e8">
-  <title>Powertrain testbench and pedal controls — Muhammad Anjum</title><link rel="canonical" href="https://muhammadanjum.com/projects/powertrain-testbench.html"><link rel="icon" type="image/png" sizes="32x32" href="../assets/media/favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="../assets/media/apple-touch-icon.png"><link rel="stylesheet" href="../assets/css/site.css">
-  <script>try{document.documentElement.dataset.theme=localStorage.getItem("portfolio-theme")||((matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light")}catch(e){}</script><script defer src="../assets/js/site.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Powertrain testbench and pedal controls — Muhammad Anjum</title>
+  <meta name="description" content="Powertrain testbench and pedal-control work for Aztec Electric Racing: inverter calibration, vehicle wiring and driver-interface design.">
+  <meta name="theme-color" content="#f2ecdf">
+  <link rel="canonical" href="https://muhammadanjum.com/projects/powertrain-testbench.html">
+  <meta property="og:site_name" content="Muhammad Anjum">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Powertrain testbench and pedal controls — Muhammad Anjum">
+  <meta property="og:description" content="Powertrain testbench and pedal-control work for Aztec Electric Racing: inverter calibration, vehicle wiring and driver-interface design.">
+  <meta property="og:url" content="https://muhammadanjum.com/projects/powertrain-testbench.html">
+  <meta property="og:image" content="https://muhammadanjum.com/assets/media/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/media/favicon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/media/apple-touch-icon.png">
+  <script>document.documentElement.classList.add("js")</script>
+  <link rel="stylesheet" href="../assets/css/site.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Powertrain testbench and pedal controls","description":"Powertrain testbench and pedal-control work for Aztec Electric Racing: inverter calibration, vehicle wiring and driver-interface design.","author":{"@type":"Person","name":"Muhammad Anjum","url":"https://muhammadanjum.com/"},"mainEntityOfPage":"https://muhammadanjum.com/projects/powertrain-testbench.html"}</script>
+  <script defer src="../assets/js/site.js"></script>
+  
 </head>
-<body data-page="projects"><a class="skip-link" href="#main">Skip to content</a><div class="scroll-progress" data-progress aria-hidden="true"></div>
-  <header class="site-header" data-header><div class="container header-inner"><a class="brand" href="../index.html" aria-label="Muhammad Anjum, home"><span class="brand-mark">MA</span><span class="brand-copy"><strong>Muhammad Anjum</strong><span>Aerospace · EV · manufacturing</span></span></a><nav class="site-nav" id="site-navigation" data-site-nav aria-label="Primary navigation"><a href="../index.html" data-nav-page="home">Home</a><a href="../experience.html" data-nav-page="experience">Experience</a><a href="../projects.html" data-nav-page="projects">Projects</a><a href="../about.html" data-nav-page="about">About</a></nav><div class="header-actions"><a class="button small header-resume magnetic" href="../Muhammad-Anjum-Resume.pdf" target="_blank" rel="noopener">Résumé <span class="arrow">↗</span></a><button class="icon-button" type="button" data-theme-toggle aria-label="Switch theme"><span class="theme-glyph" aria-hidden="true"></span></button><button class="menu-button" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-navigation" aria-label="Open navigation"><span class="menu-lines" aria-hidden="true"></span></button></div></div></header>
-  <main id="main"><section class="case-hero"><div class="container"><a class="back-link" href="../projects.html">← All projects</a><div class="case-hero-grid"><div><p class="eyebrow">Aztec Electric Racing · Powertrain & ergonomics</p><h1>Powertrain testbench and pedal controls.</h1><p class="page-lede">A functional test platform connecting electrical, mechanical, hydraulic, control, and driver-interface work.</p><div class="tag-list"><span class="tag">Testbench</span><span class="tag">Motor inverter</span><span class="tag">Vehicle wiring</span><span class="tag">Pedal controls</span></div></div><div class="project-visual case-hero-visual" aria-hidden="true"><span class="visual-label">Test-and-feedback loop</span><svg class="loop-diagram" viewBox="0 0 600 460"><rect x="54" y="146" width="150" height="160" rx="28" fill="var(--surface)" stroke="currentColor"></rect><rect x="396" y="146" width="150" height="160" rx="28" fill="var(--surface)" stroke="currentColor"></rect><circle cx="300" cy="226" r="54" fill="var(--gold-soft)" stroke="currentColor"></circle><path class="moving" d="M204 178 C254 84 346 84 396 178"></path><path class="moving" d="M396 276 C346 372 254 372 204 276"></path><path d="M276 226 H324 M300 202 V250"></path></svg></div></div></div></section>
-    <section class="section-compact"><div class="container case-layout"><aside class="case-sidebar reveal"><span class="section-number">Project facts</span><dl class="case-facts"><div><dt>Role</dt><dd>Powertrain & Ergonomics Engineer</dd></div><div><dt>Organization</dt><dd>Aztec Electric Racing</dd></div><div><dt>Period</dt><dd>August 2022 — May 2023</dd></div><div><dt>CAD</dt><dd>SolidWorks</dd></div></dl></aside><div class="case-body">
-      <section class="case-section reveal"><span class="section-number">01 · Brief</span><h2>Build a platform for integrated powertrain testing.</h2><p>The testbench combined electrical, mechanical, and hydraulic components so the team could wire, calibrate, troubleshoot, and iterate before full-vehicle integration.</p></section>
-      <section class="case-section reveal"><span class="section-number">02 · Work</span><h2>Design, wire, calibrate, test.</h2><ul class="fact-list"><li>Designed and fabricated the functional testbench.</li><li>Programmed, calibrated, and tuned electronic components through the motor inverter.</li><li>Used design matrices and physical analyses to select commercial and custom parts.</li><li>Traced and connected wiring to the vehicle harness and troubleshot circuitry.</li><li>Modelled preliminary driver foot-pedal designs in SolidWorks and integrated electrical components with the pedal box.</li><li>Programmed pedal travel for the desired motor response and driver comfort.</li></ul></section>
-      <section class="case-section reveal"><span class="section-number">03 · Interfaces</span><div class="project-facts"><div class="project-fact"><span>Electrical</span><strong>Harness & circuitry</strong></div><div class="project-fact"><span>Controls</span><strong>Inverter calibration</strong></div><div class="project-fact"><span>Mechanical</span><strong>Testbench & pedals</strong></div><div class="project-fact"><span>Driver</span><strong>Travel & response</strong></div></div></section>
-    </div></div></section><section class="section"><div class="container"><div class="case-next reveal"><span>Next case study</span><a href="iam3d-drone.html">IAM3D competition drone <span class="arrow">↗</span></a></div></div></section>
-  </main><button class="icon-button back-top" type="button" data-back-top aria-label="Back to top">↑</button><footer class="site-footer"><div class="container footer-inner"><span>© <span data-year></span> Muhammad Anjum</span><div class="footer-links"><a href="mailto:muhammad.u.anjum@gmail.com">Email</a><a href="https://www.linkedin.com/in/muhammad-u-anjum/" target="_blank" rel="noopener">LinkedIn</a></div></div></footer>
-</body></html>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" data-header>
+    <div class="wrap header-in">
+      <a class="brand" href="../index.html" aria-label="Muhammad Anjum, home"><span class="brand-mark" aria-hidden="true">MA</span><span class="brand-name"><strong>Muhammad Anjum</strong><span>Aerospace · EV systems · Manufacturing</span></span></a>
+      <nav class="site-nav" id="site-nav" data-nav aria-label="Primary"><a href="../projects.html" aria-current="page">Work</a><a href="../experience.html">Experience</a><a href="../about.html">About</a><a class="btn btn-ink nav-resume" href="../Muhammad-Anjum-Resume.pdf" target="_blank" rel="noopener">Résumé <span class="arr" aria-hidden="true">↗</span></a></nav>
+      <div class="header-end">
+        <a class="btn btn-ink btn-sm" href="../Muhammad-Anjum-Resume.pdf" target="_blank" rel="noopener">Résumé <span class="arr" aria-hidden="true">↗</span></a>
+        <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span></button>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+
+<section class="case-hero wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../projects.html">Work</a><i>/</i><span>Powertrain testbench and pedal controls</span></nav>
+  <div class="case-top no-fig">
+    <div class="enter" style="--d:0">
+      <p class="label" style="margin-top:28px"><span>Powertrain &amp; ergonomics · <a href="../experience/aztec-electric-racing.html">Aztec Electric Racing</a></span></p>
+      <h1>Powertrain testbench and pedal controls</h1>
+      <p class="lede">A functional test platform that joined electrical, mechanical and hydraulic systems so the team could wire, calibrate and troubleshoot a powertrain before it went into a car.</p>
+      <div class="tags"><span class="tag">Testbench</span><span class="tag">Motor inverter</span><span class="tag">Vehicle wiring</span><span class="tag">Pedal controls</span></div>
+    </div>
+    
+  </div>
+  
+</section>
+<div class="wrap case-grid">
+  <aside class="rail" aria-label="About this project">
+    <div><h2>Project facts</h2><dl class="facts"><div><dt>Role</dt><dd>Powertrain &amp; Ergonomics Engineer</dd></div><div><dt>Organization</dt><dd>Aztec Electric Racing</dd></div><div><dt>Period</dt><dd>August 2022 – May 2023</dd></div><div><dt>CAD</dt><dd>SolidWorks</dd></div></dl></div>
+    <div><h2>On this page</h2><nav class="toc" data-toc aria-label="Sections"><a href="#brief"><span>01</span>Background and objective</a><a href="#role"><span>02</span>Role and ownership</a><a href="#interfaces"><span>03</span>Systems and interfaces</a></nav></div>
+  </aside>
+  <div class="case-body">
+<section class="case-sec" id="brief" aria-label="Background and objective"><p class="label"><b>01</b> Background and objective</p>
+  <h2>Build a platform for integrated powertrain testing.</h2>
+  <div class="prose">
+    <p>The testbench was Aztec Electric Racing’s first powertrain test platform. It combined electrical, mechanical and hydraulic components so the team could wire, calibrate, troubleshoot and iterate before full-vehicle integration. It was built and iterated with cooling-loop and wiring-harness integration.</p>
+  </div>
+</section>
+
+<section class="case-sec" id="role" aria-label="Role and ownership"><p class="label"><b>02</b> Role and ownership</p>
+  <h2>Design, wire, calibrate, test.</h2>
+  <div class="prose">
+    <p>I worked as Powertrain and Ergonomics Engineer from August 2022 to May 2023, on both the testbench and the driver pedal controls.</p>
+  </div>
+  <div class="panel owned">
+    <h3>Responsibilities</h3>
+    <ul class="bullets">
+      <li>Designed and fabricated the functional testbench, with electrical, mechanical and hydraulic components.</li>
+      <li>Programmed, calibrated and tuned electronic components through the motor inverter.</li>
+      <li>Used design matrices and physical analyses to select commercial and custom parts.</li>
+      <li>Traced and connected wiring to the vehicle harness, and applied circuit principles to troubleshoot wiring and circuitry.</li>
+      <li>Modeled preliminary driver foot-pedal designs in SolidWorks and integrated the electrical components with the pedal box.</li>
+      <li>Programmed pedal travel for the desired motor response and driver comfort.</li>
+      <li>Documented the work for reference and validation.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="case-sec" id="interfaces" aria-label="Systems and interfaces"><p class="label"><b>03</b> Systems and interfaces</p>
+  <h2>Four interfaces, one test loop.</h2>
+  <div class="prose">
+    <p>The testbench let the team find problems before full-vehicle integration. These are the four interfaces it exercised.</p>
+  </div>
+  <div class="interfaces">
+    <div><span>Electrical</span><strong>Harness and circuitry</strong></div>
+    <div><span>Controls</span><strong>Inverter calibration</strong></div>
+    <div><span>Mechanical</span><strong>Testbench and pedals</strong></div>
+    <div><span>Driver</span><strong>Pedal travel and motor response</strong></div>
+  </div>
+  <div class="refs"><strong>Evidence</strong>Photographs, wiring diagrams, pedal CAD and calibration records for this project aren’t published on this page yet. The layout above is ready for them.</div>
+</section>
+
+  </div>
+</div>
+<section class="wrap sec tight">
+  <nav class="pager" aria-label="More case studies">
+    <a class="panel panel-lift" href="../projects.html"><small>All work</small><strong>Back to projects</strong></a>
+    <a class="panel panel-lift" href="../projects/iam3d-drone.html"><small>Next case study</small><strong>IAM3D competition drone <span class="arr" aria-hidden="true">↗</span></strong></a>
+  </nav>
+</section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot">
+        <div><a class="brand" href="../index.html" aria-label="Muhammad Anjum, home"><span class="brand-mark" aria-hidden="true">MA</span><span class="brand-name"><strong>Muhammad Anjum</strong><span>Aerospace · EV systems · Manufacturing</span></span></a><p>Aerospace and EV systems engineering, from supplier audits to high-voltage battery builds.</p></div>
+        <nav class="foot-links" aria-label="Footer">
+          <div><p class="foot-h">Portfolio</p><a href="../projects.html">Work</a><a href="../experience.html">Experience</a><a href="../experience/aztec-electric-racing.html">Aztec Electric Racing</a><a href="../about.html">About</a></div>
+          <div><p class="foot-h">Case studies</p><a href="../projects/vehicle-conversion.html">Tesla-powered Triumph Stag</a><a href="../projects/tractive-accumulator.html">352.8 V tractive accumulator</a><a href="../projects/iam3d-drone.html">IAM3D competition drone</a><a href="../projects/powertrain-testbench.html">Powertrain testbench and pedal controls</a></div>
+          <div><p class="foot-h">Contact</p><a href="mailto:muhammad.u.anjum@gmail.com">Email</a><a href="https://www.linkedin.com/in/muhammad-u-anjum/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/muhammad-anjum" target="_blank" rel="noopener">GitHub</a><a href="../Muhammad-Anjum-Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></div>
+        </nav>
+      </div>
+      <div class="foot-base"><span>© <span data-year>2026</span> Muhammad Anjum</span><span>San Diego, California</span></div>
+    </div>
+  </footer>
+  <dialog class="lightbox" data-lightbox aria-label="Enlarged figure"><div class="lb-inner"><div class="lb-img"><img alt=""></div><div class="lb-cap"><span data-lb-caption></span><button class="lb-close" type="button" data-lb-close>Close</button></div></div></dialog>
+</body>
+</html>

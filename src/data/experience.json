@@ -1,0 +1,230 @@
+[
+  {
+    "slug": "spacex",
+    "group": "Professional",
+    "org": "SpaceX",
+    "roles": [
+      {
+        "title": "Supplier Development Engineer Intern",
+        "period": "May – August 2026"
+      }
+    ],
+    "location": "Hawthorne, California",
+    "context": "Starship flight hardware · confidential development program",
+    "summary": "Technical decisions on Starship flight hardware: design for manufacturing, sourcing and supplier selection, with on-site supplier audits and root-cause analysis.",
+    "bullets": [
+      "Owned technical decisions for Starship flight hardware on a confidential development program: DFM, sourcing, manufacturing and supplier selection.",
+      "Conducted on-site supplier audits to establish quality expectations and assess manufacturing capability.",
+      "Led root-cause analysis on out-of-tolerance conditions and other nonconformances, driving corrective actions, internal and external, to closure.",
+      "Identified a recurring gap between design engineering and supplier expectations and developed a standardized review process adopted by supplier development, quality and design engineering.",
+      "Resolved critical part shortages to keep production on schedule while coordinating experimental assembly procedures for development testing."
+    ],
+    "result": {
+      "value": "3 teams",
+      "label": "adopted the review process I developed"
+    },
+    "tags": [
+      "Supplier audits",
+      "Root-cause analysis",
+      "DFM & sourcing",
+      "Flight hardware"
+    ],
+    "projects": [],
+    "page": false
+  },
+  {
+    "slug": "the-thermal-club",
+    "group": "Professional",
+    "org": "The Thermal Club",
+    "roles": [
+      {
+        "title": "EV Systems Engineer",
+        "period": "February 2026 – present"
+      }
+    ],
+    "location": "Thermal, California",
+    "context": "Part-time · full-vehicle electric conversion",
+    "summary": "End-to-end electrical conversion of a Triumph Stag to Tesla power: low-voltage harness, high-voltage battery, motor controller, charging and digital dash.",
+    "bullets": [
+      "Designed and built a custom low-voltage wiring harness for full-vehicle integration.",
+      "Programmed and calibrated the motor control unit and digital dash for real-time telemetry.",
+      "Built and tested high-voltage battery packs, including cell validation and BMS configuration.",
+      "Owned the electrical conversion end to end, from component selection through final commissioning."
+    ],
+    "result": {
+      "value": "End to end",
+      "label": "electrical ownership, component selection to commissioning"
+    },
+    "tags": [
+      "Vehicle integration",
+      "High-voltage battery",
+      "Controls calibration",
+      "Low-voltage harness"
+    ],
+    "projects": [
+      "vehicle-conversion"
+    ],
+    "page": true,
+    "image": "thermal-club/triumph-stag-workshop",
+    "imageAlt": "White Triumph Stag in the workshop with its hood raised"
+  },
+  {
+    "slug": "aztec-electric-racing",
+    "group": "Leadership",
+    "org": "Aztec Electric Racing",
+    "roles": [
+      {
+        "title": "President · Energy Storage Team Lead",
+        "period": "July 2023 – June 2026"
+      },
+      {
+        "title": "Powertrain & Ergonomics Engineer",
+        "period": "August 2022 – May 2023"
+      }
+    ],
+    "location": "San Diego, California",
+    "context": "Formula SAE Electric",
+    "summary": "Led a 250+ member Formula SAE electric team while running its energy-storage work: the first tractive battery, the first accumulator inspection pass and the first powertrain testbench.",
+    "bullets": [
+      "Led a 250+ member FSAE electric team across project management, operations and budget planning.",
+      "Established the team's first operations framework for competition requirements, sponsorship outreach, safety and recruitment.",
+      "Researched, designed and fabricated the team's first high-voltage tractive battery, with controls integration.",
+      "Passed accumulator structural inspection for the first time in team history.",
+      "Built and iterated the team's first powertrain testbench, with cooling-loop and wiring-harness integration.",
+      "Developed documentation and validation standards for future subsystem design and manufacturing."
+    ],
+    "result": {
+      "value": "250+",
+      "label": "members led"
+    },
+    "extraResults": [
+      {
+        "value": "$200K+",
+        "label": "funding and support secured through fundraising and donor engagement"
+      },
+      {
+        "value": "First",
+        "label": "accumulator structural-inspection pass in team history"
+      }
+    ],
+    "tags": [
+      "High-voltage systems",
+      "EV powertrain",
+      "Controls integration",
+      "Operations"
+    ],
+    "projects": [
+      "tractive-accumulator",
+      "powertrain-testbench"
+    ],
+    "page": true,
+    "image": "accumulator/team-display",
+    "imageAlt": "The finished Aztec Electric Racing accumulator displayed at a team event",
+    "imageMax": "430px"
+  },
+  {
+    "slug": "muslim-tech-collaborative",
+    "group": "Leadership",
+    "org": "Muslim Tech Collaborative",
+    "roles": [
+      {
+        "title": "Founder & President",
+        "period": "July 2024 – present"
+      }
+    ],
+    "location": "San Diego, California",
+    "context": "Student professional-development network",
+    "summary": "Founded a professional-development network for Muslim students and grew it to 30+ active members, with employer partnerships and funding behind its panels and workshops.",
+    "bullets": [
+      "Founded and scaled a professional-development network for Muslim students from the ground up.",
+      "Directed all club operations: organization, outreach, marketing, recruitment and funding strategy.",
+      "Secured funding and employer partnerships for professional panels and career workshops that connect students with industry professionals."
+    ],
+    "result": {
+      "value": "30+",
+      "label": "active members in the network"
+    },
+    "tags": [
+      "Community operations",
+      "Recruitment",
+      "Funding",
+      "Employer partnerships"
+    ],
+    "projects": [],
+    "page": false
+  },
+  {
+    "slug": "nasa",
+    "group": "Professional",
+    "org": "NASA · Kennedy Space Center",
+    "roles": [
+      {
+        "title": "Integrated Management System Intern",
+        "period": "June – August 2023"
+      }
+    ],
+    "location": "Merritt Island, Florida",
+    "context": "Integrated Management System team",
+    "summary": "Documentation workflows and internal web applications for document control and governmental compliance audits, plus eight NASA certifications.",
+    "bullets": [
+      "Managed and streamlined documentation workflows for the Integrated Management System team.",
+      "Maintained internal web applications for document control and governmental compliance audits.",
+      "Authored and revised technical memos, data sheets and procedural updates, with a documented 10% efficiency improvement.",
+      "Developed technical instructions and action plans.",
+      "Earned eight NASA certifications in process management and technical documentation."
+    ],
+    "result": {
+      "value": "10%",
+      "label": "documented workflow efficiency improvement"
+    },
+    "extraResults": [
+      {
+        "value": "8",
+        "label": "NASA certifications earned"
+      }
+    ],
+    "tags": [
+      "Process management",
+      "Internal web applications",
+      "Compliance",
+      "Technical documentation"
+    ],
+    "projects": [],
+    "page": false
+  },
+  {
+    "slug": "asme-sdsu",
+    "group": "Leadership",
+    "org": "ASME · SDSU",
+    "roles": [
+      {
+        "title": "Project Manager",
+        "period": "August 2023 – May 2024"
+      }
+    ],
+    "location": "San Diego, California",
+    "context": "Student chapter · IAM3D Drone Competition",
+    "summary": "Ran the chapter's four-part project plan and led the IAM3D drone project from research through competition, where the team finished fourth internationally.",
+    "bullets": [
+      "Directed all phases of a four-part project plan for the SDSU student chapter.",
+      "Organized and led general-body meetings.",
+      "Implemented project-tracking and design-documentation tools.",
+      "Led the IAM3D Drone Competition project.",
+      "Managed procurement and budgeting for materials, tools and travel."
+    ],
+    "result": {
+      "value": "4th",
+      "label": "internationally at the IAM3D Drone Competition"
+    },
+    "tags": [
+      "Project planning",
+      "Design documentation",
+      "Procurement",
+      "Budgeting"
+    ],
+    "projects": [
+      "iam3d-drone"
+    ],
+    "page": false
+  }
+]

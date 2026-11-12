@@ -3,182 +3,218 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A chronological deep dive into Muhammad Anjum's full-vehicle electrical integration work on a Tesla-powered Triumph Stag conversion.">
-  <meta name="theme-color" content="#f5f1e8">
-  <title>Tesla-powered Triumph Stag conversion — Muhammad Anjum</title>
+  <title>Tesla-powered Triumph Stag — Muhammad Anjum</title>
+  <meta name="description" content="Full-vehicle electrical integration of a Tesla-powered Triumph Stag: battery validation, BMS, high-voltage distribution, cooling, motor control, charging and dash.">
+  <meta name="theme-color" content="#f2ecdf">
   <link rel="canonical" href="https://muhammadanjum.com/projects/vehicle-conversion.html">
+  <meta property="og:site_name" content="Muhammad Anjum">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Tesla-powered Triumph Stag — Muhammad Anjum">
+  <meta property="og:description" content="Full-vehicle electrical integration of a Tesla-powered Triumph Stag: battery validation, BMS, high-voltage distribution, cooling, motor control, charging and dash.">
+  <meta property="og:url" content="https://muhammadanjum.com/projects/vehicle-conversion.html">
+  <meta property="og:image" content="https://muhammadanjum.com/assets/media/projects/thermal-club/triumph-stag-workshop.webp">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/media/favicon.png">
   <link rel="apple-touch-icon" sizes="180x180" href="../assets/media/apple-touch-icon.png">
+  <script>document.documentElement.classList.add("js")</script>
   <link rel="stylesheet" href="../assets/css/site.css">
-  <script>try{document.documentElement.dataset.theme=localStorage.getItem("portfolio-theme")||((matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light")}catch(e){}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"TechArticle","headline":"Tesla-powered Triumph Stag","description":"Full-vehicle electrical integration of a Tesla-powered Triumph Stag: battery validation, BMS, high-voltage distribution, cooling, motor control, charging and dash.","author":{"@type":"Person","name":"Muhammad Anjum","url":"https://muhammadanjum.com/"},"image":"https://muhammadanjum.com/assets/media/projects/thermal-club/triumph-stag-workshop.webp","mainEntityOfPage":"https://muhammadanjum.com/projects/vehicle-conversion.html"}</script>
   <script defer src="../assets/js/site.js"></script>
+  
 </head>
-<body data-page="projects">
+<body>
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="scroll-progress" data-progress aria-hidden="true"></div>
   <header class="site-header" data-header>
-    <div class="container header-inner">
-      <a class="brand" href="../index.html" aria-label="Muhammad Anjum, home"><span class="brand-mark">MA</span><span class="brand-copy"><strong>Muhammad Anjum</strong><span>Aerospace · EV · manufacturing</span></span></a>
-      <nav class="site-nav" id="site-navigation" data-site-nav aria-label="Primary navigation"><a href="../index.html" data-nav-page="home">Home</a><a href="../experience.html" data-nav-page="experience">Experience</a><a href="../projects.html" data-nav-page="projects">Projects</a><a href="../about.html" data-nav-page="about">About</a></nav>
-      <div class="header-actions"><a class="button small header-resume magnetic" href="../Muhammad-Anjum-Resume.pdf" target="_blank" rel="noopener">Résumé <span class="arrow">↗</span></a><button class="icon-button" type="button" data-theme-toggle aria-label="Switch theme"><span class="theme-glyph" aria-hidden="true"></span></button><button class="menu-button" type="button" data-menu-toggle aria-expanded="false" aria-controls="site-navigation" aria-label="Open navigation"><span class="menu-lines" aria-hidden="true"></span></button></div>
+    <div class="wrap header-in">
+      <a class="brand" href="../index.html" aria-label="Muhammad Anjum, home"><span class="brand-mark" aria-hidden="true">MA</span><span class="brand-name"><strong>Muhammad Anjum</strong><span>Aerospace · EV systems · Manufacturing</span></span></a>
+      <nav class="site-nav" id="site-nav" data-nav aria-label="Primary"><a href="../projects.html" aria-current="page">Work</a><a href="../experience.html">Experience</a><a href="../about.html">About</a><a class="btn btn-ink nav-resume" href="../Muhammad-Anjum-Resume.pdf" target="_blank" rel="noopener">Résumé <span class="arr" aria-hidden="true">↗</span></a></nav>
+      <div class="header-end">
+        <a class="btn btn-ink btn-sm" href="../Muhammad-Anjum-Resume.pdf" target="_blank" rel="noopener">Résumé <span class="arr" aria-hidden="true">↗</span></a>
+        <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span></button>
+      </div>
     </div>
   </header>
-
   <main id="main">
-    <section class="case-hero">
-      <div class="container">
-        <a class="back-link" href="../projects.html">← All projects</a>
-        <div class="case-hero-grid">
-          <div>
-            <p class="eyebrow">The Thermal Club · Full-vehicle integration</p>
-            <h1>Tesla-powered Triumph Stag.</h1>
-            <p class="page-lede">A 1970s British grand tourer rebuilt around a 2021 Tesla Model S powertrain, fourteen liquid-cooled battery modules, and a completely new electrical nervous system.</p>
-            <div class="tag-list"><span class="tag">High voltage</span><span class="tag">BMS</span><span class="tag">Motor controls</span><span class="tag">Charging</span><span class="tag">Dash & telemetry</span></div>
-          </div>
-          <figure class="case-hero-photo reveal">
-            <button class="case-image-button" type="button" data-lightbox aria-label="Enlarge Triumph Stag in the workshop"><img src="../assets/media/projects/thermal-club/triumph-stag-workshop.webp" alt="White Triumph Stag undergoing electric conversion in the workshop" width="1800" height="1350" loading="eager" decoding="async"></button>
-            <figcaption>The Triumph Stag during the full-vehicle electric conversion.</figcaption>
-          </figure>
-        </div>
-        <div class="case-stat-grid reveal" aria-label="Conversion project highlights">
-          <div class="case-stat"><strong>14</strong><span>Tesla battery modules</span></div>
-          <div class="case-stat"><strong>≈74.2 kWh</strong><span>module-rated energy</span></div>
-          <div class="case-stat"><strong>319.2 V</strong><span>nominal pack voltage</span></div>
-          <div class="case-stat"><strong>End to end</strong><span>electrical integration scope</span></div>
-        </div>
-        <nav class="case-process-nav reveal" aria-label="Project phases"><a href="#context">Context</a><a href="#architecture">Architecture</a><a href="#battery">Battery</a><a href="#bms">BMS</a><a href="#cooling">Cooling</a><a href="#controls">Controls</a><a href="#charging">Charging</a><a href="#dash">Dash</a><a href="#commissioning">Commissioning</a></nav>
-      </div>
-    </section>
 
-    <section class="section-compact">
-      <div class="container case-layout">
-        <aside class="case-sidebar reveal">
-          <span class="section-number">Project facts</span>
-          <dl class="case-facts"><div><dt>Role</dt><dd>EV Systems Engineer</dd></div><div><dt>Organization</dt><dd>The Thermal Club</dd></div><div><dt>Period</dt><dd>February 2026 — Present</dd></div><div><dt>Platform</dt><dd>Triumph Stag · Tesla Model S</dd></div><div><dt>Scope</dt><dd>Electrical design through commissioning</dd></div></dl>
-        </aside>
+<section class="case-hero wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="../projects.html">Work</a><i>/</i><span>Tesla-powered Triumph Stag</span></nav>
+  <div class="case-top">
+    <div class="enter" style="--d:0">
+      <p class="label" style="margin-top:28px"><span>Vehicle integration · The Thermal Club</span></p>
+      <h1>Tesla-powered Triumph Stag</h1>
+      <p class="lede">A 1970s British grand tourer rebuilt around a Tesla Model S drive unit, fourteen liquid-cooled battery modules, and a new electrical system. I own that system from component selection through commissioning.</p>
+      <div class="tags"><span class="tag">High voltage</span><span class="tag">BMS</span><span class="tag">Motor controls</span><span class="tag">Charging</span><span class="tag">Dash &amp; telemetry</span></div>
+    </div>
+    <div class="enter" style="--d:2"><div class="mount "><div class="frame" style="aspect-ratio:1.333"><img src="../assets/media/projects/thermal-club/triumph-stag-workshop.webp" srcset="../assets/media/projects/thermal-club/triumph-stag-workshop-640.jpg 640w, ../assets/media/projects/thermal-club/triumph-stag-workshop-1100.jpg 1100w, ../assets/media/projects/thermal-club/triumph-stag-workshop.webp 1800w" sizes="(min-width: 1080px) 700px, 100vw" width="1800" height="1350" alt="White Triumph Stag in the workshop with its hood raised during the electric conversion" loading="eager" fetchpriority="high" decoding="async"></div></div></div>
+  </div>
+  <div class="panel key-figures" data-reveal><div><strong>14</strong><span>Tesla battery modules</span></div><div><strong>≈74.2 kWh</strong><span>module-rated energy</span></div><div><strong>319.2 V</strong><span>nominal pack voltage</span></div><div><strong>6,216</strong><span>cells across the vehicle</span></div></div>
+</section>
+<div class="wrap case-grid">
+  <aside class="rail" aria-label="About this project">
+    <div><h2>Project facts</h2><dl class="facts"><div><dt>Role</dt><dd>EV Systems Engineer</dd></div><div><dt>Organization</dt><dd>The Thermal Club</dd></div><div><dt>Period</dt><dd>February 2026 – present</dd></div><div><dt>Platform</dt><dd>Triumph Stag · Tesla Model S</dd></div><div><dt>Scope</dt><dd>Electrical design through commissioning</dd></div></dl></div>
+    <div><h2>On this page</h2><nav class="toc" data-toc aria-label="Sections"><a href="#context"><span>01</span>Background and objective</a><a href="#role"><span>02</span>Role and ownership</a><a href="#architecture"><span>03</span>Requirements and architecture</a><a href="#battery"><span>04</span>Battery validation and assembly</a><a href="#bms"><span>05</span>BMS bring-up and troubleshooting</a><a href="#distribution"><span>06</span>High-voltage distribution</a><a href="#cooling"><span>07</span>Cooling integration</a><a href="#controls"><span>08</span>Motor control and wiring</a><a href="#charging"><span>09</span>Charger configuration</a><a href="#dash"><span>10</span>Dash development</a><a href="#commissioning"><span>11</span>Commissioning and status</a></nav></div>
+  </aside>
+  <div class="case-body">
+<section class="case-sec" id="context" aria-label="Background and objective"><p class="label"><b>01</b> Background and objective</p>
+  <h2>Keep the car. Replace the operating system.</h2>
+  <div class="prose">
+    <p>The Triumph Stag is a four-seat British sports tourer styled by Giovanni Michelotti and built from 1970 to 1977. It left the factory with a 3.0-liter V8, rear-wheel drive and a distinctive T-bar structure. This project keeps that character and replaces the propulsion with a modern electric system.</p>
+    <p>A conversion is more than a motor swap. Battery placement changes mass distribution and service access. The high-voltage path has to coexist with low-voltage controls. Cooling has to serve both the battery and the drive unit. The driver still needs legible feedback.</p>
+    <p><a href="https://en.wikipedia.org/wiki/Triumph_Stag" target="_blank" rel="noopener">Triumph Stag background</a> · <a href="https://evwest.com/evw-tsla-unv-universal-tesla-large-drive-unit-ev-conversion-package-ldu-motor-controller-throttle-stub-axles" target="_blank" rel="noopener">Conversion package</a></p>
+  </div>
+</section>
 
-        <div class="case-body">
-          <section class="case-section reveal" id="context">
-            <span class="section-number">01 · Vehicle context</span>
-            <h2>Preserve the car. Replace the operating system.</h2>
-            <p>The Triumph Stag is a four-seat British sports tourer styled by Giovanni Michelotti and produced from 1970 to 1977. It left the factory with a 3.0-liter V8, rear-wheel drive, and a distinctive T-bar structure. This project keeps the Stag’s character while replacing the original propulsion architecture with a modern electric system.</p>
-            <p>The conversion is not a motor swap in isolation. Battery placement affects mass distribution and service access; the high-voltage path must coexist with low-voltage controls; cooling has to support both energy storage and the drive unit; and the driver still needs familiar, legible feedback. Muhammad’s role covers that complete electrical chain—from component selection and wiring through controls setup and system commissioning.</p>
-            <div class="case-source-row"><a href="https://en.wikipedia.org/wiki/Triumph_Stag" target="_blank" rel="noopener">Triumph Stag background <span>↗</span></a><a href="https://evwest.com/evw-tsla-unv-universal-tesla-large-drive-unit-ev-conversion-package-ldu-motor-controller-throttle-stub-axles" target="_blank" rel="noopener">Conversion package <span>↗</span></a></div>
-          </section>
+<section class="case-sec" id="role" aria-label="Role and ownership"><p class="label"><b>02</b> Role and ownership</p>
+  <h2>I own the electrical chain.</h2>
+  <div class="prose">
+    <p>I’m the EV Systems Engineer on the build, part-time since February 2026. My scope runs from component selection and wiring through controls setup and commissioning.</p>
+  </div>
+  <div class="panel owned"><h3>Responsibilities</h3><ul class="bullets"><li>Designed and built a custom low-voltage wiring harness for full-vehicle integration.</li><li>Programmed and calibrated the motor control unit and digital dash for real-time telemetry.</li><li>Built and tested high-voltage battery packs, including cell validation and BMS configuration.</li><li>Owned the electrical conversion end to end, from component selection through final commissioning.</li></ul></div>
+</section>
 
-          <section class="case-section reveal" id="architecture">
-            <span class="section-number">02 · System architecture</span>
-            <h2>Define the interfaces before routing the first wire.</h2>
-            <p>The propulsion foundation is an EV West universal conversion package built around a Tesla Model S large drive unit and EV Controls T2-C controller. The LDU combines the motor, inverter, and reduction gearbox; the supporting package supplies the throttle and brake interfaces, precharge hardware, axles, charge port, charger, DC-DC conversion, contactor hardware, and control electronics needed to turn that assembly into a vehicle system.</p>
-            <p>The project-specific battery is a fourteen-module Tesla Model S pack. At the listed module ratings, that architecture is approximately 74.2 kWh and 319.2 volts nominal, rising to 352.8 volts at the module charge cutoff. Those values sit inside the drive unit kit’s published 275–400-volt input range, while leaving the BMS, charger, contactors, cooling hardware, and instrumentation to be integrated around the vehicle’s actual packaging.</p>
-            <div class="architecture-strip" aria-label="Vehicle energy and control architecture"><span>Charge inlet</span><i>→</i><span>Charger</span><i>→</i><span>Contactors + BMS</span><i>→</i><span>14-module pack</span><i>→</i><span>Inverter + LDU</span><i>→</i><span>Drive axles</span></div>
-            <div class="case-media-grid">
-              <figure class="case-figure"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge early front systems bay"><img src="../assets/media/projects/thermal-club/front-systems-bay.webp" alt="Front systems bay with high-voltage cabling, controls, and auxiliary electronics during integration" width="1800" height="1350" loading="lazy" decoding="async"></button><figcaption>An early integration state: high-voltage cabling, controls, auxiliary power, and service access all competing for the same bay.</figcaption></figure>
-              <figure class="case-figure"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge later front bay integration"><img src="../assets/media/projects/thermal-club/front-bay-integration.webp" alt="Later front systems bay integration with organized wiring and power electronics" width="1800" height="1350" loading="lazy" decoding="async"></button><figcaption>The later bay shows the system becoming a vehicle installation rather than a collection of bench-tested parts.</figcaption></figure>
-            </div>
-          </section>
+<section class="case-sec" id="architecture" aria-label="Requirements and architecture"><p class="label"><b>03</b> Requirements and architecture</p>
+  <h2>Define the interfaces before routing the first wire.</h2>
+  <div class="prose">
+    <p>The propulsion foundation is an EV West universal conversion package built around a Tesla Model S large drive unit (LDU) and an EV Controls T2-C controller. The LDU combines the motor, inverter and reduction gearbox. The package adds the throttle and brake interfaces, precharge hardware, axles, charge port, charger, DC-DC conversion, contactor hardware and control electronics.</p>
+    <p>The battery is a fourteen-module Tesla Model S pack. At the listed module ratings that is about 74.2 kWh and 319.2 V nominal, rising to 352.8 V at the modules’ charge cutoff. Both voltages sit inside the drive unit kit’s published 275–400 V input range. The BMS, charger, contactors, cooling and instrumentation still had to be integrated around the car’s actual packaging.</p>
+  </div>
+  <div class="calc" style="--n:4"><div><strong>14</strong><span>Tesla Model S modules</span></div><div><strong>≈74.2 kWh</strong><span>module-rated energy</span></div><div><strong>319.2 V</strong><span>nominal pack voltage</span></div><div><strong>352.8 V</strong><span>at module charge cutoff</span></div></div>
+  <div class="flow" aria-label="Energy and control path"><span>Charge inlet</span><span>Charger</span><span>Contactors and BMS</span><span>14-module pack</span><span>Inverter and LDU</span><span>Drive axles</span></div>
+  <div class="sec-media row">
+    <figure class="fig" style="--ar:1.333"><button class="fig-btn" type="button" data-zoom="../assets/media/projects/thermal-club/front-systems-bay.webp" aria-label="Enlarge figure: Front systems bay with high-voltage cabling, controls and auxiliary electronics during integration"><img src="../assets/media/projects/thermal-club/front-systems-bay.webp" srcset="../assets/media/projects/thermal-club/front-systems-bay-640.jpg 640w, ../assets/media/projects/thermal-club/front-systems-bay-1100.jpg 1100w, ../assets/media/projects/thermal-club/front-systems-bay.webp 1800w" sizes="(min-width: 1080px) 440px, 100vw" width="1800" height="1350" alt="Front systems bay with high-voltage cabling, controls and auxiliary electronics during integration" loading="lazy" decoding="async"></button><figcaption>Early integration: high-voltage cabling, controls, auxiliary power and service access all share one bay.</figcaption></figure>
+    <figure class="fig" style="--ar:1.333"><button class="fig-btn" type="button" data-zoom="../assets/media/projects/thermal-club/front-bay-integration.webp" aria-label="Enlarge figure: Later front systems bay integration with organized wiring and power electronics"><img src="../assets/media/projects/thermal-club/front-bay-integration.webp" srcset="../assets/media/projects/thermal-club/front-bay-integration-640.jpg 640w, ../assets/media/projects/thermal-club/front-bay-integration-1100.jpg 1100w, ../assets/media/projects/thermal-club/front-bay-integration.webp 1800w" sizes="(min-width: 1080px) 440px, 100vw" width="1800" height="1350" alt="Later front systems bay integration with organized wiring and power electronics" loading="lazy" decoding="async"></button><figcaption>The same bay later, installed as a vehicle system rather than a set of bench-tested parts.</figcaption></figure>
+  </div>
+</section>
 
-          <section class="case-section reveal" id="battery">
-            <span class="section-number">03 · Battery validation & assembly</span>
-            <h2>Turn fourteen used modules into one known pack.</h2>
-            <p>Each EV West module is rated at 22.8 volts nominal and 5.3 kWh, with 444 cylindrical cells arranged 74-parallel by 6-series. Across fourteen modules, the vehicle contains 6,216 cells. Before integration, the work required checking the modules as electrical assemblies: confirming cell-group readings, inspecting connections and coolant interfaces, and establishing that the set could operate together under one BMS.</p>
-            <p>Assembly then became a packaging and repeatability problem. Modules had to be retained without loading vulnerable features, linked with controlled high-voltage connections, connected to cell-monitoring harnesses, and kept accessible enough to diagnose. The enclosure work split the pack across vehicle locations while preserving a single electrical architecture.</p>
-            <div class="case-metric-row"><span><strong>444</strong> cells per module</span><span><strong>6,216</strong> cells across the vehicle</span><span><strong>352.8 V</strong> module charge-limit total</span></div>
-            <div class="case-media-grid">
-              <figure class="case-figure portrait"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge battery enclosure on build stand"><img src="../assets/media/projects/thermal-club/battery-enclosure-bench.webp" alt="Tesla battery modules assembled inside an aluminum enclosure on a build stand" width="1350" height="1800" loading="lazy" decoding="async"></button><figcaption>A battery enclosure on the build stand, with module terminals, coolant connections, and high-voltage exits visible.</figcaption></figure>
-              <figure class="case-figure portrait"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge battery module array"><img src="../assets/media/projects/thermal-club/battery-module-array.webp" alt="Array of Tesla Model S battery modules installed in the aluminum enclosure" width="1350" height="1800" loading="lazy" decoding="async"></button><figcaption>The module array during assembly, before the enclosure was closed.</figcaption></figure>
-            </div>
-            <div class="case-media-grid">
-              <figure class="case-figure portrait"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge underbody battery enclosure"><img src="../assets/media/projects/thermal-club/underbody-battery-enclosure.webp" alt="Aluminum battery enclosure installed beneath the Triumph Stag" width="1350" height="1800" loading="lazy" decoding="async"></button><figcaption>The underbody enclosure installed against the Stag’s available floor structure.</figcaption></figure>
-              <figure class="case-figure portrait"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge front battery box"><img src="../assets/media/projects/thermal-club/front-battery-box.webp" alt="Closed front battery enclosure with high-voltage and coolant connections" width="1350" height="1800" loading="lazy" decoding="async"></button><figcaption>The front enclosure after integration, with high-voltage and fluid interfaces routed around the box.</figcaption></figure>
-            </div>
-          </section>
+<section class="case-sec" id="battery" aria-label="Battery validation and assembly"><p class="label"><b>04</b> Battery validation and assembly</p>
+  <h2>Turn fourteen modules into one known pack.</h2>
+  <div class="prose">
+    <p>Each EV West module is rated at 22.8 V nominal and 5.3 kWh, with 444 cylindrical cells arranged 74-parallel by 6-series. Fourteen modules put 6,216 cells in the car. Before integration I checked the modules as electrical assemblies: confirming cell-group readings, inspecting connections and coolant interfaces, and establishing that the set could run together under one BMS.</p>
+    <p>Assembly then became a packaging and repeatability problem. Modules had to be retained without loading vulnerable features, joined with controlled high-voltage connections, wired to the cell-monitoring harnesses, and left accessible enough to diagnose. The enclosure work splits the pack across locations in the car while keeping a single electrical architecture.</p>
+  </div>
+  <div class="calc" style="--n:3"><div><strong>444</strong><span>cells per module</span></div><div><strong>6,216</strong><span>cells across the vehicle</span></div><div><strong>352.8 V</strong><span>module charge-limit total</span></div></div>
+  <div class="sec-media row">
+    <figure class="fig" style="--ar:0.750"><button class="fig-btn" type="button" data-zoom="../assets/media/projects/thermal-club/battery-module-array.webp" aria-label="Enlarge figure: Array of Tesla Model S battery modules installed in the aluminum enclosure"><img src="../assets/media/projects/thermal-club/battery-module-array.webp" srcset="../assets/media/projects/thermal-club/battery-module-array-640.jpg 640w, ../assets/media/projects/thermal-club/battery-module-array-1100.jpg 1100w, ../assets/media/projects/thermal-club/battery-module-array.webp 1350w" sizes="(min-width: 1080px) 440px, 100vw" width="1350" height="1800" alt="Array of Tesla Model S battery modules installed in the aluminum enclosure" loading="lazy" decoding="async"></button><figcaption>The module array during assembly, before the enclosure was closed.</figcaption></figure>
+    <figure class="fig" style="--ar:0.750"><button class="fig-btn" type="button" data-zoom="../assets/media/projects/thermal-club/underbody-battery-enclosure.webp" aria-label="Enlarge figure: Aluminum battery enclosure installed beneath the Triumph Stag"><img src="../assets/media/projects/thermal-club/underbody-battery-enclosure.webp" srcset="../assets/media/projects/thermal-club/underbody-battery-enclosure-640.jpg 640w, ../assets/media/projects/thermal-club/underbody-battery-enclosure-1100.jpg 1100w, ../assets/media/projects/thermal-club/underbody-battery-enclosure.webp 1350w" sizes="(min-width: 1080px) 440px, 100vw" width="1350" height="1800" alt="Aluminum battery enclosure installed beneath the Triumph Stag" loading="lazy" decoding="async"></button><figcaption>The underbody enclosure, installed against the Stag’s available floor structure.</figcaption></figure>
+  </div>
+</section>
 
-          <section class="case-section reveal" id="bms">
-            <span class="section-number">04 · BMS bring-up</span>
-            <h2>Make every measurement believable before trusting the pack.</h2>
-            <p>Programming the BMS started with configuration, but troubleshooting depended on evidence. Module count and cell topology had to match the physical harness. Cell-group voltages had to be plausible and consistent. Temperature inputs, balancing behavior, pack limits, and communications then had to agree with what the hardware was actually doing.</p>
-            <p>Muhammad used live serial data and in-vehicle checks to trace mismatches between configuration, wiring, and reported values. The goal was not merely to clear a fault; it was to identify whether the fault represented an unsafe electrical condition, an incorrect parameter, a connection problem, or a communications issue before enabling the next stage of the system.</p>
-            <div class="case-media-grid">
-              <figure class="case-figure portrait"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge BMS configuration session"><img src="../assets/media/projects/thermal-club/bms-configuration-session.webp" alt="Laptop connected to the vehicle during a battery-management-system configuration session" width="1350" height="1800" loading="lazy" decoding="async"></button><figcaption>BMS configuration and fault tracing with the vehicle hardware connected.</figcaption></figure>
-              <figure class="case-figure"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge BMS cell voltage data"><img src="../assets/media/projects/thermal-club/bms-cell-voltage-data.webp" alt="Serial terminal showing individual BMS cell-group voltage readings and configuration values" width="1800" height="1350" loading="lazy" decoding="async"></button><figcaption>Individual cell-group readings provided the first check that the configured topology matched the physical pack.</figcaption></figure>
-            </div>
-            <figure class="case-figure wide"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge in-vehicle BMS test"><img src="../assets/media/projects/thermal-club/bms-vehicle-test.webp" alt="Laptop connected to the Triumph Stag during in-vehicle BMS testing" width="1800" height="1350" loading="lazy" decoding="async"></button><figcaption>In-vehicle testing moved the BMS from isolated configuration to system-level verification.</figcaption></figure>
-          </section>
+<section class="case-sec" id="bms" aria-label="BMS bring-up and troubleshooting"><p class="label"><b>05</b> BMS bring-up and troubleshooting</p>
+  <h2>Make every measurement believable before trusting the pack.</h2>
+  <div class="prose">
+    <p>Programming the BMS started with configuration, but troubleshooting depended on evidence. Module count and cell topology had to match the physical harness. Cell-group voltages had to be plausible and consistent. Temperature inputs, balancing, pack limits and communications had to agree with what the hardware was doing.</p>
+    <p>I used live serial data and in-vehicle checks to trace mismatches between configuration, wiring and reported values. The aim was not just to clear a fault but to decide whether it was an unsafe electrical condition, a wrong parameter, a connection problem or a communications issue, before enabling the next stage.</p>
+  </div>
+  <div class="sec-media row">
+    <figure class="fig" style="--ar:0.750"><button class="fig-btn" type="button" data-zoom="../assets/media/projects/thermal-club/bms-configuration-session.webp" aria-label="Enlarge figure: Laptop connected to the vehicle during a battery-management-system configuration session"><img src="../assets/media/projects/thermal-club/bms-configuration-session.webp" srcset="../assets/media/projects/thermal-club/bms-configuration-session-640.jpg 640w, ../assets/media/projects/thermal-club/bms-configuration-session-1100.jpg 1100w, ../assets/media/projects/thermal-club/bms-configuration-session.webp 1350w" sizes="(min-width: 1080px) 380px, 100vw" width="1350" height="1800" alt="Laptop connected to the vehicle during a battery-management-system configuration session" loading="lazy" decoding="async"></button><figcaption>BMS configuration and fault tracing with the vehicle hardware connected.</figcaption></figure>
+    <figure class="fig" style="--ar:1.333"><button class="fig-btn" type="button" data-zoom="../assets/media/projects/thermal-club/bms-cell-voltage-data.webp" aria-label="Enlarge figure: Serial terminal showing individual BMS cell-group voltage readings and configuration values"><img src="../assets/media/projects/thermal-club/bms-cell-voltage-data.webp" srcset="../assets/media/projects/thermal-club/bms-cell-voltage-data-640.jpg 640w, ../assets/media/projects/thermal-club/bms-cell-voltage-data-1100.jpg 1100w, ../assets/media/projects/thermal-club/bms-cell-voltage-data.webp 1800w" sizes="(min-width: 1080px) 500px, 100vw" width="1800" height="1350" alt="Serial terminal showing individual BMS cell-group voltage readings and configuration values" loading="lazy" decoding="async"></button><figcaption>Cell-group readings gave the first check that the configured topology matched the physical pack.</figcaption></figure>
+  </div>
+  <div class="sec-media">
+    <figure class="fig" style="--ar:1.333"><button class="fig-btn" type="button" data-zoom="../assets/media/projects/thermal-club/bms-vehicle-test.webp" aria-label="Enlarge figure: Laptop connected to the Triumph Stag during in-vehicle BMS testing"><img src="../assets/media/projects/thermal-club/bms-vehicle-test.webp" srcset="../assets/media/projects/thermal-club/bms-vehicle-test-640.jpg 640w, ../assets/media/projects/thermal-club/bms-vehicle-test-1100.jpg 1100w, ../assets/media/projects/thermal-club/bms-vehicle-test.webp 1800w" sizes="(min-width: 1080px) 880px, 100vw" width="1800" height="1350" alt="Laptop connected to the Triumph Stag during in-vehicle BMS testing" loading="lazy" decoding="async"></button><figcaption>In-vehicle testing moved the BMS from isolated configuration to system-level verification.</figcaption></figure>
+  </div>
+</section>
 
-          <section class="case-section reveal" id="distribution">
-            <span class="section-number">05 · High-voltage distribution</span>
-            <h2>Control when energy can move—and where it cannot.</h2>
-            <p>The high-voltage distribution enclosure concentrates the contactors, precharge path, service disconnect, protection, and measurement interfaces that sit between the battery and inverter. Wiring this layer required more than point-to-point continuity: conductor routing, termination quality, strain relief, polarity, insulation, and service access all influence whether the system can be energized and diagnosed safely.</p>
-            <p>Low-voltage command wiring was kept legible alongside the orange high-voltage conductors so that the contactor sequence and interlocks could be traced during troubleshooting. The completed enclosure became the controlled gateway between stored energy and the rest of the car.</p>
-            <figure class="case-figure wide"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge high-voltage distribution enclosure"><img src="../assets/media/projects/thermal-club/high-voltage-distribution-box.webp" alt="Open high-voltage distribution enclosure with contactors, fuses, control wiring, and orange cable" width="1800" height="1350" loading="lazy" decoding="async"></button><figcaption>High-voltage distribution hardware with contactors, protection, service disconnect, and labelled control wiring.</figcaption></figure>
-          </section>
+<section class="case-sec" id="distribution" aria-label="High-voltage distribution"><p class="label"><b>06</b> High-voltage distribution</p>
+  <h2>Control when energy can move, and where it can’t.</h2>
+  <div class="case-split">
+    <div class="prose">
+      <p>The distribution enclosure holds the contactors, precharge path, service disconnect, protection and measurement interfaces between the battery and the inverter. Wiring it took more than continuity. Conductor routing, terminations, strain relief, polarity, insulation and service access all decide whether the system can be energized and diagnosed safely.</p>
+      <p>Low-voltage command wiring stays legible next to the orange high-voltage conductors, so the contactor sequence and interlocks can be traced during troubleshooting. The finished enclosure is the controlled gateway between stored energy and the rest of the car.</p>
+    </div>
+    <figure class="fig" style="--ar:1.333"><button class="fig-btn" type="button" data-zoom="../assets/media/projects/thermal-club/high-voltage-distribution-box.webp" aria-label="Enlarge figure: Open high-voltage distribution enclosure with contactors, fuses, control wiring and orange cable"><img src="../assets/media/projects/thermal-club/high-voltage-distribution-box.webp" srcset="../assets/media/projects/thermal-club/high-voltage-distribution-box-640.jpg 640w, ../assets/media/projects/thermal-club/high-voltage-distribution-box-1100.jpg 1100w, ../assets/media/projects/thermal-club/high-voltage-distribution-box.webp 1800w" sizes="(min-width: 1080px) 480px, 100vw" width="1800" height="1350" alt="Open high-voltage distribution enclosure with contactors, fuses, control wiring and orange cable" loading="lazy" decoding="async"></button><figcaption>High-voltage distribution hardware: contactors, protection, service disconnect and labelled control wiring.</figcaption></figure>
+  </div>
+</section>
 
-          <section class="case-section reveal" id="cooling">
-            <span class="section-number">06 · Cooling integration</span>
-            <h2>Treat fluid routing as part of the electrical system.</h2>
-            <p>The Tesla modules include integrated liquid-cooling passages, and the drive unit and inverter also depend on managed temperatures. The conversion therefore needed a coolant network that could reach separated hardware without obstructing service access or exposing electrical connections to avoidable leak risk.</p>
-            <p>Muhammad’s integration work included connecting the module interfaces, routing lines through the available structure, coordinating pumps and auxiliary power, and checking the physical system before sustained operation. Hose support, bend radius, high points that can trap air, bleed access, and separation from terminals were treated as installation constraints—not cleanup after the electrical design.</p>
-            <div class="case-media-grid">
-              <figure class="case-figure portrait"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge battery enclosure coolant connections"><img src="../assets/media/projects/thermal-club/battery-enclosure-bench.webp" alt="Battery enclosure with clear coolant lines attached to Tesla module interfaces" width="1350" height="1800" loading="lazy" decoding="async"></button><figcaption>Coolant lines connected at the battery enclosure during bench integration.</figcaption></figure>
-              <figure class="case-figure portrait"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge installed battery cooling interfaces"><img src="../assets/media/projects/thermal-club/front-battery-box.webp" alt="Installed front battery enclosure with routed coolant plumbing" width="1350" height="1800" loading="lazy" decoding="async"></button><figcaption>The installed front enclosure shows how plumbing, high voltage, and chassis clearance had to be resolved together.</figcaption></figure>
-            </div>
-          </section>
+<section class="case-sec" id="cooling" aria-label="Cooling integration"><p class="label"><b>07</b> Cooling integration</p>
+  <h2>Treat fluid routing as part of the electrical system.</h2>
+  <div class="prose">
+    <p>The Tesla modules have integrated liquid-cooling passages, and the drive unit and inverter also depend on managed temperatures. The coolant network has to reach separated hardware without blocking service access or putting fluid near electrical connections.</p>
+    <p>My work covered connecting the module interfaces, routing lines through the available structure, coordinating pumps and auxiliary power, and checking the physical system before sustained operation. Hose support, bend radius, high points that trap air, bleed access and distance from terminals were installation constraints from the start.</p>
+  </div>
+  <div class="sec-media row">
+    <figure class="fig" style="--ar:0.750"><button class="fig-btn" type="button" data-zoom="../assets/media/projects/thermal-club/battery-enclosure-bench.webp" aria-label="Enlarge figure: Battery enclosure with clear coolant lines attached to Tesla module interfaces"><img src="../assets/media/projects/thermal-club/battery-enclosure-bench.webp" srcset="../assets/media/projects/thermal-club/battery-enclosure-bench-640.jpg 640w, ../assets/media/projects/thermal-club/battery-enclosure-bench-1100.jpg 1100w, ../assets/media/projects/thermal-club/battery-enclosure-bench.webp 1350w" sizes="(min-width: 1080px) 440px, 100vw" width="1350" height="1800" alt="Battery enclosure with clear coolant lines attached to Tesla module interfaces" loading="lazy" decoding="async"></button><figcaption>Coolant lines connected at the battery enclosure during bench integration.</figcaption></figure>
+    <figure class="fig" style="--ar:0.750"><button class="fig-btn" type="button" data-zoom="../assets/media/projects/thermal-club/front-battery-box.webp" aria-label="Enlarge figure: Installed front battery enclosure with routed coolant plumbing"><img src="../assets/media/projects/thermal-club/front-battery-box.webp" srcset="../assets/media/projects/thermal-club/front-battery-box-640.jpg 640w, ../assets/media/projects/thermal-club/front-battery-box-1100.jpg 1100w, ../assets/media/projects/thermal-club/front-battery-box.webp 1350w" sizes="(min-width: 1080px) 440px, 100vw" width="1350" height="1800" alt="Installed front battery enclosure with routed coolant plumbing" loading="lazy" decoding="async"></button><figcaption>The installed front enclosure: plumbing, high voltage and chassis clearance resolved together.</figcaption></figure>
+  </div>
+</section>
 
-          <section class="case-section reveal" id="controls">
-            <span class="section-number">07 · Motor controls & vehicle wiring</span>
-            <h2>Translate driver inputs into controlled torque.</h2>
-            <p>The EV Controls T2-C sits between the Stag’s driver controls and the Tesla inverter. Motor tuning meant configuring the controller around the installed hardware, then checking throttle and brake inputs, direction and drive-state logic, torque response, regeneration behavior, current limits, and reported temperatures without skipping directly to maximum output.</p>
-            <p>At the same time, the custom low-voltage harness had to distribute power and signals to the BMS, controller, dash, charger interfaces, pumps, fans, relays, switches, and retained vehicle features. Muhammad designed and built that harness, then traced wiring and communications faults as individual subsystems were brought online.</p>
-            <div class="case-media-grid">
-              <figure class="case-figure portrait"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge full systems-bay overview"><img src="../assets/media/projects/thermal-club/vehicle-systems-bay-overview.webp" alt="Vehicle systems bay with integrated high-voltage and low-voltage hardware" width="1350" height="1800" loading="lazy" decoding="async"></button><figcaption>The systems bay during integration, with the low-voltage harness layered around power electronics and high-voltage routing.</figcaption></figure>
-              <figure class="case-figure"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge organized front bay wiring"><img src="../assets/media/projects/thermal-club/front-bay-integration.webp" alt="Organized front bay wiring and power electronics in the converted Triumph Stag" width="1800" height="1350" loading="lazy" decoding="async"></button><figcaption>Harness development progressed from temporary test access toward supported and traceable vehicle wiring.</figcaption></figure>
-            </div>
-            <figure class="case-figure wide"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge chassis corner"><img src="../assets/media/projects/thermal-club/chassis-corner.webp" alt="Triumph Stag suspension and brake corner during the conversion build" width="1350" height="1800" loading="lazy" decoding="async"></button><figcaption>The existing chassis, braking, and suspension hardware remained part of the packaging envelope for a full-vehicle conversion.</figcaption></figure>
-          </section>
+<section class="case-sec" id="controls" aria-label="Motor control and wiring"><p class="label"><b>08</b> Motor control and wiring</p>
+  <h2>Translate driver inputs into controlled torque.</h2>
+  <div class="prose">
+    <p>The T2-C sits between the Stag’s driver controls and the Tesla inverter. Tuning meant configuring the controller around the installed hardware, then checking throttle and brake inputs, direction and drive-state logic, torque response, regeneration, current limits and reported temperatures, without jumping to full output.</p>
+    <p>In parallel I designed and built the custom low-voltage harness. It distributes power and signals to the BMS, controller, dash, charger interfaces, pumps, fans, relays, switches and retained vehicle features. I traced wiring and communications faults as each subsystem came online.</p>
+  </div>
+  <div class="sec-media row">
+    <figure class="fig" style="--ar:0.750"><button class="fig-btn" type="button" data-zoom="../assets/media/projects/thermal-club/vehicle-systems-bay-overview.webp" aria-label="Enlarge figure: Vehicle systems bay with integrated high-voltage and low-voltage hardware"><img src="../assets/media/projects/thermal-club/vehicle-systems-bay-overview.webp" srcset="../assets/media/projects/thermal-club/vehicle-systems-bay-overview-640.jpg 640w, ../assets/media/projects/thermal-club/vehicle-systems-bay-overview-1100.jpg 1100w, ../assets/media/projects/thermal-club/vehicle-systems-bay-overview.webp 1350w" sizes="(min-width: 1080px) 440px, 100vw" width="1350" height="1800" alt="Vehicle systems bay with integrated high-voltage and low-voltage hardware" loading="lazy" decoding="async"></button><figcaption>The systems bay during integration, with the low-voltage harness layered around power electronics and high-voltage routing.</figcaption></figure>
+    <figure class="fig" style="--ar:0.750"><button class="fig-btn" type="button" data-zoom="../assets/media/projects/thermal-club/chassis-corner.webp" aria-label="Enlarge figure: Triumph Stag suspension and brake corner during the conversion build"><img src="../assets/media/projects/thermal-club/chassis-corner.webp" srcset="../assets/media/projects/thermal-club/chassis-corner-640.jpg 640w, ../assets/media/projects/thermal-club/chassis-corner-1100.jpg 1100w, ../assets/media/projects/thermal-club/chassis-corner.webp 1350w" sizes="(min-width: 1080px) 440px, 100vw" width="1350" height="1800" alt="Triumph Stag suspension and brake corner during the conversion build" loading="lazy" decoding="async"></button><figcaption>The existing chassis, brake and suspension hardware stayed part of the packaging envelope.</figcaption></figure>
+  </div>
+</section>
 
-          <section class="case-section reveal" id="charging">
-            <span class="section-number">08 · Charger configuration</span>
-            <h2>Make charging a coordinated vehicle state.</h2>
-            <p>The charging system had to match the fourteen-module pack while remaining subordinate to the BMS. Configuration connected the charger’s voltage and current behavior to pack limits, cell monitoring, contactor control, and fault handling. The charge inlet, high-voltage path, DC-DC system, and low-voltage wake-up behavior also had to function as one sequence.</p>
-            <p>Bring-up was staged: verify communication and sensed values, confirm the pack state, establish the permitted charging conditions, and monitor cell-group and temperature data as energy entered the system. That sequence turned the charger from an isolated component into a controlled part of the vehicle.</p>
-            <div class="case-callout"><strong>System principle</strong><span>The charger does not decide that the pack is healthy. It operates inside limits established and monitored by the battery-management system.</span></div>
-          </section>
+<section class="case-sec" id="charging" aria-label="Charger configuration"><p class="label"><b>09</b> Charger configuration</p>
+  <h2>Make charging a coordinated vehicle state.</h2>
+  <div class="prose">
+    <p>The charger had to match the fourteen-module pack while staying subordinate to the BMS. Configuration tied the charger’s voltage and current behavior to pack limits, cell monitoring, contactor control and fault handling. The charge inlet, high-voltage path, DC-DC system and low-voltage wake-up had to work as one sequence.</p>
+    <p>Bring-up was staged: verify communication and sensed values, confirm pack state, set the permitted charging conditions, then watch cell-group and temperature data as energy went in.</p>
+  </div>
+  <div class="callout"><strong>System principle</strong><p>The charger doesn’t decide that the pack is healthy. It works inside limits the battery-management system sets and monitors.</p></div>
+</section>
 
-          <section class="case-section reveal" id="dash">
-            <span class="section-number">09 · Dash development</span>
-            <h2>Expose the data needed to drive—and the data needed to debug.</h2>
-            <p>The digital dash evolved in parallel with the vehicle. Early layouts proved the communication path and basic gauge behavior. Later versions reorganized the screen around driver priority: pack voltage, drive mode, motor speed, current, power, throttle and brake state, and temperatures across the inverter and motor-control hardware.</p>
-            <p>Muhammad programmed and calibrated the dash for real-time telemetry, using each installation to evaluate legibility, hierarchy, and whether the displayed signals matched the controller and BMS. The progression is visible from the first loose display to the refined interface installed behind the Stag steering wheel.</p>
-            <div class="case-progression-grid">
-              <figure class="case-figure"><span class="image-step">01 · Signal bring-up</span><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge early dash interface"><img src="../assets/media/projects/thermal-club/dash-interface-early.webp" alt="Early AEM dash interface displaying initial speed and status graphics" width="1350" height="1800" loading="lazy" decoding="async"></button><figcaption>An early screen confirmed the display and data path.</figcaption></figure>
-              <figure class="case-figure"><span class="image-step">02 · In-vehicle mockup</span><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge dash cabin prototype"><img src="../assets/media/projects/thermal-club/dash-cabin-prototype.webp" alt="Digital dash positioned in the Triumph Stag cabin during a mockup" width="1350" height="1800" loading="lazy" decoding="async"></button><figcaption>Physical mockups established viewing position and scale.</figcaption></figure>
-              <figure class="case-figure"><span class="image-step">03 · Display fit check</span><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge temporary dash fit check"><img src="../assets/media/projects/thermal-club/dash-prototype-install.webp" alt="AEM digital dash powered during a temporary fit check in the open Triumph Stag cabin" width="1350" height="1800" loading="lazy" decoding="async"></button><figcaption>A powered fit check connected screen design to the unfinished cabin geometry.</figcaption></figure>
-              <figure class="case-figure"><span class="image-step">04 · Layout development</span><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge dash layout development"><img src="../assets/media/projects/thermal-club/dash-layout-development.webp" alt="AEM dash-layout software showing configured telemetry fields" width="1800" height="1350" loading="lazy" decoding="async"></button><figcaption>The layout editor organized CAN data into a usable hierarchy.</figcaption></figure>
-              <figure class="case-figure"><span class="image-step">05 · Vehicle configuration</span><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge dash configuration in vehicle"><img src="../assets/media/projects/thermal-club/dash-config-in-vehicle.webp" alt="Laptop and digital dash connected inside the Triumph Stag during configuration" width="1800" height="1350" loading="lazy" decoding="async"></button><figcaption>Configuration continued against live vehicle signals.</figcaption></figure>
-              <figure class="case-figure"><span class="image-step">06 · Refined interface</span><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge refined dash interface"><img src="../assets/media/projects/thermal-club/dash-interface-refined.webp" alt="Refined Thermal Club digital dash with pack, drive, power, and temperature data" width="1800" height="1350" loading="lazy" decoding="async"></button><figcaption>The refined display prioritized drive state and system temperatures.</figcaption></figure>
-              <figure class="case-figure"><span class="image-step">07 · Installed display</span><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge final dash installation"><img src="../assets/media/projects/thermal-club/dash-final-install.webp" alt="Final digital dash installed behind the Triumph Stag steering wheel" width="1350" height="1800" loading="lazy" decoding="async"></button><figcaption>The display installed in the driver’s normal line of sight.</figcaption></figure>
-            </div>
-          </section>
+<section class="case-sec" id="dash" aria-label="Dash development"><p class="label"><b>10</b> Dash development</p>
+  <h2>Expose the data needed to drive, and the data needed to debug.</h2>
+  <div class="prose">
+    <p>The digital dash evolved alongside the car. Early layouts proved the communication path and basic gauge behavior. Later versions reorganized the screen around driver priority: pack voltage, drive mode, motor speed, current, power, throttle and brake state, and temperatures across the inverter and motor-control hardware.</p>
+    <p>I programmed and calibrated the dash for real-time telemetry, and used each installation to judge legibility, hierarchy and whether the displayed signals matched the controller and BMS. The sequence below runs from the first loose display to the interface installed behind the steering wheel.</p>
+  </div>
+  <div class="sec-media row">
+    <figure class="fig" style="--ar:0.750"><span class="step"><b>01</b>Signal bring-up</span><button class="fig-btn" type="button" data-zoom="../assets/media/projects/thermal-club/dash-interface-early.webp" aria-label="Enlarge figure: Early AEM dash interface displaying initial speed and status graphics"><img src="../assets/media/projects/thermal-club/dash-interface-early.webp" srcset="../assets/media/projects/thermal-club/dash-interface-early-640.jpg 640w, ../assets/media/projects/thermal-club/dash-interface-early-1100.jpg 1100w, ../assets/media/projects/thermal-club/dash-interface-early.webp 1350w" sizes="(min-width: 1080px) 290px, 100vw" width="1350" height="1800" alt="Early AEM dash interface displaying initial speed and status graphics" loading="lazy" decoding="async"></button><figcaption>An early screen confirmed the display and the data path.</figcaption></figure>
+    <figure class="fig" style="--ar:0.750"><span class="step"><b>02</b>In-vehicle mockup</span><button class="fig-btn" type="button" data-zoom="../assets/media/projects/thermal-club/dash-cabin-prototype.webp" aria-label="Enlarge figure: Digital dash positioned in the Triumph Stag cabin during a mockup"><img src="../assets/media/projects/thermal-club/dash-cabin-prototype.webp" srcset="../assets/media/projects/thermal-club/dash-cabin-prototype-640.jpg 640w, ../assets/media/projects/thermal-club/dash-cabin-prototype-1100.jpg 1100w, ../assets/media/projects/thermal-club/dash-cabin-prototype.webp 1350w" sizes="(min-width: 1080px) 290px, 100vw" width="1350" height="1800" alt="Digital dash positioned in the Triumph Stag cabin during a mockup" loading="lazy" decoding="async"></button><figcaption>Physical mockups set viewing position and scale.</figcaption></figure>
+    <figure class="fig" style="--ar:0.750"><span class="step"><b>03</b>Display fit check</span><button class="fig-btn" type="button" data-zoom="../assets/media/projects/thermal-club/dash-prototype-install.webp" aria-label="Enlarge figure: AEM digital dash powered during a temporary fit check in the open Triumph Stag cabin"><img src="../assets/media/projects/thermal-club/dash-prototype-install.webp" srcset="../assets/media/projects/thermal-club/dash-prototype-install-640.jpg 640w, ../assets/media/projects/thermal-club/dash-prototype-install-1100.jpg 1100w, ../assets/media/projects/thermal-club/dash-prototype-install.webp 1350w" sizes="(min-width: 1080px) 290px, 100vw" width="1350" height="1800" alt="AEM digital dash powered during a temporary fit check in the open Triumph Stag cabin" loading="lazy" decoding="async"></button><figcaption>A powered fit check tied screen design to the unfinished cabin.</figcaption></figure>
+  </div>
+  <div class="sec-media row">
+    <figure class="fig" style="--ar:1.333"><span class="step"><b>04</b>Layout development</span><button class="fig-btn" type="button" data-zoom="../assets/media/projects/thermal-club/dash-layout-development.webp" aria-label="Enlarge figure: AEM dash-layout software showing configured telemetry fields"><img src="../assets/media/projects/thermal-club/dash-layout-development.webp" srcset="../assets/media/projects/thermal-club/dash-layout-development-640.jpg 640w, ../assets/media/projects/thermal-club/dash-layout-development-1100.jpg 1100w, ../assets/media/projects/thermal-club/dash-layout-development.webp 1800w" sizes="(min-width: 1080px) 290px, 100vw" width="1800" height="1350" alt="AEM dash-layout software showing configured telemetry fields" loading="lazy" decoding="async"></button><figcaption>The layout editor organized CAN data into a usable hierarchy.</figcaption></figure>
+    <figure class="fig" style="--ar:1.333"><span class="step"><b>05</b>Vehicle configuration</span><button class="fig-btn" type="button" data-zoom="../assets/media/projects/thermal-club/dash-config-in-vehicle.webp" aria-label="Enlarge figure: Laptop and digital dash connected inside the Triumph Stag during configuration"><img src="../assets/media/projects/thermal-club/dash-config-in-vehicle.webp" srcset="../assets/media/projects/thermal-club/dash-config-in-vehicle-640.jpg 640w, ../assets/media/projects/thermal-club/dash-config-in-vehicle-1100.jpg 1100w, ../assets/media/projects/thermal-club/dash-config-in-vehicle.webp 1800w" sizes="(min-width: 1080px) 290px, 100vw" width="1800" height="1350" alt="Laptop and digital dash connected inside the Triumph Stag during configuration" loading="lazy" decoding="async"></button><figcaption>Configuration continued against live vehicle signals.</figcaption></figure>
+    <figure class="fig" style="--ar:1.333"><span class="step"><b>06</b>Refined interface</span><button class="fig-btn" type="button" data-zoom="../assets/media/projects/thermal-club/dash-interface-refined.webp" aria-label="Enlarge figure: Refined Thermal Club digital dash with pack, drive, power and temperature data"><img src="../assets/media/projects/thermal-club/dash-interface-refined.webp" srcset="../assets/media/projects/thermal-club/dash-interface-refined-640.jpg 640w, ../assets/media/projects/thermal-club/dash-interface-refined-1100.jpg 1100w, ../assets/media/projects/thermal-club/dash-interface-refined.webp 1800w" sizes="(min-width: 1080px) 290px, 100vw" width="1800" height="1350" alt="Refined Thermal Club digital dash with pack, drive, power and temperature data" loading="lazy" decoding="async"></button><figcaption>The refined display prioritizes drive state and system temperatures.</figcaption></figure>
+  </div>
+  <div class="case-split flip">
+    <div class="prose"><p>The last step is the refined interface, installed behind the steering wheel in the driver’s normal line of sight.</p></div>
+    <div style="max-width:380px"><figure class="fig" style="--ar:0.750"><span class="step"><b>07</b>Installed display</span><button class="fig-btn" type="button" data-zoom="../assets/media/projects/thermal-club/dash-final-install.webp" aria-label="Enlarge figure: Final digital dash installed behind the Triumph Stag steering wheel"><img src="../assets/media/projects/thermal-club/dash-final-install.webp" srcset="../assets/media/projects/thermal-club/dash-final-install-640.jpg 640w, ../assets/media/projects/thermal-club/dash-final-install-1100.jpg 1100w, ../assets/media/projects/thermal-club/dash-final-install.webp 1350w" sizes="(min-width: 1080px) 380px, 100vw" width="1350" height="1800" alt="Final digital dash installed behind the Triumph Stag steering wheel" loading="lazy" decoding="async"></button><figcaption>The display installed in the driver’s line of sight.</figcaption></figure></div>
+  </div>
+</section>
 
-          <section class="case-section reveal" id="commissioning">
-            <span class="section-number">10 · Integration & commissioning</span>
-            <h2>Prove the interfaces in sequence, then prove the vehicle.</h2>
-            <p>Commissioning joined work that had previously been verified one subsystem at a time. The practical sequence moved from low-voltage power and communications, through BMS plausibility and interlocks, contactor and precharge behavior, charger operation, cooling auxiliaries, inverter readiness, driver inputs, motor response, and finally complete telemetry.</p>
-            <p>The project remains active. The demonstrated scope is the engineering process itself: selecting hardware, assembling and testing the battery modules, integrating cooling, configuring and troubleshooting the BMS, building the low-voltage harness, tuning the motor controller, configuring charging, and developing the dash into an instrument the driver can actually use.</p>
-            <div class="role-outcome"><strong>Full vehicle</strong><span>electrical ownership from component selection through final commissioning</span></div>
-            <figure class="case-figure wide"><button class="case-image-button" type="button" data-lightbox aria-label="Enlarge converted Triumph Stag systems bay"><img src="../assets/media/projects/thermal-club/vehicle-systems-bay-overview.webp" alt="Converted Triumph Stag with the integrated electric systems bay open" width="1350" height="1800" loading="lazy" decoding="async"></button><figcaption>The conversion in its integrated state: battery, controls, distribution, cooling, and instrumentation operating as one vehicle system.</figcaption></figure>
-            <div class="case-source-note"><strong>Hardware references</strong><p>Vehicle and component specifications are based on the supplied <a href="https://en.wikipedia.org/wiki/Triumph_Stag" target="_blank" rel="noopener">Triumph Stag background</a>, <a href="https://evwest.com/tesla-model-s-lithium-ion-battery-18650-ev-module-22-8-volt-5-3-kwh" target="_blank" rel="noopener">EV West battery-module listing</a>, <a href="https://evwest.com/tesla-model-s-drive-unit-starter-kit-ev-controls-t2-c-controller" target="_blank" rel="noopener">LDU starter-kit listing</a>, and <a href="https://evwest.com/evw-tsla-unv-universal-tesla-large-drive-unit-ev-conversion-package-ldu-motor-controller-throttle-stub-axles" target="_blank" rel="noopener">universal conversion-package listing</a>. Ratings describe the listed hardware; the project page does not claim a completed vehicle performance figure.</p></div>
-          </section>
-        </div>
-      </div>
-    </section>
+<section class="case-sec" id="commissioning" aria-label="Commissioning and status"><p class="label"><b>11</b> Commissioning and status</p>
+  <h2>Prove the interfaces in sequence, then prove the vehicle.</h2>
+  <div class="prose">
+    <p>Commissioning joins work that was verified one subsystem at a time. The sequence moves from low-voltage power and communications, through BMS plausibility and interlocks, contactors and precharge, charger and cooling auxiliaries, inverter readiness and driver inputs, to motor response and complete telemetry.</p>
+  </div>
+  <div class="flow" aria-label="Commissioning sequence"><span>Low-voltage power and comms</span><span>BMS plausibility and interlocks</span><span>Contactors and precharge</span><span>Charger and cooling</span><span>Inverter and driver inputs</span><span>Motor response and telemetry</span></div>
+  <div class="prose">
+    <p>The project is still active. What this page documents is the engineering process: selecting hardware, assembling and testing the battery modules, integrating cooling, configuring and troubleshooting the BMS, building the low-voltage harness, tuning the motor controller, configuring charging and developing the dash. It doesn’t claim a finished vehicle performance figure.</p>
+  </div>
+  <div class="result"><strong>Full vehicle</strong><span>electrical ownership, from component selection through final commissioning</span></div>
+  <div class="refs"><strong>Hardware references</strong>Specifications come from the <a href="https://en.wikipedia.org/wiki/Triumph_Stag" target="_blank" rel="noopener">Triumph Stag background</a>, the <a href="https://evwest.com/tesla-model-s-lithium-ion-battery-18650-ev-module-22-8-volt-5-3-kwh" target="_blank" rel="noopener">EV West battery-module listing</a>, the <a href="https://evwest.com/tesla-model-s-drive-unit-starter-kit-ev-controls-t2-c-controller" target="_blank" rel="noopener">LDU starter-kit listing</a> and the <a href="https://evwest.com/evw-tsla-unv-universal-tesla-large-drive-unit-ev-conversion-package-ldu-motor-controller-throttle-stub-axles" target="_blank" rel="noopener">universal conversion-package listing</a>. Ratings describe the listed hardware.</div>
+</section>
 
-    <section class="section"><div class="container"><div class="case-next reveal"><span>Next case study</span><a href="tractive-accumulator.html">High-voltage tractive accumulator <span class="arrow">↗</span></a></div></div></section>
+  </div>
+</div>
+<section class="wrap sec tight">
+  <nav class="pager" aria-label="More case studies">
+    <a class="panel panel-lift" href="../projects.html"><small>All work</small><strong>Back to projects</strong></a>
+    <a class="panel panel-lift" href="../projects/tractive-accumulator.html"><small>Next case study</small><strong>352.8 V tractive accumulator <span class="arr" aria-hidden="true">↗</span></strong></a>
+  </nav>
+</section>
   </main>
-
-  <dialog class="image-dialog" data-lightbox-dialog aria-label="Expanded project image"><button class="image-dialog-close" type="button" data-lightbox-close>Close</button><img data-lightbox-image alt=""><p data-lightbox-caption></p></dialog>
-  <button class="icon-button back-top" type="button" data-back-top aria-label="Back to top">↑</button>
-  <footer class="site-footer"><div class="container footer-inner"><span>© <span data-year></span> Muhammad Anjum</span><div class="footer-links"><a href="mailto:muhammad.u.anjum@gmail.com">Email</a><a href="https://www.linkedin.com/in/muhammad-u-anjum/" target="_blank" rel="noopener">LinkedIn</a></div></div></footer>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot">
+        <div><a class="brand" href="../index.html" aria-label="Muhammad Anjum, home"><span class="brand-mark" aria-hidden="true">MA</span><span class="brand-name"><strong>Muhammad Anjum</strong><span>Aerospace · EV systems · Manufacturing</span></span></a><p>Aerospace and EV systems engineering, from supplier audits to high-voltage battery builds.</p></div>
+        <nav class="foot-links" aria-label="Footer">
+          <div><p class="foot-h">Portfolio</p><a href="../projects.html">Work</a><a href="../experience.html">Experience</a><a href="../experience/aztec-electric-racing.html">Aztec Electric Racing</a><a href="../about.html">About</a></div>
+          <div><p class="foot-h">Case studies</p><a href="../projects/vehicle-conversion.html">Tesla-powered Triumph Stag</a><a href="../projects/tractive-accumulator.html">352.8 V tractive accumulator</a><a href="../projects/iam3d-drone.html">IAM3D competition drone</a><a href="../projects/powertrain-testbench.html">Powertrain testbench and pedal controls</a></div>
+          <div><p class="foot-h">Contact</p><a href="mailto:muhammad.u.anjum@gmail.com">Email</a><a href="https://www.linkedin.com/in/muhammad-u-anjum/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/muhammad-anjum" target="_blank" rel="noopener">GitHub</a><a href="../Muhammad-Anjum-Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></div>
+        </nav>
+      </div>
+      <div class="foot-base"><span>© <span data-year>2026</span> Muhammad Anjum</span><span>San Diego, California</span></div>
+    </div>
+  </footer>
+  <dialog class="lightbox" data-lightbox aria-label="Enlarged figure"><div class="lb-inner"><div class="lb-img"><img alt=""></div><div class="lb-cap"><span data-lb-caption></span><button class="lb-close" type="button" data-lb-close>Close</button></div></div></dialog>
 </body>
 </html>

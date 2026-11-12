@@ -1,0 +1,14 @@
+{
+  "name": "Muhammad Anjum",
+  "domain": "https://muhammadanjum.com",
+  "email": "muhammad.u.anjum@gmail.com",
+  "linkedin": "https://www.linkedin.com/in/muhammad-u-anjum/",
+  "github": "https://github.com/muhammad-anjum",
+  "resume": "Muhammad-Anjum-Resume.pdf",
+  "tagline": "Aerospace · EV systems · Manufacturing",
+  "nav": [
+    { "label": "Work", "href": "projects.html", "key": "projects" },
+    { "label": "Experience", "href": "experience.html", "key": "experience" },
+    { "label": "About", "href": "about.html", "key": "about" }
+  ]
+}

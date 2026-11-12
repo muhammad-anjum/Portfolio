@@ -1,0 +1,149 @@
+<section class="case-sec" id="mission" data-label="Mission and objective">
+  <h2>Design around the task the aircraft must complete.</h2>
+  <div class="prose">
+    <p>The competition mission asks an FPV racing drone to carry a small payload, run an obstacle course quickly, align over a target and release the payload with no manual intervention. Speed matters, and so does repeatable pickup and release. Every gram added to the mechanism costs flight performance, and every unverified shortcut risks the mission.</p>
+    <p>The team split the problem into four interacting systems: flight hardware, a payload-retention mechanism, a camera-alignment mechanism and a battery-restraint strategy. Additive manufacturing made custom geometry possible, and it brought print orientation, tolerance, support material and layer-strength constraints in from day one.</p>
+  </div>
+  <div class="principles">
+    <div><strong>Carry</strong><span>Retain the payload through acceleration and course maneuvers.</span></div>
+    <div><strong>See</strong><span>Give the pilot useful forward and downward alignment views.</span></div>
+    <div><strong>Release</strong><span>Separate the payload on command without continuous holding power.</span></div>
+    <div><strong>Print</strong><span>Turn optimized geometry into parts the available machine can make.</span></div>
+  </div>
+  <div class="sec-media">
+    {{fig "iam3d/exploded-assembly" alt="Exploded CAD assembly of the IAM3D drone and payload system" cls="plate" cap="The full assembly: propulsion, structure, camera, battery restraint and payload-release hardware."}}
+  </div>
+</section>
+
+<section class="case-sec" id="role" data-label="Role and execution">
+  <h2>Give the engineering work a structure to move through.</h2>
+  <div class="prose">
+    <p>As Project Manager I directed the four-part plan from early research through design, manufacturing and competition preparation. I organized and led the general-body meetings, introduced project-tracking and design-documentation practices, coordinated procurement, managed the budget for materials and tools, and handled travel planning to get the finished aircraft to competition.</p>
+    <p>That role connected the team’s technical owners rather than replacing them. Decision matrices made component selections reviewable. Shared CAD and report standards kept mechanism interfaces from drifting apart. Procurement timing surfaced parts that were strong on paper but unavailable, over budget or incompatible with the remaining schedule.</p>
+  </div>
+  <div class="flow" aria-label="Project development process"><span>Research</span><span>Trade studies</span><span>Mechanism design</span><span>Analysis</span><span>Printing</span><span>Integration</span></div>
+  {{block ownership asme-sdsu}}
+</section>
+
+<section class="case-sec" id="selection" data-label="Trade study: components">
+  <h2>Balance performance at the system level.</h2>
+  <div class="prose">
+    <p>The team used weighted decision matrices instead of picking the single fastest or cheapest part. Processor performance, voltage compatibility, sensor quality, current capacity, size, mass, radio reliability, video performance, discharge rate and cost were weighed across the whole flight stack.</p>
+    <p>The chosen stack pairs a SpeedyBee F405 V4 BLS 55A flight-controller and ESC with a Tattu R-Line 1550 mAh 4S1P 14.8 V 130C battery, four MEPS SZ2207 2750KV motors, DJI O3 video hardware and a TBS Crossfire radio. The design report’s full bill of materials comes to $496.56.</p>
+  </div>
+  <div class="table-wrap"><table><thead><tr><th scope="col">Subsystem</th><th scope="col">Selected hardware</th><th scope="col">Decision emphasis</th></tr></thead><tbody>
+    <tr><td>Flight control and ESC</td><td>SpeedyBee F405 V4 BLS 55A</td><td>Compatibility, processor performance, current capacity</td></tr>
+    <tr><td>Energy</td><td>Tattu R-Line 1550 mAh 4S</td><td>Mass, capacity, discharge rate, cost</td></tr>
+    <tr><td>Propulsion</td><td>MEPS SZ2207 2750KV ×4</td><td>Thrust, mass, size, value</td></tr>
+    <tr><td>Video</td><td>DJI O3 Air Unit</td><td>Image performance, range, package mass</td></tr>
+    <tr><td>Radio</td><td>TBS Crossfire</td><td>Reliability, range, integration</td></tr>
+  </tbody></table></div>
+</section>
+
+<section class="case-sec" id="payload" data-label="Payload principles and calculation">
+  <h2>Choose a mechanism whose safe state matches the mission.</h2>
+  <div class="prose">
+    <p>An energize-to-hold electromagnet would simplify release but draws power and makes heat the whole time the payload is attached. An energize-to-release layout avoids that continuous draw but adds custom-circuit and rules uncertainty. The team went with a passive permanent magnet for retention and mechanical separation for release.</p>
+    <p>The magnetic circuit still had to be sized. With an estimated 22.23 g payload and a deliberately conservative acceleration case, the report calculates a minimum retention force of 1.4371 N. The selected magnet is rated at 5.829 N, which leaves margin before the design moves on to its release geometry.</p>
+  </div>
+  <div class="calc" style="--n:3"><div><strong>22.23 g</strong><span>estimated payload</span></div><div><strong>1.4371 N</strong><span>required retention force</span></div><div><strong>5.829 N</strong><span>selected magnet rating</span></div></div>
+  <div class="sec-media row">
+    {{fig "iam3d/magnetic-flux-principle" alt="Diagram explaining magnetic flux paths through the payload retention interface" cls="plate" cap="The retention concept depends on closing the magnetic flux path through the payload’s steel interface." sizes="(min-width: 1080px) 540px, 100vw"}}
+    {{fig "iam3d/magnet-pull-force" alt="Magnet pull-force calculation for the payload washer thickness" cls="plate" cap="Pull-force research checks the selected magnet against the payload interface thickness." sizes="(min-width: 1080px) 260px, 100vw"}}
+  </div>
+</section>
+
+<section class="case-sec" id="release" data-label="Release mechanism analysis">
+  <h2>Turn half a servo rotation into a predictable separation.</h2>
+  <div class="prose">
+    <p>Magnet-force data shows the steel target has to move at least 0.1875 in from the magnet before attraction drops below the payload’s weight. The selected micro servo rotates only 180 degrees, so the lead screw has to deliver that travel in half a revolution. That sets a custom pitch of 0.375 in per turn.</p>
+    <p>A lead-screw force model puts the required drive torque at 0.02 N·m. The smallest 2.1 g servo fell just short, so the team moved to a 4.3 g servo rated at 0.037 N·m. The final cage keeps the magnet fixed while a servo-driven platen opens the release gap.</p>
+  </div>
+  <div class="calc" style="--n:4"><div><strong>0.1875 in</strong><span>minimum release travel</span></div><div><strong>0.375 in/turn</strong><span>custom lead-screw pitch</span></div><div><strong>0.02 N·m</strong><span>required drive torque</span></div><div><strong>0.037 N·m</strong><span>rating, 4.3 g servo</span></div></div>
+  <div class="sec-media row">
+    {{fig "iam3d/payload-concepts" alt="Early payload-release concepts using magnetic retention and servo actuation" cls="plate" cap="Concept sketches compare electrical holding with mechanically actuated release." sizes="(min-width: 1080px) 330px, 100vw"}}
+    {{fig "iam3d/lead-screw-analysis" alt="Lead-screw force and release-distance analysis for the payload mechanism" cls="plate" cap="Gap and lead-screw calculations turn the release requirement into travel and torque." sizes="(min-width: 1080px) 560px, 100vw"}}
+  </div>
+  <div class="sec-media">
+    {{fig "iam3d/magnet-cage" alt="CAD views of the payload magnet cage and lead-screw mechanism" cls="plate" cap="The selected cage packages the servo, lead screw, translating platen and permanent magnet." sizes="(min-width: 1080px) 560px, 100vw"}}
+  </div>
+</section>
+
+<section class="case-sec" id="alignment" data-label="Trade study: camera alignment">
+  <h2>Widen the pilot’s view without a second video system.</h2>
+  <div class="prose">
+    <p>A second camera and ground station would give dedicated downward vision. The available goggles can’t take two live inputs, though, and the extra monitor, transmitter, mass, cost and control complexity worked against the mission. The team designed a mechanical mount that reorients the single DJI camera instead.</p>
+    <p>The first geared concept could rotate the camera, but it used a lot of volume, needed a two-piece mount and at least half an inch of rear wire clearance. A top-mounted direct-drive concept sat low enough to distort the pilot’s sense of the drone’s envelope. The chosen bottom-pivot arm keeps the normal forward position above the frame, uses less material, and swings the same camera toward the payload.</p>
+    <p>Moment-of-inertia and gravitational-torque estimates put total demand near 0.00186 N·m, low enough for the lighter 2.1 g servo. The camera load is far smaller than the payload’s, so the analysis supported a simpler actuator here.</p>
+  </div>
+  <div class="sec-media row">
+    {{fig "iam3d/camera-gear-concept" alt="Rejected geared camera-adjustment mechanism" cls="plate" cap="The geared concept exposed volume, assembly and wire-clearance problems." sizes="(min-width: 1080px) 440px, 100vw"}}
+    {{fig "iam3d/camera-pivot-cad" alt="Compact bottom-pivot camera-mount CAD" cls="plate" cap="The selected bottom-pivot layout preserves the forward view and uses less material." sizes="(min-width: 1080px) 440px, 100vw"}}
+  </div>
+</section>
+
+<section class="case-sec" id="restraint" data-label="Battery restraint">
+  <h2>Use geometry to resist the direction of motion.</h2>
+  <div class="case-split">
+    <div class="prose"><p>The battery system compared two straps against one strap with grip tape. The lighter single strap won, but friction alone isn’t asked to hold the battery against fore-aft movement. Grooves locate the strap, and raised edge walls form a positive geometric stop against acceleration.</p></div>
+    {{fig "iam3d/battery-plate-cad" alt="CAD of the grooved drone battery-retention plate" cls="plate" cap="The plate combines a strap, grip surface, locating grooves and end walls in one restraint." sizes="(min-width: 1080px) 480px, 100vw"}}
+  </div>
+</section>
+
+<section class="case-sec" id="structure" data-label="Structural optimization">
+  <h2>Remove material only after defining the load case.</h2>
+  <div class="prose">
+    <p>The 55 A ESC limits the planned motor operating point to 40% throttle. MEPS thrust data turns that into a 5.072 N load at each motor. A baseline SolidWorks study gave about 0.34 mm of maximum arm displacement, and the team set 0.5 mm as the allowable limit for candidate frames.</p>
+    <p>Altair Inspire topology studies explored 20%, 30%, 40% and 50% mass targets. The raw outputs were treated as guidance, not printable geometry. Load paths that persisted across the studies informed a hand-rebuilt frame with continuous members, printable transitions, fastener lands and room for the payload and camera mechanisms.</p>
+    <p>The refined design projects a 27% mass reduction while staying under the displacement limit for the report’s combined loading. That is less inert mass on the same propulsion system, with stiffness still bounded.</p>
+  </div>
+  <div class="calc" style="--n:4"><div><strong>5.072 N</strong><span>load per motor, 40% throttle</span></div><div><strong>0.34 mm</strong><span>baseline arm displacement</span></div><div><strong>0.5 mm</strong><span>allowable displacement</span></div><div><strong>27%</strong><span>projected mass reduction</span></div></div>
+  <div class="sec-media row">
+    {{fig "iam3d/optimization-design-space" alt="Drone-frame topology-optimization design space, fixtures and motor loading" cls="plate" cap="The topology design space, with fixtures and motor loads defined before material removal." sizes="(min-width: 1080px) 440px, 100vw"}}
+    {{fig "iam3d/topology-iteration" alt="Topology-optimization iteration of the drone frame" cls="plate" cap="One optimization result shows the load paths worth keeping in the manufacturable frame." sizes="(min-width: 1080px) 440px, 100vw"}}
+  </div>
+  <div class="sec-media">
+    {{fig "iam3d/fea-displacement" alt="Finite-element displacement plot of the optimized drone frame" cls="plate" cap="The reconstructed frame stays within the project’s 0.5 mm displacement criterion."}}
+  </div>
+</section>
+
+<section class="case-sec" id="dynamics" data-label="Vibration analysis">
+  <h2>Check the operating band, not just a static snapshot.</h2>
+  <div class="prose">
+    <p>Static stiffness can’t show whether the motor operating range excites a structural mode. The team extracted thirty modes and focused a harmonic-response study on the 1152–1779.1 Hz range associated with sustained operating throttle. A response near 1220 Hz was the most significant point in that interval, and the predicted displacement stayed below 0.5 mm.</p>
+    <p>Simulation didn’t replace flight testing here. It narrowed the structural risk and showed acceptable predicted motion across the analyzed band.</p>
+  </div>
+  <div class="calc" style="--n:3"><div><strong>30</strong><span>modes extracted</span></div><div><strong>1152–1779.1 Hz</strong><span>operating band analyzed</span></div><div><strong>≈1220 Hz</strong><span>most significant response, under 0.5 mm</span></div></div>
+  <div class="sec-media">
+    {{fig "iam3d/harmonic-analysis" alt="Harmonic-response plots for the optimized drone frame" cls="plate" cap="Harmonic-response plots across the motor operating-frequency range."}}
+  </div>
+</section>
+
+<section class="case-sec" id="manufacturing" data-label="Additive manufacturing">
+  <h2>Design the printed part around layers, clearances and supports.</h2>
+  <div class="prose">
+    <p>The structure uses CarbonX carbon-fiber-reinforced PLA, which the team’s Bambu Lab X1 Carbon can print. The frame stays largely planar so it prints flat with no support material, which improves bed contact and lines the layers up with the main in-plane loads.</p>
+    <p>Mechanisms needed a different kind of validation. A printed clearance coupon tested several offsets and found 0.15 mm (0.006 in) to be the usable free-moving fit for that setup. Screw holes and moving interfaces were sized from that measured capability instead of a generic tolerance.</p>
+    <p>The magnet cage prints on its side so layer orientation better resists the expected shear. Camera-mount orientation balances support material against load direction and surface requirements. Slicer previews gave a final manufacturing check before time and material were committed.</p>
+  </div>
+  <div class="sec-media row">
+    {{fig "iam3d/clearance-test" alt="Additively manufactured clearance-test coupon" cls="plate" cap="The clearance coupon turns printer behavior into a design value for moving fits." sizes="(min-width: 1080px) 400px, 100vw"}}
+    {{fig "iam3d/magnet-cage-cam" alt="Slicing setup and print orientation for the magnet cage" cls="plate" cap="Cage orientation puts the layer stack in a better position against shear." sizes="(min-width: 1080px) 440px, 100vw"}}
+  </div>
+  <div class="case-split flip">
+    <div class="prose"><p>Camera-mount slicing, with support and build orientation visible, is the last check before printing.</p></div>
+    {{fig "iam3d/camera-mount-cam" alt="Slicing setup and supports for the camera-mount component" cls="plate" cap="Camera-mount slicing preview with supports and build orientation." sizes="(min-width: 1080px) 400px, 100vw"}}
+  </div>
+</section>
+
+<section class="case-sec" id="testing" data-label="Testing, results and status">
+  <h2>Separate what the report proved from what competition proved later.</h2>
+  <div class="prose">
+    <p>The report documents component checks, electronics setup, mechanism development, structural analysis, printed-fit testing and final assembly. When it was written, the team’s complete flight-test program had not finished. This page keeps that boundary instead of presenting simulation and bench work as finished flight validation.</p>
+    <p>After the report, the project went through final integration and competition, and the team finished fourth internationally. That result belongs at the end of the engineering story: it came from a design that moved past CAD and documentation into a complete competition program.</p>
+  </div>
+  <div class="result"><strong>4th</strong><span>internationally in the IAM3D Drone Competition</span></div>
+  <div class="sec-media">
+    {{fig "iam3d/final-payload-assembly" alt="Completed printed payload-release assembly with servo and magnet" cap="The manufactured payload assembly: servo, lead screw, translating platen and magnet cage together." sizes="(min-width: 1080px) 560px, 100vw"}}
+  </div>
+</section>

@@ -1,0 +1,628 @@
+{
+ "accumulator/assembled-accumulator": {
+  "w": 1800,
+  "h": 1350,
+  "variants": [
+   {
+    "file": "accumulator/assembled-accumulator-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "accumulator/assembled-accumulator-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "accumulator/assembled-controls": {
+  "w": 1013,
+  "h": 1800,
+  "variants": []
+ },
+ "accumulator/bms-boards": {
+  "w": 1266,
+  "h": 1104,
+  "variants": []
+ },
+ "accumulator/cell-segments": {
+  "w": 1200,
+  "h": 1600,
+  "variants": []
+ },
+ "accumulator/central-pcb": {
+  "w": 1234,
+  "h": 1384,
+  "variants": []
+ },
+ "accumulator/charge-cart-outlet-layout": {
+  "w": 1800,
+  "h": 1000,
+  "variants": [
+   {
+    "file": "accumulator/charge-cart-outlet-layout-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "accumulator/charge-cart-outlet-layout-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "accumulator/charge-cart-power-schematic": {
+  "w": 1133,
+  "h": 720,
+  "variants": []
+ },
+ "accumulator/enclosure-cad": {
+  "w": 1271,
+  "h": 846,
+  "variants": []
+ },
+ "accumulator/enclosure-welding": {
+  "w": 1350,
+  "h": 1800,
+  "variants": [
+   {
+    "file": "accumulator/enclosure-welding-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "accumulator/enclosure-welding-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "accumulator/fabricated-enclosure": {
+  "w": 1350,
+  "h": 1800,
+  "variants": [
+   {
+    "file": "accumulator/fabricated-enclosure-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "accumulator/fabricated-enclosure-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "accumulator/final-accumulator": {
+  "w": 1800,
+  "h": 858,
+  "variants": [
+   {
+    "file": "accumulator/final-accumulator-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "accumulator/final-accumulator-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "accumulator/lid-and-enclosure": {
+  "w": 1800,
+  "h": 969,
+  "variants": [
+   {
+    "file": "accumulator/lid-and-enclosure-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "accumulator/lid-and-enclosure-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "accumulator/maintenance-plug-cad": {
+  "w": 801,
+  "h": 305,
+  "variants": []
+ },
+ "accumulator/nomex-installation": {
+  "w": 1200,
+  "h": 1600,
+  "variants": []
+ },
+ "accumulator/segment-layout": {
+  "w": 1350,
+  "h": 1800,
+  "variants": [
+   {
+    "file": "accumulator/segment-layout-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "accumulator/segment-layout-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "accumulator/system-packaging-cad": {
+  "w": 1001,
+  "h": 813,
+  "variants": []
+ },
+ "accumulator/team-display": {
+  "w": 1350,
+  "h": 1800,
+  "variants": [
+   {
+    "file": "accumulator/team-display-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "accumulator/team-display-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "iam3d/battery-plate-cad": {
+  "w": 1304,
+  "h": 914,
+  "variants": [
+   {
+    "file": "iam3d/battery-plate-cad-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "iam3d/battery-plate-cad-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "iam3d/camera-gear-concept": {
+  "w": 1600,
+  "h": 1264,
+  "variants": [
+   {
+    "file": "iam3d/camera-gear-concept-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "iam3d/camera-gear-concept-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "iam3d/camera-mount-cam": {
+  "w": 1089,
+  "h": 1010,
+  "variants": []
+ },
+ "iam3d/camera-pivot-cad": {
+  "w": 1186,
+  "h": 1275,
+  "variants": []
+ },
+ "iam3d/clearance-test": {
+  "w": 743,
+  "h": 768,
+  "variants": []
+ },
+ "iam3d/exploded-assembly": {
+  "w": 1600,
+  "h": 1035,
+  "variants": [
+   {
+    "file": "iam3d/exploded-assembly-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "iam3d/exploded-assembly-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "iam3d/fea-displacement": {
+  "w": 1564,
+  "h": 669,
+  "variants": [
+   {
+    "file": "iam3d/fea-displacement-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "iam3d/fea-displacement-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "iam3d/final-payload-assembly": {
+  "w": 1600,
+  "h": 1347,
+  "variants": [
+   {
+    "file": "iam3d/final-payload-assembly-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "iam3d/final-payload-assembly-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "iam3d/harmonic-analysis": {
+  "w": 1600,
+  "h": 1022,
+  "variants": [
+   {
+    "file": "iam3d/harmonic-analysis-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "iam3d/harmonic-analysis-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "iam3d/lead-screw-analysis": {
+  "w": 1471,
+  "h": 710,
+  "variants": [
+   {
+    "file": "iam3d/lead-screw-analysis-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "iam3d/lead-screw-analysis-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "iam3d/magnet-cage-cam": {
+  "w": 983,
+  "h": 742,
+  "variants": []
+ },
+ "iam3d/magnet-cage": {
+  "w": 1408,
+  "h": 1396,
+  "variants": [
+   {
+    "file": "iam3d/magnet-cage-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "iam3d/magnet-cage-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "iam3d/magnet-pull-force": {
+  "w": 474,
+  "h": 677,
+  "variants": []
+ },
+ "iam3d/magnetic-flux-principle": {
+  "w": 1280,
+  "h": 720,
+  "variants": []
+ },
+ "iam3d/optimization-design-space": {
+  "w": 1600,
+  "h": 1001,
+  "variants": [
+   {
+    "file": "iam3d/optimization-design-space-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "iam3d/optimization-design-space-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "iam3d/optimized-frame": {
+  "w": 1600,
+  "h": 1191,
+  "variants": [
+   {
+    "file": "iam3d/optimized-frame-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "iam3d/optimized-frame-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "iam3d/payload-concepts": {
+  "w": 883,
+  "h": 871,
+  "variants": []
+ },
+ "iam3d/topology-iteration": {
+  "w": 1600,
+  "h": 1148,
+  "variants": [
+   {
+    "file": "iam3d/topology-iteration-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "iam3d/topology-iteration-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "thermal-club/battery-enclosure-bench": {
+  "w": 1350,
+  "h": 1800,
+  "variants": [
+   {
+    "file": "thermal-club/battery-enclosure-bench-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "thermal-club/battery-enclosure-bench-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "thermal-club/battery-module-array": {
+  "w": 1350,
+  "h": 1800,
+  "variants": [
+   {
+    "file": "thermal-club/battery-module-array-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "thermal-club/battery-module-array-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "thermal-club/bms-cell-voltage-data": {
+  "w": 1800,
+  "h": 1350,
+  "variants": [
+   {
+    "file": "thermal-club/bms-cell-voltage-data-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "thermal-club/bms-cell-voltage-data-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "thermal-club/bms-configuration-session": {
+  "w": 1350,
+  "h": 1800,
+  "variants": [
+   {
+    "file": "thermal-club/bms-configuration-session-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "thermal-club/bms-configuration-session-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "thermal-club/bms-vehicle-test": {
+  "w": 1800,
+  "h": 1350,
+  "variants": [
+   {
+    "file": "thermal-club/bms-vehicle-test-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "thermal-club/bms-vehicle-test-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "thermal-club/chassis-corner": {
+  "w": 1350,
+  "h": 1800,
+  "variants": [
+   {
+    "file": "thermal-club/chassis-corner-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "thermal-club/chassis-corner-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "thermal-club/dash-cabin-prototype": {
+  "w": 1350,
+  "h": 1800,
+  "variants": [
+   {
+    "file": "thermal-club/dash-cabin-prototype-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "thermal-club/dash-cabin-prototype-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "thermal-club/dash-config-in-vehicle": {
+  "w": 1800,
+  "h": 1350,
+  "variants": [
+   {
+    "file": "thermal-club/dash-config-in-vehicle-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "thermal-club/dash-config-in-vehicle-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "thermal-club/dash-final-install": {
+  "w": 1350,
+  "h": 1800,
+  "variants": [
+   {
+    "file": "thermal-club/dash-final-install-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "thermal-club/dash-final-install-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "thermal-club/dash-interface-early": {
+  "w": 1350,
+  "h": 1800,
+  "variants": [
+   {
+    "file": "thermal-club/dash-interface-early-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "thermal-club/dash-interface-early-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "thermal-club/dash-interface-refined": {
+  "w": 1800,
+  "h": 1350,
+  "variants": [
+   {
+    "file": "thermal-club/dash-interface-refined-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "thermal-club/dash-interface-refined-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "thermal-club/dash-layout-development": {
+  "w": 1800,
+  "h": 1350,
+  "variants": [
+   {
+    "file": "thermal-club/dash-layout-development-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "thermal-club/dash-layout-development-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "thermal-club/dash-prototype-install": {
+  "w": 1350,
+  "h": 1800,
+  "variants": [
+   {
+    "file": "thermal-club/dash-prototype-install-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "thermal-club/dash-prototype-install-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "thermal-club/front-battery-box": {
+  "w": 1350,
+  "h": 1800,
+  "variants": [
+   {
+    "file": "thermal-club/front-battery-box-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "thermal-club/front-battery-box-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "thermal-club/front-bay-integration": {
+  "w": 1800,
+  "h": 1350,
+  "variants": [
+   {
+    "file": "thermal-club/front-bay-integration-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "thermal-club/front-bay-integration-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "thermal-club/front-systems-bay": {
+  "w": 1800,
+  "h": 1350,
+  "variants": [
+   {
+    "file": "thermal-club/front-systems-bay-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "thermal-club/front-systems-bay-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "thermal-club/high-voltage-distribution-box": {
+  "w": 1800,
+  "h": 1350,
+  "variants": [
+   {
+    "file": "thermal-club/high-voltage-distribution-box-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "thermal-club/high-voltage-distribution-box-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "thermal-club/triumph-stag-workshop": {
+  "w": 1800,
+  "h": 1350,
+  "variants": [
+   {
+    "file": "thermal-club/triumph-stag-workshop-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "thermal-club/triumph-stag-workshop-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "thermal-club/underbody-battery-enclosure": {
+  "w": 1350,
+  "h": 1800,
+  "variants": [
+   {
+    "file": "thermal-club/underbody-battery-enclosure-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "thermal-club/underbody-battery-enclosure-1100.jpg",
+    "width": 1100
+   }
+  ]
+ },
+ "thermal-club/vehicle-systems-bay-overview": {
+  "w": 1350,
+  "h": 1800,
+  "variants": [
+   {
+    "file": "thermal-club/vehicle-systems-bay-overview-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "thermal-club/vehicle-systems-bay-overview-1100.jpg",
+    "width": 1100
+   }
+  ]
+ }
+}
