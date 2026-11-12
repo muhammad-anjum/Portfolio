@@ -53,14 +53,22 @@ assets/
 
 ## Add or expand a role
 
-Roles live in `src/data/experience.json`. Each one already shows on the Experience page with its summary, results and a "Responsibilities and ownership" drawer.
+Roles live in `src/data/experience.json`. Each one shows on the Experience page with its summary, results and a "Responsibilities and ownership" drawer.
 
-To give a role its own page, set `"page": true`, optionally add `"image"`/`"imageAlt"`, and create `src/experience/<slug>.html`. Use `src/experience/the-thermal-club.html` as the short template and `aztec-electric-racing.html` as the long one. Helper tags: `{{block ownership <slug>}}`, `{{block results <slug>}}`, `{{block role-projects <slug>}}`, `{{project <slug> title}}`, `{{figures <slug>}}`.
+- `group` is `Professional`, `Research` or `Leadership`. `start` and `end` (`"YYYY-MM"` or `"present"`) set the order: current roles first, newest start first, then finished roles by end date. A role with `"start": null` sorts last among the current ones, so adding its start date moves it automatically.
+- `links` adds external links to the card and the role page (the SDSU research entry links to the lab website).
+- To give a role its own page, set `"page": true`, optionally add `"image"`/`"imageAlt"`, and create `src/experience/<slug>.html`. Use `the-thermal-club.html` as the short template, `sdsu-research.html` for a record that fills in over time, and `aztec-electric-racing.html` as the long one. Helper tags: `{{block ownership <slug>}}`, `{{block results <slug>}}`, `{{block role-projects <slug>}}`, `{{project <slug> title}}`, `{{figures <slug>}}`, `{{resume}}`.
+- Skills live in `src/data/site.json` and render on Home and About with `{{block skills}}`.
+
+## Résumé
+
+`Muhammad-Anjum-Resume.pdf` at the repo root is the only résumé. Every button points at that filename, so replacing the file in place updates the whole site. Don't add dated copies next to it; they would be publicly reachable.
 
 ## Design system
 
 - **Light only.** Paper `#f2ecdf`, ink `#15130f`, gold (`--gold-bright`, `--gold-deep`) and a petrol-teal counterweight (`--petrol`) used for the hero stage, key-number plates and result cards. All tokens are at the top of `site.css`.
 - **Type.** System fonts, nothing to download: an old-style serif for headlines, system sans for text, system mono for labels.
+- **Header.** The name is set as a wordmark (roman first name, italic gold surname, one signature stroke drawn under it). Navigation is a raised capsule whose thumb follows hover and focus, rests on the current page, and glides in from the previous page's position (`nav-thumb` in `site.js`). On phones it becomes a full-screen sheet with a staggered entrance.
 - **One motion system.** One easing (`--ease`) and three durations (`--t-fast`, `--t-med`, `--t-slow`). Sections fade up once as they enter (`data-reveal`), the hero enters once on load (`.enter`), pages cross-fade through the View Transitions API where supported, and hover states are small lifts and drawn underlines. Under `prefers-reduced-motion` everything is static and the hero renders one settled frame.
 - **Hero.** `hero.js` simulates potential flow around a hex-packed cell array on two canvases. It pauses off-screen and in background tabs, and caps pixel density.
 

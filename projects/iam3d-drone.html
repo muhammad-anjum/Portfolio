@@ -26,10 +26,12 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header" data-header>
     <div class="wrap header-in">
-      <a class="brand" href="../index.html" aria-label="Muhammad Anjum, home"><span class="brand-mark" aria-hidden="true">MA</span><span class="brand-name"><strong>Muhammad Anjum</strong><span>Aerospace · EV systems · Manufacturing</span></span></a>
-      <nav class="site-nav" id="site-nav" data-nav aria-label="Primary"><a href="../projects.html" aria-current="page">Work</a><a href="../experience.html">Experience</a><a href="../about.html">About</a><a class="btn btn-ink nav-resume" href="../Muhammad-Anjum-Resume.pdf" target="_blank" rel="noopener">Résumé <span class="arr" aria-hidden="true">↗</span></a></nav>
+      <a class="wordmark" href="../index.html" aria-label="Muhammad Anjum, home"><span class="wm-first">Muhammad</span><span class="wm-last">Anjum<svg class="wm-sign" viewBox="0 0 120 14" aria-hidden="true" focusable="false"><path d="M2 9.5C15 3.5 27 12.5 43 7.5S71 2.5 87 8.5s21 2 31-4.5" pathLength="1"/></svg></span></a>
+      <nav class="site-nav" id="site-nav" data-nav aria-label="Primary"><span class="nav-thumb" aria-hidden="true"></span><a href="../projects.html" style="--i:0" aria-current="page">Work</a><a href="../experience.html" style="--i:1">Experience</a><a href="../about.html" style="--i:2">About</a>
+        <div class="nav-extra"><a class="btn btn-ink" href="../Muhammad-Anjum-Resume.pdf" target="_blank" rel="noopener">Résumé <span class="arr" aria-hidden="true">↗</span></a><a href="mailto:muhammad.u.anjum@gmail.com">Email</a><a href="https://www.linkedin.com/in/muhammad-u-anjum/" target="_blank" rel="noopener">LinkedIn</a></div>
+      </nav>
       <div class="header-end">
-        <a class="btn btn-ink btn-sm" href="../Muhammad-Anjum-Resume.pdf" target="_blank" rel="noopener">Résumé <span class="arr" aria-hidden="true">↗</span></a>
+        <a class="resume-link" href="../Muhammad-Anjum-Resume.pdf" target="_blank" rel="noopener"><span>Résumé</span><span class="arr" aria-hidden="true">↗</span></a>
         <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span></button>
       </div>
     </div>
@@ -40,8 +42,8 @@
   <nav class="crumbs" aria-label="Breadcrumb"><a href="../projects.html">Work</a><i>/</i><span>IAM3D competition drone</span></nav>
   <div class="case-top">
     <div class="enter" style="--d:0">
-      <p class="label" style="margin-top:28px"><span>Aerospace competition · ASME · SDSU</span></p>
       <h1>IAM3D competition drone</h1>
+      <p class="byline">Aerospace competition · ASME · SDSU</p>
       <p class="lede">An FPV aircraft that carries, aligns over and releases a payload. The team worked through trade studies, mechanism analysis, topology optimization and additive manufacturing, and finished fourth internationally.</p>
       <div class="tags"><span class="tag">Project management</span><span class="tag">Mechanism design</span><span class="tag">FEA</span><span class="tag">DFAM</span><span class="tag">Systems testing</span></div>
     </div>
@@ -55,7 +57,7 @@
     <div><h2>On this page</h2><nav class="toc" data-toc aria-label="Sections"><a href="#mission"><span>01</span>Mission and objective</a><a href="#role"><span>02</span>Role and execution</a><a href="#selection"><span>03</span>Trade study: components</a><a href="#payload"><span>04</span>Payload principles and calculation</a><a href="#release"><span>05</span>Release mechanism analysis</a><a href="#alignment"><span>06</span>Trade study: camera alignment</a><a href="#restraint"><span>07</span>Battery restraint</a><a href="#structure"><span>08</span>Structural optimization</a><a href="#dynamics"><span>09</span>Vibration analysis</a><a href="#manufacturing"><span>10</span>Additive manufacturing</a><a href="#testing"><span>11</span>Testing, results and status</a></nav></div>
   </aside>
   <div class="case-body">
-<section class="case-sec" id="mission" aria-label="Mission and objective"><p class="label"><b>01</b> Mission and objective</p>
+<section class="case-sec" id="mission" aria-label="Mission and objective">
   <h2>Design around the task the aircraft must complete.</h2>
   <div class="prose">
     <p>The competition mission asks an FPV racing drone to carry a small payload, run an obstacle course quickly, align over a target and release the payload with no manual intervention. Speed matters, and so does repeatable pickup and release. Every gram added to the mechanism costs flight performance, and every unverified shortcut risks the mission.</p>
@@ -72,7 +74,7 @@
   </div>
 </section>
 
-<section class="case-sec" id="role" aria-label="Role and execution"><p class="label"><b>02</b> Role and execution</p>
+<section class="case-sec" id="role" aria-label="Role and execution">
   <h2>Give the engineering work a structure to move through.</h2>
   <div class="prose">
     <p>As Project Manager I directed the four-part plan from early research through design, manufacturing and competition preparation. I organized and led the general-body meetings, introduced project-tracking and design-documentation practices, coordinated procurement, managed the budget for materials and tools, and handled travel planning to get the finished aircraft to competition.</p>
@@ -82,7 +84,7 @@
   <div class="panel owned"><h3>Responsibilities</h3><ul class="bullets"><li>Directed all phases of a four-part project plan for the SDSU student chapter.</li><li>Organized and led general-body meetings.</li><li>Implemented project-tracking and design-documentation tools.</li><li>Led the IAM3D Drone Competition project.</li><li>Managed procurement and budgeting for materials, tools and travel.</li></ul></div>
 </section>
 
-<section class="case-sec" id="selection" aria-label="Trade study: components"><p class="label"><b>03</b> Trade study: components</p>
+<section class="case-sec" id="selection" aria-label="Trade study: components">
   <h2>Balance performance at the system level.</h2>
   <div class="prose">
     <p>The team used weighted decision matrices instead of picking the single fastest or cheapest part. Processor performance, voltage compatibility, sensor quality, current capacity, size, mass, radio reliability, video performance, discharge rate and cost were weighed across the whole flight stack.</p>
@@ -97,7 +99,7 @@
   </tbody></table></div>
 </section>
 
-<section class="case-sec" id="payload" aria-label="Payload principles and calculation"><p class="label"><b>04</b> Payload principles and calculation</p>
+<section class="case-sec" id="payload" aria-label="Payload principles and calculation">
   <h2>Choose a mechanism whose safe state matches the mission.</h2>
   <div class="prose">
     <p>An energize-to-hold electromagnet would simplify release but draws power and makes heat the whole time the payload is attached. An energize-to-release layout avoids that continuous draw but adds custom-circuit and rules uncertainty. The team went with a passive permanent magnet for retention and mechanical separation for release.</p>
@@ -110,7 +112,7 @@
   </div>
 </section>
 
-<section class="case-sec" id="release" aria-label="Release mechanism analysis"><p class="label"><b>05</b> Release mechanism analysis</p>
+<section class="case-sec" id="release" aria-label="Release mechanism analysis">
   <h2>Turn half a servo rotation into a predictable separation.</h2>
   <div class="prose">
     <p>Magnet-force data shows the steel target has to move at least 0.1875 in from the magnet before attraction drops below the payload’s weight. The selected micro servo rotates only 180 degrees, so the lead screw has to deliver that travel in half a revolution. That sets a custom pitch of 0.375 in per turn.</p>
@@ -126,7 +128,7 @@
   </div>
 </section>
 
-<section class="case-sec" id="alignment" aria-label="Trade study: camera alignment"><p class="label"><b>06</b> Trade study: camera alignment</p>
+<section class="case-sec" id="alignment" aria-label="Trade study: camera alignment">
   <h2>Widen the pilot’s view without a second video system.</h2>
   <div class="prose">
     <p>A second camera and ground station would give dedicated downward vision. The available goggles can’t take two live inputs, though, and the extra monitor, transmitter, mass, cost and control complexity worked against the mission. The team designed a mechanical mount that reorients the single DJI camera instead.</p>
@@ -139,7 +141,7 @@
   </div>
 </section>
 
-<section class="case-sec" id="restraint" aria-label="Battery restraint"><p class="label"><b>07</b> Battery restraint</p>
+<section class="case-sec" id="restraint" aria-label="Battery restraint">
   <h2>Use geometry to resist the direction of motion.</h2>
   <div class="case-split">
     <div class="prose"><p>The battery system compared two straps against one strap with grip tape. The lighter single strap won, but friction alone isn’t asked to hold the battery against fore-aft movement. Grooves locate the strap, and raised edge walls form a positive geometric stop against acceleration.</p></div>
@@ -147,7 +149,7 @@
   </div>
 </section>
 
-<section class="case-sec" id="structure" aria-label="Structural optimization"><p class="label"><b>08</b> Structural optimization</p>
+<section class="case-sec" id="structure" aria-label="Structural optimization">
   <h2>Remove material only after defining the load case.</h2>
   <div class="prose">
     <p>The 55 A ESC limits the planned motor operating point to 40% throttle. MEPS thrust data turns that into a 5.072 N load at each motor. A baseline SolidWorks study gave about 0.34 mm of maximum arm displacement, and the team set 0.5 mm as the allowable limit for candidate frames.</p>
@@ -164,7 +166,7 @@
   </div>
 </section>
 
-<section class="case-sec" id="dynamics" aria-label="Vibration analysis"><p class="label"><b>09</b> Vibration analysis</p>
+<section class="case-sec" id="dynamics" aria-label="Vibration analysis">
   <h2>Check the operating band, not just a static snapshot.</h2>
   <div class="prose">
     <p>Static stiffness can’t show whether the motor operating range excites a structural mode. The team extracted thirty modes and focused a harmonic-response study on the 1152–1779.1 Hz range associated with sustained operating throttle. A response near 1220 Hz was the most significant point in that interval, and the predicted displacement stayed below 0.5 mm.</p>
@@ -176,7 +178,7 @@
   </div>
 </section>
 
-<section class="case-sec" id="manufacturing" aria-label="Additive manufacturing"><p class="label"><b>10</b> Additive manufacturing</p>
+<section class="case-sec" id="manufacturing" aria-label="Additive manufacturing">
   <h2>Design the printed part around layers, clearances and supports.</h2>
   <div class="prose">
     <p>The structure uses CarbonX carbon-fiber-reinforced PLA, which the team’s Bambu Lab X1 Carbon can print. The frame stays largely planar so it prints flat with no support material, which improves bed contact and lines the layers up with the main in-plane loads.</p>
@@ -193,7 +195,7 @@
   </div>
 </section>
 
-<section class="case-sec" id="testing" aria-label="Testing, results and status"><p class="label"><b>11</b> Testing, results and status</p>
+<section class="case-sec" id="testing" aria-label="Testing, results and status">
   <h2>Separate what the report proved from what competition proved later.</h2>
   <div class="prose">
     <p>The report documents component checks, electronics setup, mechanism development, structural analysis, printed-fit testing and final assembly. When it was written, the team’s complete flight-test program had not finished. This page keeps that boundary instead of presenting simulation and bench work as finished flight validation.</p>
@@ -217,9 +219,9 @@
   <footer class="site-footer">
     <div class="wrap">
       <div class="foot">
-        <div><a class="brand" href="../index.html" aria-label="Muhammad Anjum, home"><span class="brand-mark" aria-hidden="true">MA</span><span class="brand-name"><strong>Muhammad Anjum</strong><span>Aerospace · EV systems · Manufacturing</span></span></a><p>Aerospace and EV systems engineering, from supplier audits to high-voltage battery builds.</p></div>
+        <div><a class="wordmark" href="../index.html" aria-label="Muhammad Anjum, home"><span class="wm-first">Muhammad</span><span class="wm-last">Anjum<svg class="wm-sign" viewBox="0 0 120 14" aria-hidden="true" focusable="false"><path d="M2 9.5C15 3.5 27 12.5 43 7.5S71 2.5 87 8.5s21 2 31-4.5" pathLength="1"/></svg></span></a><p>Aerospace and EV systems engineering, from supplier audits to high-voltage battery builds.</p></div>
         <nav class="foot-links" aria-label="Footer">
-          <div><p class="foot-h">Portfolio</p><a href="../projects.html">Work</a><a href="../experience.html">Experience</a><a href="../experience/aztec-electric-racing.html">Aztec Electric Racing</a><a href="../about.html">About</a></div>
+          <div><p class="foot-h">Portfolio</p><a href="../projects.html">Work</a><a href="../experience.html">Experience</a><a href="../experience/aztec-electric-racing.html">Aztec Electric Racing</a><a href="../experience/sdsu-research.html">SDSU research</a><a href="../about.html">About</a></div>
           <div><p class="foot-h">Case studies</p><a href="../projects/vehicle-conversion.html">Tesla-powered Triumph Stag</a><a href="../projects/tractive-accumulator.html">352.8 V tractive accumulator</a><a href="../projects/iam3d-drone.html">IAM3D competition drone</a><a href="../projects/powertrain-testbench.html">Powertrain testbench and pedal controls</a></div>
           <div><p class="foot-h">Contact</p><a href="mailto:muhammad.u.anjum@gmail.com">Email</a><a href="https://www.linkedin.com/in/muhammad-u-anjum/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/muhammad-anjum" target="_blank" rel="noopener">GitHub</a><a href="../Muhammad-Anjum-Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></div>
         </nav>

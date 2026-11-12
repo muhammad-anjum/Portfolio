@@ -7,7 +7,6 @@ out: about.html
 <section class="page-hero wrap">
   <div class="page-hero split">
     <div>
-      <p class="label enter" style="--d:0">Education · capabilities · contact</p>
       <h1 class="enter" style="--d:1">About<em>.</em></h1>
     </div>
     <p class="lede enter" style="--d:2;margin-top:0">I’m an aerospace engineering student and EV systems engineer. I’ve worked on supplier development for Starship flight hardware, manufacturing quality, vehicle electrical integration, high-voltage batteries and technical leadership.</p>
@@ -17,24 +16,23 @@ out: about.html
 <section class="sec tight" style="padding-top:clamp(24px,4vw,48px)" aria-label="Background">
   <div class="wrap about-grid" data-reveal-group>
     <article class="edu panel" data-reveal>
-      <p class="label">Education</p>
       <h2>San Diego State University</h2>
       <p>B.S. Aerospace Engineering<br>Minors in Mathematics and Computer Science<br>August 2022 – May 2027</p>
     </article>
-    <aside class="honor panel" data-reveal><strong>5×</strong><span>Dean’s List honoree</span></aside>
+    <aside class="honor panel" data-reveal><h2>Research</h2><p>Undergraduate research in advanced energy systems in Dr. Lingping Kong’s Electrochemical Energy Lab, where I own the anode recycling and characterization project.</p><p><a class="link" href="{{root}}experience/sdsu-research.html">The research role {{block-arrow}}</a></p></aside>
 
     <article class="span-6 panel stack-s" data-reveal>
-      <p class="label">Right now</p>
       <h2>What I’m working on</h2>
       <ul class="bullets" style="margin-top:0">
         <li>Engineering EV systems at The Thermal Club.</li>
         <li>Leading Muslim Tech Collaborative.</li>
+        <li>Owning the anode recycling and characterization project at SDSU’s Electrochemical Energy Lab.</li>
+        <li>Owning the anode recycling and characterization project in SDSU’s Electrochemical Energy Lab.</li>
         <li>Finishing a B.S. in Aerospace Engineering with Mathematics and Computer Science minors.</li>
         <li>Applying supplier-development experience from SpaceX to hardware and manufacturing problems.</li>
       </ul>
     </article>
     <article class="span-6 panel stack-s" data-reveal>
-      <p class="label">Roles of interest</p>
       <h2>What I’m looking for</h2>
       <p>Electric vehicles, aerospace, battery systems, test engineering, supplier development, manufacturing and systems engineering.</p>
       <div class="tags"><span class="tag">EV systems</span><span class="tag">Aerospace</span><span class="tag">Battery systems</span><span class="tag">Supplier development</span><span class="tag">Test engineering</span></div>
@@ -45,21 +43,16 @@ out: about.html
 <section class="sec" aria-labelledby="h-caps">
   <div class="wrap">
     <header class="sec-head" data-reveal>
-      <div><p class="label">Capabilities</p><h2 id="h-caps">Skills I <em>bring.</em></h2></div>
-      <p class="sec-intro">Grouped as on my résumé: management, engineering and manufacturing, and software.</p>
+      <div><h2 id="h-caps">Skills I <em>bring.</em></h2></div>
+      <p class="sec-intro">Grouped as on my résumé.</p>
     </header>
-    <div class="caps" data-reveal-group>
-      <div class="cap panel" data-reveal><h3>Management</h3><ul><li>Supplier auditing and quality assessment</li><li>Root-cause analysis, 8D</li><li>Program and project management</li><li>Supply-chain logistics</li><li>Budgeting and cost reports</li><li>Cross-functional leadership</li></ul></div>
-      <div class="cap panel" data-reveal><h3>Engineering and manufacturing</h3><ul><li>High-voltage systems and BMS</li><li>Battery validation and testing</li><li>Machining and fabrication</li><li>Circuit analysis and PCB design</li><li>GD&amp;T</li><li>Automotive and EV systems</li></ul></div>
-      <div class="cap panel" data-reveal><h3>Software and tools</h3><ul><li>NX and Teamcenter</li><li>SolidWorks</li><li>ANSYS FEA</li><li>MATLAB and Simulink</li><li>Python, C, Java</li><li>AI agent tooling, Microsoft Office</li></ul></div>
-    </div>
+    {{block skills}}
   </div>
 </section>
 
 <section class="sec" aria-labelledby="h-contact">
   <div class="wrap about-grid" data-reveal-group>
     <article class="span-8 panel stack-s" data-reveal>
-      <p class="label">Languages</p>
       <h2>Multilingual</h2>
       <div class="langs">
         <div><strong>English</strong><span>Native or bilingual</span></div>
@@ -68,13 +61,12 @@ out: about.html
       </div>
     </article>
     <article class="span-4 panel stack-s" data-reveal>
-      <p class="label">Files</p>
       <h2>Résumé</h2>
       <p>The current one-page résumé as a PDF.</p>
-      <p><a class="btn btn-ink" href="{{root}}Muhammad-Anjum-Resume.pdf" target="_blank" rel="noopener">Open résumé <span class="arr" aria-hidden="true">↗</span></a></p>
+      <p><a class="btn btn-ink" href="{{resume}}" target="_blank" rel="noopener">Open résumé <span class="arr" aria-hidden="true">↗</span></a></p>
     </article>
     <article class="span-12 panel" data-reveal style="display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,5vw,72px);align-items:start">
-      <div class="stack-s"><p class="label">Contact</p><h2 id="h-contact">Get in touch.</h2><p>Email is the fastest way to reach me. LinkedIn carries my current professional updates, and GitHub has selected public code.</p></div>
+      <div class="stack-s"><h2 id="h-contact">Get in touch.</h2><p>Email is the fastest way to reach me. LinkedIn carries my current professional updates, and GitHub has selected public code.</p></div>
       <div class="contact-list">
         <a href="mailto:muhammad.u.anjum@gmail.com"><small>Email</small><strong>muhammad.u.anjum@gmail.com</strong></a>
         <a href="https://www.linkedin.com/in/muhammad-u-anjum/" target="_blank" rel="noopener"><small>LinkedIn</small><strong>/in/muhammad-u-anjum</strong></a>

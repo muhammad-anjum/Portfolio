@@ -26,6 +26,55 @@
   })
   window.matchMedia("(min-width: 861px)").addEventListener("change", event => { if (event.matches) setMenu(false) })
 
+  /* Navigation thumb: follows hover and focus, rests on the current page, and glides in from
+     the previous page's position so moving between pages reads as one continuous gesture */
+  const thumb = nav?.querySelector(".nav-thumb")
+  const navLinks = nav ? [...nav.querySelectorAll(":scope > a")] : []
+  const current = navLinks.find(a => a.hasAttribute("aria-current"))
+  const desktopNav = window.matchMedia("(min-width: 861px)")
+  const placeThumb = (el, animate = true) => {
+    if (!thumb) return
+    if (!el) { thumb.classList.remove("on"); return }
+    thumb.classList.toggle("still", !animate)
+    nav.style.setProperty("--x", `${el.offsetLeft}px`)
+    nav.style.setProperty("--w", `${el.offsetWidth}px`)
+    thumb.classList.add("on")
+  }
+  const saveThumb = () => {
+    try { sessionStorage.setItem("nav-thumb", current ? JSON.stringify({ x: current.offsetLeft, w: current.offsetWidth }) : "none") } catch {}
+  }
+  if (thumb && navLinks.length) {
+    let previous = null
+    try { const raw = sessionStorage.getItem("nav-thumb"); previous = raw && raw !== "none" ? JSON.parse(raw) : null } catch {}
+    const settle = () => {
+      if (!desktopNav.matches) return
+      if (current) {
+        if (previous && !reduce) {
+          nav.style.setProperty("--x", `${previous.x}px`)
+          nav.style.setProperty("--w", `${previous.w}px`)
+          thumb.classList.add("still", "on")
+          void thumb.offsetWidth
+          requestAnimationFrame(() => placeThumb(current, true))
+        } else placeThumb(current, false)
+      } else if (previous && !reduce) {
+        nav.style.setProperty("--x", `${previous.x}px`)
+        nav.style.setProperty("--w", `${previous.w}px`)
+        thumb.classList.add("still", "on")
+        void thumb.offsetWidth
+        requestAnimationFrame(() => { thumb.classList.remove("still"); placeThumb(null) })
+      }
+      saveThumb()
+    }
+    settle()
+    navLinks.forEach(a => {
+      a.addEventListener("pointerenter", () => desktopNav.matches && placeThumb(a))
+      a.addEventListener("focus", () => desktopNav.matches && placeThumb(a))
+    })
+    nav.addEventListener("pointerleave", () => desktopNav.matches && placeThumb(current))
+    nav.addEventListener("focusout", event => { if (desktopNav.matches && !nav.contains(event.relatedTarget)) placeThumb(current) })
+    window.addEventListener("resize", () => { if (desktopNav.matches) placeThumb(current, false) }, { passive: true })
+  }
+
   /* Scroll reveals: one transition, staggered inside groups */
   doc.querySelectorAll("[data-reveal-group]").forEach(group => {
     ;[...group.querySelectorAll(":scope > [data-reveal]")].forEach((el, i) => el.style.setProperty("--i", i))

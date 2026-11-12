@@ -17,7 +17,7 @@
       "Conducted on-site supplier audits to establish quality expectations and assess manufacturing capability.",
       "Led root-cause analysis on out-of-tolerance conditions and other nonconformances, driving corrective actions, internal and external, to closure.",
       "Identified a recurring gap between design engineering and supplier expectations and developed a standardized review process adopted by supplier development, quality and design engineering.",
-      "Resolved critical part shortages to keep production on schedule while coordinating experimental assembly procedures for development testing."
+      "Resolved critical part shortages to keep production on schedule while coordinating experimental assembly procedures for development testing in parallel."
     ],
     "result": {
       "value": "3 teams",
@@ -30,7 +30,9 @@
       "Flight hardware"
     ],
     "projects": [],
-    "page": false
+    "page": false,
+    "start": "2026-05",
+    "end": "2026-08"
   },
   {
     "slug": "the-thermal-club",
@@ -43,7 +45,7 @@
       }
     ],
     "location": "Thermal, California",
-    "context": "Part-time · full-vehicle electric conversion",
+    "context": "Contract · full-vehicle electric conversion",
     "summary": "End-to-end electrical conversion of a Triumph Stag to Tesla power: low-voltage harness, high-voltage battery, motor controller, charging and digital dash.",
     "bullets": [
       "Designed and built a custom low-voltage wiring harness for full-vehicle integration.",
@@ -65,8 +67,10 @@
       "vehicle-conversion"
     ],
     "page": true,
-    "image": "thermal-club/triumph-stag-workshop",
-    "imageAlt": "White Triumph Stag in the workshop with its hood raised"
+    "image": "thermal-club/high-voltage-distribution-box",
+    "imageAlt": "Open high-voltage distribution enclosure with contactors, fuses, control wiring and orange cable",
+    "start": "2026-02",
+    "end": "present"
   },
   {
     "slug": "aztec-electric-racing",
@@ -120,7 +124,9 @@
     "page": true,
     "image": "accumulator/team-display",
     "imageAlt": "The finished Aztec Electric Racing accumulator displayed at a team event",
-    "imageMax": "430px"
+    "imageMax": "430px",
+    "start": "2022-08",
+    "end": "2026-06"
   },
   {
     "slug": "muslim-tech-collaborative",
@@ -151,7 +157,9 @@
       "Employer partnerships"
     ],
     "projects": [],
-    "page": false
+    "page": false,
+    "start": "2024-07",
+    "end": "present"
   },
   {
     "slug": "nasa",
@@ -190,7 +198,9 @@
       "Technical documentation"
     ],
     "projects": [],
-    "page": false
+    "page": false,
+    "start": "2023-06",
+    "end": "2023-08"
   },
   {
     "slug": "asme-sdsu",
@@ -225,6 +235,46 @@
     "projects": [
       "iam3d-drone"
     ],
-    "page": false
+    "page": false,
+    "start": "2023-08",
+    "end": "2024-05"
+  },
+  {
+    "slug": "sdsu-research",
+    "group": "Research",
+    "org": "Lingping Kong Research Group",
+    "start": null,
+    "end": "present",
+    "roles": [
+      {
+        "title": "Undergraduate research in advanced energy systems",
+        "period": "Current"
+      }
+    ],
+    "location": "San Diego, California",
+    "context": "Electrochemical Energy Lab · San Diego State University",
+    "summary": "Undergraduate research in SDSU's Electrochemical Energy Lab, where I own the anode recycling and characterization project. It extends my work from vehicle-level battery systems into battery materials and laboratory research.",
+    "bullets": [
+      "Conduct undergraduate research in advanced energy systems in Dr. Lingping Kong's Electrochemical Energy Lab at San Diego State University.",
+      "Own the anode recycling and characterization project, on the recycling and characterization of battery materials."
+    ],
+    "result": {
+      "value": "Project owner",
+      "label": "anode recycling and characterization"
+    },
+    "tags": [
+      "Energy storage",
+      "Battery research",
+      "Materials",
+      "Research experience"
+    ],
+    "projects": [],
+    "page": true,
+    "links": [
+      {
+        "label": "Research group website",
+        "href": "https://lingpinglab.sdsu.edu/"
+      }
+    ]
   }
 ]

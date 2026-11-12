@@ -1,8 +1,15 @@
 # Content still needed
 
-The rebuild uses only facts from the résumé, the previous site and the project reports. Nothing below has been invented. These are the gaps, and the claims worth a second look.
+The site uses only facts from the 9/28/2026 résumé, the previous site and the project reports. Nothing below has been invented. These are the gaps, and the claims worth a second look.
 
 ## Missing material
+
+**SDSU research (Lingping Kong Research Group)**
+- A formal position title. The résumé only says "Undergraduate Research in Advanced Energy Systems: Electrochemical Energy Lab, Dr. Lingping Kong", so the page uses that wording as the role line.
+- The start date. The entry shows "Current" and sorts last among current roles until a date is added (`start` in `src/data/experience.json`).
+- Everything in the research record: experimental procedures, material-recovery workflows, characterization methods, equipment and lab processes, images, findings and results, publications, posters or presentations. The page lists each as "Not yet published".
+- Permission to use any photographs from the lab website. None were used.
+
 
 **All case studies**
 - Lessons learned. None of the source material states any, so no "lessons" section is published. The case-study template takes one more `case-sec` whenever you have it.
@@ -34,6 +41,11 @@ The rebuild uses only facts from the résumé, the previous site and the project
 - The NASA tools project was listed on the old Projects page without a case study. It is not on the new Work page; add it to `projects.json` if you write it up.
 
 ## Please confirm
+
+- **Dean's List.** The earlier résumé listed "5× Dean's List Honoree"; the 9/28/2026 résumé does not, so it is no longer on the site. Say the word if you want it back.
+- **The Thermal Club** is now described as "contract" (it was "part-time") to match the new résumé.
+- **Skills** now follow the new résumé. "AI agent tooling", "Microsoft Office" and "PCB design" are gone from it; "DFM", "wiring-harness design" and "automotive/EV systems integration" are in.
+- **Languages and education start date (Aug 2022)** are not on the new résumé. They stay from the earlier site; delete them if you'd rather the site match the résumé exactly.
 
 - **"$200K+ funding and support secured"** appears on the previous site but not on the résumé.
 - **ASME · SDSU Project Manager (Aug 2023 – May 2024)** appears on the previous site but not on the résumé.

@@ -1,16 +1,19 @@
 <section class="case-sec" id="context" data-label="Background and objective">
   <h2>Keep the car. Replace the operating system.</h2>
-  <div class="prose">
-    <p>The Triumph Stag is a four-seat British sports tourer styled by Giovanni Michelotti and built from 1970 to 1977. It left the factory with a 3.0-liter V8, rear-wheel drive and a distinctive T-bar structure. This project keeps that character and replaces the propulsion with a modern electric system.</p>
-    <p>A conversion is more than a motor swap. Battery placement changes mass distribution and service access. The high-voltage path has to coexist with low-voltage controls. Cooling has to serve both the battery and the drive unit. The driver still needs legible feedback.</p>
-    <p><a href="https://en.wikipedia.org/wiki/Triumph_Stag" target="_blank" rel="noopener">Triumph Stag background</a> · <a href="https://evwest.com/evw-tsla-unv-universal-tesla-large-drive-unit-ev-conversion-package-ldu-motor-controller-throttle-stub-axles" target="_blank" rel="noopener">Conversion package</a></p>
+  <div class="case-split">
+    <div class="prose">
+      <p>The Triumph Stag is a four-seat British sports tourer styled by Giovanni Michelotti and built from 1970 to 1977. It left the factory with a 3.0-liter V8, rear-wheel drive and a distinctive T-bar structure. This project keeps that character and replaces the propulsion with a modern electric system.</p>
+      <p>A conversion is more than a motor swap. Battery placement changes mass distribution and service access. The high-voltage path has to coexist with low-voltage controls. Cooling has to serve both the battery and the drive unit. The driver still needs legible feedback.</p>
+      <p><a href="https://en.wikipedia.org/wiki/Triumph_Stag" target="_blank" rel="noopener">Triumph Stag background</a> · <a href="https://evwest.com/evw-tsla-unv-universal-tesla-large-drive-unit-ev-conversion-package-ldu-motor-controller-throttle-stub-axles" target="_blank" rel="noopener">Conversion package</a></p>
+    </div>
+    <div style="max-width:380px">{{fig "thermal-club/chassis-corner" alt="Triumph Stag suspension and brake corner during the conversion build" cap="The existing chassis, brake and suspension hardware stays. Everything new has to fit around it." sizes="(min-width: 1080px) 380px, 100vw"}}</div>
   </div>
 </section>
 
 <section class="case-sec" id="role" data-label="Role and ownership">
   <h2>I own the electrical chain.</h2>
   <div class="prose">
-    <p>I’m the EV Systems Engineer on the build, part-time since February 2026. My scope runs from component selection and wiring through controls setup and commissioning.</p>
+    <p>I’m the EV Systems Engineer on the build, on contract since February 2026. My scope runs from component selection and wiring through controls setup and commissioning.</p>
   </div>
   {{block ownership the-thermal-club}}
 </section>
@@ -49,11 +52,8 @@
     <p>I used live serial data and in-vehicle checks to trace mismatches between configuration, wiring and reported values. The aim was not just to clear a fault but to decide whether it was an unsafe electrical condition, a wrong parameter, a connection problem or a communications issue, before enabling the next stage.</p>
   </div>
   <div class="sec-media row">
-    {{fig "thermal-club/bms-configuration-session" alt="Laptop connected to the vehicle during a battery-management-system configuration session" cap="BMS configuration and fault tracing with the vehicle hardware connected." sizes="(min-width: 1080px) 380px, 100vw"}}
-    {{fig "thermal-club/bms-cell-voltage-data" alt="Serial terminal showing individual BMS cell-group voltage readings and configuration values" cap="Cell-group readings gave the first check that the configured topology matched the physical pack." sizes="(min-width: 1080px) 500px, 100vw"}}
-  </div>
-  <div class="sec-media">
-    {{fig "thermal-club/bms-vehicle-test" alt="Laptop connected to the Triumph Stag during in-vehicle BMS testing" cap="In-vehicle testing moved the BMS from isolated configuration to system-level verification."}}
+    {{fig "thermal-club/bms-configuration-session" alt="Laptop connected to the vehicle during a battery-management-system configuration session" cap="Configuration and fault tracing happen against the real harness, with the laptop connected to the car." sizes="(min-width: 1080px) 380px, 100vw"}}
+    {{fig "thermal-club/bms-cell-voltage-data" alt="Serial terminal showing individual BMS cell-group voltage readings and configuration values" cap="Cell-group readings are the first check that the configured topology matches the physical pack." sizes="(min-width: 1080px) 500px, 100vw"}}
   </div>
 </section>
 
@@ -84,11 +84,12 @@
   <h2>Translate driver inputs into controlled torque.</h2>
   <div class="prose">
     <p>The T2-C sits between the Stag’s driver controls and the Tesla inverter. Tuning meant configuring the controller around the installed hardware, then checking throttle and brake inputs, direction and drive-state logic, torque response, regeneration, current limits and reported temperatures, without jumping to full output.</p>
-    <p>In parallel I designed and built the custom low-voltage harness. It distributes power and signals to the BMS, controller, dash, charger interfaces, pumps, fans, relays, switches and retained vehicle features. I traced wiring and communications faults as each subsystem came online.</p>
   </div>
-  <div class="sec-media row">
-    {{fig "thermal-club/vehicle-systems-bay-overview" alt="Vehicle systems bay with integrated high-voltage and low-voltage hardware" cap="The systems bay during integration, with the low-voltage harness layered around power electronics and high-voltage routing." sizes="(min-width: 1080px) 440px, 100vw"}}
-    {{fig "thermal-club/chassis-corner" alt="Triumph Stag suspension and brake corner during the conversion build" cap="The existing chassis, brake and suspension hardware stayed part of the packaging envelope." sizes="(min-width: 1080px) 440px, 100vw"}}
+  <div class="case-split flip">
+    <div class="prose">
+      <p>In parallel I designed and built the custom low-voltage harness. It distributes power and signals to the BMS, controller, dash, charger interfaces, pumps, fans, relays, switches and retained vehicle features. I traced wiring and communications faults as each subsystem came online.</p>
+    </div>
+    <div style="max-width:400px">{{fig "thermal-club/vehicle-systems-bay-overview" alt="Vehicle systems bay with integrated high-voltage and low-voltage hardware" cap="The low-voltage harness layered around the power electronics and high-voltage routing, the part of the build that has to be traceable when something misbehaves." sizes="(min-width: 1080px) 400px, 100vw"}}</div>
   </div>
 </section>
 
@@ -105,21 +106,19 @@
   <h2>Expose the data needed to drive, and the data needed to debug.</h2>
   <div class="prose">
     <p>The digital dash evolved alongside the car. Early layouts proved the communication path and basic gauge behavior. Later versions reorganized the screen around driver priority: pack voltage, drive mode, motor speed, current, power, throttle and brake state, and temperatures across the inverter and motor-control hardware.</p>
-    <p>I programmed and calibrated the dash for real-time telemetry, and used each installation to judge legibility, hierarchy and whether the displayed signals matched the controller and BMS. The sequence below runs from the first loose display to the interface installed behind the steering wheel.</p>
-  </div>
-  <div class="sec-media row">
-    {{fig "thermal-club/dash-interface-early" alt="Early AEM dash interface displaying initial speed and status graphics" step="01|Signal bring-up" cap="An early screen confirmed the display and the data path." sizes="(min-width: 1080px) 290px, 100vw"}}
-    {{fig "thermal-club/dash-cabin-prototype" alt="Digital dash positioned in the Triumph Stag cabin during a mockup" step="02|In-vehicle mockup" cap="Physical mockups set viewing position and scale." sizes="(min-width: 1080px) 290px, 100vw"}}
-    {{fig "thermal-club/dash-prototype-install" alt="AEM digital dash powered during a temporary fit check in the open Triumph Stag cabin" step="03|Display fit check" cap="A powered fit check tied screen design to the unfinished cabin." sizes="(min-width: 1080px) 290px, 100vw"}}
-  </div>
-  <div class="sec-media row">
-    {{fig "thermal-club/dash-layout-development" alt="AEM dash-layout software showing configured telemetry fields" step="04|Layout development" cap="The layout editor organized CAN data into a usable hierarchy." sizes="(min-width: 1080px) 290px, 100vw"}}
-    {{fig "thermal-club/dash-config-in-vehicle" alt="Laptop and digital dash connected inside the Triumph Stag during configuration" step="05|Vehicle configuration" cap="Configuration continued against live vehicle signals." sizes="(min-width: 1080px) 290px, 100vw"}}
-    {{fig "thermal-club/dash-interface-refined" alt="Refined Thermal Club digital dash with pack, drive, power and temperature data" step="06|Refined interface" cap="The refined display prioritizes drive state and system temperatures." sizes="(min-width: 1080px) 290px, 100vw"}}
+    <p>I programmed and calibrated the dash for real-time telemetry, and used each stage to judge legibility, hierarchy and whether the displayed signals matched the controller and BMS. Five stages show the progression.</p>
   </div>
   <div class="case-split flip">
-    <div class="prose"><p>The last step is the refined interface, installed behind the steering wheel in the driver’s normal line of sight.</p></div>
-    <div style="max-width:380px">{{fig "thermal-club/dash-final-install" alt="Final digital dash installed behind the Triumph Stag steering wheel" step="07|Installed display" cap="The display installed in the driver’s line of sight." sizes="(min-width: 1080px) 380px, 100vw"}}</div>
+    <div class="prose"><p>The first screen only has to prove two things: that the display works, and that the data path from the car reaches it. Nothing about layout is decided yet.</p></div>
+    <div style="max-width:360px">{{fig "thermal-club/dash-interface-early" alt="Early AEM dash interface displaying initial speed and status graphics" step="01|Signal bring-up" cap="The first screen confirms the display and the data path." sizes="(min-width: 1080px) 360px, 100vw"}}</div>
+  </div>
+  <div class="sec-media row">
+    {{fig "thermal-club/dash-layout-development" alt="AEM dash-layout software showing configured telemetry fields" step="02|Layout development" cap="The layout editor groups the CAN data into a hierarchy a driver can read." sizes="(min-width: 1080px) 440px, 100vw"}}
+    {{fig "thermal-club/dash-config-in-vehicle" alt="Laptop and digital dash connected inside the Triumph Stag during configuration" step="03|Vehicle configuration" cap="Configuring against live vehicle signals tests the layout against what the controller and BMS actually report." sizes="(min-width: 1080px) 440px, 100vw"}}
+  </div>
+  <div class="sec-media row">
+    {{fig "thermal-club/dash-interface-refined" alt="Refined Thermal Club digital dash with pack, drive, power and temperature data" step="04|Refined interface" cap="The refined screen puts drive state and system temperatures first." sizes="(min-width: 1080px) 560px, 100vw"}}
+    {{fig "thermal-club/dash-final-install" alt="Final digital dash installed behind the Triumph Stag steering wheel" step="05|Installed display" cap="Installed behind the steering wheel, the display sits in the driver’s normal line of sight." sizes="(min-width: 1080px) 320px, 100vw"}}
   </div>
 </section>
 

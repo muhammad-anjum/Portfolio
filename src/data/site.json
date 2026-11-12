@@ -7,8 +7,55 @@
   "resume": "Muhammad-Anjum-Resume.pdf",
   "tagline": "Aerospace · EV systems · Manufacturing",
   "nav": [
-    { "label": "Work", "href": "projects.html", "key": "projects" },
-    { "label": "Experience", "href": "experience.html", "key": "experience" },
-    { "label": "About", "href": "about.html", "key": "about" }
+    {
+      "label": "Work",
+      "href": "projects.html",
+      "key": "projects"
+    },
+    {
+      "label": "Experience",
+      "href": "experience.html",
+      "key": "experience"
+    },
+    {
+      "label": "About",
+      "href": "about.html",
+      "key": "about"
+    }
+  ],
+  "skills": [
+    {
+      "title": "Management",
+      "items": [
+        "Supplier auditing and quality assessment",
+        "Root-cause analysis (8D)",
+        "Program and project management",
+        "Supply-chain logistics",
+        "Budgeting and cost reports",
+        "Cross-functional leadership"
+      ]
+    },
+    {
+      "title": "Engineering and manufacturing",
+      "items": [
+        "High-voltage battery and BMS design",
+        "Battery validation and testing",
+        "Machining and fabrication",
+        "Circuit analysis and wiring-harness design",
+        "GD&T",
+        "DFM",
+        "Automotive and EV systems integration"
+      ]
+    },
+    {
+      "title": "Software and tools",
+      "items": [
+        "NX and Teamcenter",
+        "SolidWorks",
+        "ANSYS FEA",
+        "MATLAB and Simulink",
+        "Python, C, Java"
+      ]
+    }
   ]
 }

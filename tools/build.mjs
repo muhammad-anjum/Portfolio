@@ -51,8 +51,8 @@ function projectsIndex(root) {
     const num = String(i + 1).padStart(2, "0")
     const media = p.image
       ? `<a class="mount ${p.imageFit === "plate" ? "plate" : ""}" href="${root}projects/${p.slug}.html" tabindex="-1" aria-hidden="true"><div class="frame" style="aspect-ratio:${(manifest[p.image].w / manifest[p.image].h).toFixed(3)}">${imageTag(root, p.image, { alt: "", sizes: "(min-width: 900px) 58vw, 100vw" })}</div></a>`
-      : `<div class="panel project-text" style="padding:clamp(26px,3vw,44px);display:grid;gap:20px;align-content:center"><span class="label plain">${esc(p.kind)}</span><p class="index" aria-hidden="true">${num}</p><div class="tags">${p.tags.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div></div>`
-    return `<article class="project-item" data-reveal>${media}<div class="work-copy"><div class="work-meta"><b>${num}</b><span>${esc(p.kind)}</span><span>${esc(p.org)}</span><span>${esc(p.period)}</span></div><h2 class="h3-like" style="font-family:var(--f-display);font-size:clamp(2.1rem,3.8vw,3.2rem);letter-spacing:-.025em;line-height:1.04"><a href="${root}projects/${p.slug}.html">${esc(p.title)}</a></h2><p>${esc(p.summary)}</p>${figuresBlock(p.figures)}<p><a class="link" href="${root}projects/${p.slug}.html">Read the case study ${arrow}</a></p></div></article>`
+      : `<div class="panel project-text" style="padding:clamp(26px,3vw,44px);display:grid;gap:20px;align-content:center"><p class="index" aria-hidden="true">${num}</p><div class="tags">${p.tags.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div></div>`
+    return `<article class="project-item" data-reveal>${media}<div class="work-copy"><h2 class="work-title"><a href="${root}projects/${p.slug}.html">${esc(p.title)}</a></h2><p class="byline">${esc(p.org)} · ${esc(p.period)}</p><p>${esc(p.summary)}</p>${figuresBlock(p.figures)}<p><a class="link" href="${root}projects/${p.slug}.html">Read the case study ${arrow}</a></p></div></article>`
   }).join("\n")
 }
 
@@ -61,6 +61,7 @@ function roleCard(root, e) {
   const links = []
   if (e.page) links.push(`<a class="link" href="${root}experience/${e.slug}.html">Role in detail ${arrow}</a>`)
   for (const slug of e.projects) links.push(`<a class="link" href="${root}projects/${slug}.html">${esc(P[slug].title)} ${arrow}</a>`)
+  for (const l of e.links || []) links.push(`<a class="link" href="${l.href}" target="_blank" rel="noopener">${esc(l.label)} ${arrow}</a>`)
   return `<article class="role panel" id="${e.slug}" data-reveal>
   <div class="role-when"><b>${esc(e.roles[0].period)}</b><span>${esc(e.location)}</span></div>
   <div class="role-main">
@@ -76,21 +77,34 @@ function roleCard(root, e) {
 </article>`
 }
 
+/* Current roles first (most recent start first, unknown start last), then finished roles by end date. */
+const monthKey = v => (v ? Number(v.replace("-", "")) : -1)
+const byRecency = (a, b) => {
+  const ca = a.end === "present", cb = b.end === "present"
+  if (ca !== cb) return ca ? -1 : 1
+  return ca ? monthKey(b.start) - monthKey(a.start) : monthKey(b.end) - monthKey(a.end)
+}
+const sortedRoles = () => [...experience].sort(byRecency)
+
+const GROUPS = [["Professional", "Professional experience"], ["Research", "Research"], ["Leadership", "Leadership"]]
+
 function experienceGroups(root) {
-  return ["Professional", "Leadership"].map(group => {
-    const items = experience.filter(e => e.group === group)
-    const title = group === "Professional" ? "Professional experience" : "Leadership"
-    return `<section class="group" aria-labelledby="g-${group.toLowerCase()}"><div class="group-head"><h2 id="g-${group.toLowerCase()}">${title}</h2><span class="label plain">${items.length} roles</span></div><div class="roles">${items.map(e => roleCard(root, e)).join("\n")}</div></section>`
+  return GROUPS.map(([group, title]) => {
+    const items = sortedRoles().filter(e => e.group === group)
+    if (!items.length) return ""
+    return `<section class="group" aria-labelledby="g-${group.toLowerCase()}"><div class="group-head"><h2 id="g-${group.toLowerCase()}">${title}</h2></div><div class="roles">${items.map(e => roleCard(root, e)).join("\n")}</div></section>`
   }).join("\n")
 }
 
 function experienceMini(root) {
-  const order = ["spacex", "the-thermal-club", "aztec-electric-racing", "muslim-tech-collaborative", "nasa", "asme-sdsu"]
-  return `<div class="timeline-mini" data-reveal-group>${order.map(s => {
-    const e = E[s]
+  return `<div class="timeline-mini" data-reveal-group>${sortedRoles().map(e => {
     const href = `${root}experience.html#${e.slug}`
     return `<a class="tl-row" href="${href}" data-reveal><time>${esc(e.roles[0].period)}</time><h3>${esc(e.org)}</h3><p>${esc(e.roles.map(r => r.title).join(" · "))}</p><span class="arr" aria-hidden="true">↗</span></a>`
   }).join("")}</div>`
+}
+
+function skillsBlock() {
+  return `<div class="caps" data-reveal-group>${site.skills.map(g => `<div class="cap panel" data-reveal><h3>${esc(g.title)}</h3><ul>${g.items.map(i => `<li>${esc(i)}</li>`).join("")}</ul></div>`).join("")}</div>`
 }
 
 function ownership(slug) {
@@ -114,6 +128,7 @@ function expand(text, ctx) {
   return text
     .replace(/\{\{root\}\}/g, root)
     .replace(/\{\{block-arrow\}\}/g, arrow)
+    .replace(/\{\{resume\}\}/g, `${root}${site.resume}`)
     .replace(/\{\{fig\s+"([^"]+)"([^}]*)\}\}/g, (_, key, rest) => figure(root, key, attrs(rest)))
     .replace(/\{\{img\s+"([^"]+)"([^}]*)\}\}/g, (_, key, rest) => { const a = attrs(rest); return imageTag(root, key, { alt: a.alt || "", sizes: a.sizes || "(min-width: 900px) 58vw, 100vw", priority: a.priority === "true" }) })
     .replace(/\{\{ratio\s+"([^"]+)"\}\}/g, (_, key) => (manifest[key].w / manifest[key].h).toFixed(3))
@@ -123,6 +138,7 @@ function expand(text, ctx) {
       "projects-index": () => projectsIndex(root),
       "experience-groups": () => experienceGroups(root),
       "experience-mini": () => experienceMini(root),
+      skills: () => skillsBlock(),
       ownership: () => ownership(arg),
       "role-projects": () => roleProjects(root, arg),
       results: () => resultsStrip(arg)
@@ -137,10 +153,12 @@ function frontMatter(src) {
 }
 
 /* ---------- Layout ---------- */
+const wordmark = root => `<a class="wordmark" href="${root}index.html" aria-label="${site.name}, home"><span class="wm-first">Muhammad</span><span class="wm-last">Anjum<svg class="wm-sign" viewBox="0 0 120 14" aria-hidden="true" focusable="false"><path d="M2 9.5C15 3.5 27 12.5 43 7.5S71 2.5 87 8.5s21 2 31-4.5" pathLength="1"/></svg></span></a>`
+
 function layout({ root, title, description, key, canonical, body, scripts = [], jsonld = [], ogImage, bodyClass = "", noindex = false }) {
   const url = `${site.domain}/${canonical}`
   const og = ogImage || `${site.domain}/assets/media/og-image.png`
-  const nav = site.nav.map(n => `<a href="${root}${n.href}"${n.key === key ? ' aria-current="page"' : ""}>${n.label}</a>`).join("")
+  const nav = site.nav.map((n, i) => `<a href="${root}${n.href}" style="--i:${i}"${n.key === key ? ' aria-current="page"' : ""}>${n.label}</a>`).join("")
   const ld = jsonld.map(o => `<script type="application/ld+json">${JSON.stringify(o)}</script>`).join("\n  ")
   return `<!doctype html>
 <html lang="en">
@@ -170,10 +188,12 @@ function layout({ root, title, description, key, canonical, body, scripts = [], 
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header" data-header>
     <div class="wrap header-in">
-      <a class="brand" href="${root}index.html" aria-label="${site.name}, home"><span class="brand-mark" aria-hidden="true">MA</span><span class="brand-name"><strong>${site.name}</strong><span>${site.tagline}</span></span></a>
-      <nav class="site-nav" id="site-nav" data-nav aria-label="Primary">${nav}<a class="btn btn-ink nav-resume" href="${root}${site.resume}" target="_blank" rel="noopener">Résumé ${arrow}</a></nav>
+      ${wordmark(root)}
+      <nav class="site-nav" id="site-nav" data-nav aria-label="Primary"><span class="nav-thumb" aria-hidden="true"></span>${nav}
+        <div class="nav-extra"><a class="btn btn-ink" href="${root}${site.resume}" target="_blank" rel="noopener">Résumé ${arrow}</a><a href="mailto:${site.email}">Email</a><a href="${site.linkedin}" target="_blank" rel="noopener">LinkedIn</a></div>
+      </nav>
       <div class="header-end">
-        <a class="btn btn-ink btn-sm" href="${root}${site.resume}" target="_blank" rel="noopener">Résumé ${arrow}</a>
+        <a class="resume-link" href="${root}${site.resume}" target="_blank" rel="noopener"><span>Résumé</span>${arrow}</a>
         <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span></button>
       </div>
     </div>
@@ -184,9 +204,9 @@ ${body}
   <footer class="site-footer">
     <div class="wrap">
       <div class="foot">
-        <div><a class="brand" href="${root}index.html" aria-label="${site.name}, home"><span class="brand-mark" aria-hidden="true">MA</span><span class="brand-name"><strong>${site.name}</strong><span>${site.tagline}</span></span></a><p>Aerospace and EV systems engineering, from supplier audits to high-voltage battery builds.</p></div>
+        <div>${wordmark(root)}<p>Aerospace and EV systems engineering, from supplier audits to high-voltage battery builds.</p></div>
         <nav class="foot-links" aria-label="Footer">
-          <div><p class="foot-h">Portfolio</p><a href="${root}projects.html">Work</a><a href="${root}experience.html">Experience</a><a href="${root}experience/aztec-electric-racing.html">Aztec Electric Racing</a><a href="${root}about.html">About</a></div>
+          <div><p class="foot-h">Portfolio</p><a href="${root}projects.html">Work</a><a href="${root}experience.html">Experience</a><a href="${root}experience/aztec-electric-racing.html">Aztec Electric Racing</a><a href="${root}experience/sdsu-research.html">SDSU research</a><a href="${root}about.html">About</a></div>
           <div><p class="foot-h">Case studies</p>${projects.map(p => `<a href="${root}projects/${p.slug}.html">${esc(p.title)}</a>`).join("")}</div>
           <div><p class="foot-h">Contact</p><a href="mailto:${site.email}">Email</a><a href="${site.linkedin}" target="_blank" rel="noopener">LinkedIn</a><a href="${site.github}" target="_blank" rel="noopener">GitHub</a><a href="${root}${site.resume}" target="_blank" rel="noopener">Résumé (PDF)</a></div>
         </nav>
@@ -237,7 +257,7 @@ function caseStudy(p) {
     n += 1
     const num = String(n).padStart(2, "0")
     toc.push({ id, label, num })
-    return `<section class="case-sec" id="${id}" aria-label="${esc(label)}"><p class="label"><b>${num}</b> ${label}</p>`
+    return `<section class="case-sec" id="${id}" aria-label="${esc(label)}">`
   })
   const next = P[p.next]
   const heroFig = p.image
@@ -250,8 +270,8 @@ function caseStudy(p) {
   <nav class="crumbs" aria-label="Breadcrumb"><a href="${root}projects.html">Work</a><i>/</i><span>${esc(p.title)}</span></nav>
   <div class="case-top${p.image ? "" : " no-fig"}">
     <div class="enter" style="--d:0">
-      <p class="label" style="margin-top:28px"><span>${esc(p.kind)} · ${org}</span></p>
       <h1>${esc(p.title)}</h1>
+      <p class="byline">${esc(p.kind)} · ${org}</p>
       <p class="lede">${esc(p.lede)}</p>
       <div class="tags">${p.tags.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div>
     </div>
@@ -291,11 +311,12 @@ function rolePage(e) {
   <nav class="crumbs" aria-label="Breadcrumb"><a href="${root}experience.html">Experience</a><i>/</i><span>${esc(e.org)}</span></nav>
   <div class="case-top${e.image ? "" : " no-fig"}">
     <div class="enter" style="--d:0">
-      <p class="label" style="margin-top:28px"><span>${esc(e.context)}</span></p>
       <h1>${esc(e.org)}</h1>
-      <div style="margin-top:22px;display:grid;gap:8px">${roleLine(e)}</div>
+      <p class="byline">${esc(e.context)}</p>
+      <div style="margin-top:20px;display:grid;gap:8px">${roleLine(e)}</div>
       <p class="lede">${esc(e.summary)}</p>
       <div class="tags">${e.tags.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div>
+      ${(e.links || []).length ? `<p class="hero-links">${e.links.map(l => `<a class="link" href="${l.href}" target="_blank" rel="noopener">${esc(l.label)} ${arrow}</a>`).join("")}</p>` : ""}
     </div>
     ${e.image ? `<div class="enter" style="--d:2;${e.imageMax ? `max-width:${e.imageMax};justify-self:end;width:100%` : ""}"><div class="mount"><div class="frame" style="aspect-ratio:${(manifest[e.image].w / manifest[e.image].h).toFixed(3)}">${imageTag(root, e.image, { alt: e.imageAlt, sizes: "(min-width: 1080px) 520px, 100vw", priority: true })}</div></div></div>` : ""}
   </div>

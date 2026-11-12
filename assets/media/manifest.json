@@ -401,20 +401,6 @@
    }
   ]
  },
- "thermal-club/bms-vehicle-test": {
-  "w": 1800,
-  "h": 1350,
-  "variants": [
-   {
-    "file": "thermal-club/bms-vehicle-test-640.jpg",
-    "width": 640
-   },
-   {
-    "file": "thermal-club/bms-vehicle-test-1100.jpg",
-    "width": 1100
-   }
-  ]
- },
  "thermal-club/chassis-corner": {
   "w": 1350,
   "h": 1800,
@@ -425,20 +411,6 @@
    },
    {
     "file": "thermal-club/chassis-corner-1100.jpg",
-    "width": 1100
-   }
-  ]
- },
- "thermal-club/dash-cabin-prototype": {
-  "w": 1350,
-  "h": 1800,
-  "variants": [
-   {
-    "file": "thermal-club/dash-cabin-prototype-640.jpg",
-    "width": 640
-   },
-   {
-    "file": "thermal-club/dash-cabin-prototype-1100.jpg",
     "width": 1100
    }
   ]
@@ -509,20 +481,6 @@
    },
    {
     "file": "thermal-club/dash-layout-development-1100.jpg",
-    "width": 1100
-   }
-  ]
- },
- "thermal-club/dash-prototype-install": {
-  "w": 1350,
-  "h": 1800,
-  "variants": [
-   {
-    "file": "thermal-club/dash-prototype-install-640.jpg",
-    "width": 640
-   },
-   {
-    "file": "thermal-club/dash-prototype-install-1100.jpg",
     "width": 1100
    }
   ]

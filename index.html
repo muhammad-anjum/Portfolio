@@ -26,10 +26,12 @@
   <a class="skip-link" href="#main">Skip to content</a>
   <header class="site-header" data-header>
     <div class="wrap header-in">
-      <a class="brand" href="index.html" aria-label="Muhammad Anjum, home"><span class="brand-mark" aria-hidden="true">MA</span><span class="brand-name"><strong>Muhammad Anjum</strong><span>Aerospace · EV systems · Manufacturing</span></span></a>
-      <nav class="site-nav" id="site-nav" data-nav aria-label="Primary"><a href="projects.html">Work</a><a href="experience.html">Experience</a><a href="about.html">About</a><a class="btn btn-ink nav-resume" href="Muhammad-Anjum-Resume.pdf" target="_blank" rel="noopener">Résumé <span class="arr" aria-hidden="true">↗</span></a></nav>
+      <a class="wordmark" href="index.html" aria-label="Muhammad Anjum, home"><span class="wm-first">Muhammad</span><span class="wm-last">Anjum<svg class="wm-sign" viewBox="0 0 120 14" aria-hidden="true" focusable="false"><path d="M2 9.5C15 3.5 27 12.5 43 7.5S71 2.5 87 8.5s21 2 31-4.5" pathLength="1"/></svg></span></a>
+      <nav class="site-nav" id="site-nav" data-nav aria-label="Primary"><span class="nav-thumb" aria-hidden="true"></span><a href="projects.html" style="--i:0">Work</a><a href="experience.html" style="--i:1">Experience</a><a href="about.html" style="--i:2">About</a>
+        <div class="nav-extra"><a class="btn btn-ink" href="Muhammad-Anjum-Resume.pdf" target="_blank" rel="noopener">Résumé <span class="arr" aria-hidden="true">↗</span></a><a href="mailto:muhammad.u.anjum@gmail.com">Email</a><a href="https://www.linkedin.com/in/muhammad-u-anjum/" target="_blank" rel="noopener">LinkedIn</a></div>
+      </nav>
       <div class="header-end">
-        <a class="btn btn-ink btn-sm" href="Muhammad-Anjum-Resume.pdf" target="_blank" rel="noopener">Résumé <span class="arr" aria-hidden="true">↗</span></a>
+        <a class="resume-link" href="Muhammad-Anjum-Resume.pdf" target="_blank" rel="noopener"><span>Résumé</span><span class="arr" aria-hidden="true">↗</span></a>
         <button class="menu-btn" type="button" data-menu aria-expanded="false" aria-controls="site-nav" aria-label="Open menu"><span></span></button>
       </div>
     </div>
@@ -42,20 +44,14 @@
     <canvas class="stage-cells" aria-hidden="true"></canvas>
     <canvas class="stage-flow" aria-hidden="true"></canvas>
     <div class="stage-layer stage-vignette" aria-hidden="true"></div>
-    <div class="stage-layer stage-hud" aria-hidden="true">
-      <span class="hud-note hud-c">Fig. 00 · Flow around a cell array</span>
-      <span class="hud-note hud-a"><i></i>Streamlines</span>
-      <span class="hud-note hud-b"><i></i>Charge ripple</span>
-    </div>
     <div class="stage-body">
-      <p class="label stage-eyebrow enter" style="--d:0">Aerospace · EV systems · Manufacturing</p>
-      <h1 class="enter" style="--d:1">Hardware that <em>has to work.</em></h1>
-      <p class="stage-lede enter" style="--d:2">Aerospace engineering student and EV systems engineer. <strong>Supplier development on Starship hardware</strong> at SpaceX, <strong>high-voltage vehicle integration</strong> at The Thermal Club, and the energy-storage work behind Aztec Electric Racing’s first accumulator inspection pass.</p>
-      <div class="stage-actions enter" style="--d:3">
+      <h1 class="enter" style="--d:0">Hardware that <em>has to work.</em></h1>
+      <p class="stage-lede enter" style="--d:1">Aerospace engineering student and EV systems engineer. <strong>Supplier development on Starship hardware</strong> at SpaceX, <strong>high-voltage vehicle integration</strong> at The Thermal Club, and the energy-storage work behind Aztec Electric Racing’s first accumulator inspection pass.</p>
+      <div class="stage-actions enter" style="--d:2">
         <a class="btn btn-gold" href="projects.html">See the work <span class="arr" aria-hidden="true">↗</span></a>
         <a class="btn btn-line" href="Muhammad-Anjum-Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a>
       </div>
-      <dl class="stage-meta enter" style="--d:4">
+      <dl class="stage-meta enter" style="--d:3">
         <div><dt>Now</dt><dd>EV Systems Engineer, The Thermal Club</dd></div>
         <div><dt>Summer 2026</dt><dd>Supplier Development Intern, SpaceX</dd></div>
         <div><dt>Education</dt><dd>B.S. Aerospace Engineering, SDSU, May 2027</dd></div>
@@ -68,12 +64,11 @@
 <section class="sec" id="strengths" aria-labelledby="h-strengths">
   <div class="wrap">
     <header class="sec-head" data-reveal>
-      <div><p class="label"><b>01</b> What I bring</p><h2 id="h-strengths">Where I’m <em>strongest.</em></h2></div>
+      <div><h2 id="h-strengths">Where I’m <em>strongest.</em></h2></div>
       <p class="sec-intro">Manufacturing judgment from the supplier side, hands-on high-voltage work, and the leadership to run a large technical team.</p>
     </header>
     <div class="pillars" data-reveal-group>
       <article class="pillar panel" data-reveal>
-        <span class="num">A</span>
         <h3>Flight hardware and suppliers</h3>
         <p>At SpaceX I made DFM, sourcing and supplier-selection decisions on Starship hardware, audited suppliers on site, and led root-cause analysis on nonconformances through corrective action.</p>
         <ul>
@@ -82,16 +77,15 @@
         </ul>
       </article>
       <article class="pillar panel" data-reveal>
-        <span class="num">B</span>
         <h3>High-voltage systems</h3>
-        <p>I’ve validated and assembled battery modules, configured BMS and charging, wired high-voltage distribution, and built a 352.8 V accumulator that passed structural inspection.</p>
+        <p>I’ve validated and assembled battery modules, configured BMS and charging, wired high-voltage distribution, and built the 352.8 V accumulator at Aztec Electric Racing. Undergraduate research at SDSU now extends that into battery materials.</p>
         <ul>
           <li><a href="projects/vehicle-conversion.html">Tesla-powered Triumph Stag</a><span>14 modules</span></li>
           <li><a href="projects/tractive-accumulator.html">Tractive accumulator</a><span>352.8 V</span></li>
+          <li><a href="experience/sdsu-research.html">Anode recycling research</a><span>SDSU</span></li>
         </ul>
       </article>
       <article class="pillar panel" data-reveal>
-        <span class="num">C</span>
         <h3>Technical leadership</h3>
         <p>I led a 250+ member Formula SAE electric team as President, founded a student professional network that grew to 30+ members, and managed the project behind a fourth-place international drone finish.</p>
         <ul>
@@ -107,15 +101,15 @@
 <section class="sec" id="work" aria-labelledby="h-work">
   <div class="wrap">
     <header class="sec-head" data-reveal>
-      <div><p class="label"><b>02</b> Selected work</p><h2 id="h-work">Four projects, <em>documented end to end.</em></h2></div>
+      <div><h2 id="h-work">Four projects, <em>documented end to end.</em></h2></div>
       <div><p class="sec-intro">Each case study covers requirements, design decisions, fabrication, integration and testing, with the photos and analysis behind them.</p><a class="link" href="projects.html">All projects <span class="arr" aria-hidden="true">↗</span></a></div>
     </header>
 
     <article class="work-lead" data-reveal>
       <a class="mount" href="projects/vehicle-conversion.html" tabindex="-1" aria-hidden="true"><div class="frame" style="aspect-ratio:1.333"><img src="assets/media/projects/thermal-club/triumph-stag-workshop.webp" srcset="assets/media/projects/thermal-club/triumph-stag-workshop-640.jpg 640w, assets/media/projects/thermal-club/triumph-stag-workshop-1100.jpg 1100w, assets/media/projects/thermal-club/triumph-stag-workshop.webp 1800w" sizes="(min-width: 900px) 58vw, 100vw" width="1800" height="1350" alt="" loading="lazy" decoding="async"></div></a>
       <div class="work-copy">
-        <div class="work-meta"><b>01</b><span>Vehicle integration</span><span>The Thermal Club</span></div>
         <h3><a href="projects/vehicle-conversion.html">Tesla-powered Triumph Stag</a></h3>
+<p class="byline">The Thermal Club · February 2026 – present</p>
         <p>A 1970s grand tourer rebuilt around a Tesla Model S drive unit and fourteen battery modules. I own the electrical chain from component selection to commissioning.</p>
         <div class="figures"><div><strong>14</strong><span>Tesla battery modules</span></div><div><strong>≈74.2 kWh</strong><span>module-rated energy</span></div><div><strong>319.2 V</strong><span>nominal pack voltage</span></div></div>
         <p><a class="link" href="projects/vehicle-conversion.html">Read the case study <span class="arr" aria-hidden="true">↗</span></a></p>
@@ -126,8 +120,8 @@
       <article class="work-tile" data-reveal>
         <a class="mount" href="projects/tractive-accumulator.html" tabindex="-1" aria-hidden="true"><div class="frame" style="aspect-ratio:1.333"><img src="assets/media/projects/accumulator/assembled-accumulator.webp" srcset="assets/media/projects/accumulator/assembled-accumulator-640.jpg 640w, assets/media/projects/accumulator/assembled-accumulator-1100.jpg 1100w, assets/media/projects/accumulator/assembled-accumulator.webp 1800w" sizes="(min-width: 900px) 46vw, 100vw" width="1800" height="1350" alt="" loading="lazy" decoding="async"></div></a>
         <div class="work-copy">
-          <div class="work-meta"><b>02</b><span>Energy storage</span><span>Aztec Electric Racing</span></div>
           <h3><a href="projects/tractive-accumulator.html">352.8 V tractive accumulator</a></h3>
+<p class="byline">Aztec Electric Racing · 2023 – 2026</p>
           <p>The team's first high-voltage battery: 84 packs in six isolated segments, an aluminum shell estimated about 30% lighter than the steel one before it, and the team's first structural-inspection pass.</p>
           <div class="figures"><div><strong>352.8 V</strong><span>maximum pack voltage</span></div><div><strong>84</strong><span>battery packs</span></div><div><strong>≈30%</strong><span>lighter aluminum shell</span></div></div>
           <p><a class="link" href="projects/tractive-accumulator.html">Read the case study <span class="arr" aria-hidden="true">↗</span></a></p>
@@ -136,8 +130,8 @@
       <article class="work-tile" data-reveal>
         <a class="mount plate" href="projects/iam3d-drone.html" tabindex="-1" aria-hidden="true"><div class="frame" style="aspect-ratio:1.333"><img src="assets/media/projects/iam3d/optimized-frame.webp" srcset="assets/media/projects/iam3d/optimized-frame-640.jpg 640w, assets/media/projects/iam3d/optimized-frame-1100.jpg 1100w, assets/media/projects/iam3d/optimized-frame.webp 1600w" sizes="(min-width: 900px) 46vw, 100vw" width="1600" height="1191" alt="" loading="lazy" decoding="async"></div></a>
         <div class="work-copy">
-          <div class="work-meta"><b>03</b><span>Aerospace competition</span><span>ASME · SDSU</span></div>
           <h3><a href="projects/iam3d-drone.html">IAM3D competition drone</a></h3>
+<p class="byline">ASME · SDSU · August 2023 – May 2024</p>
           <p>An FPV drone built to carry and release a payload on command. I managed the project; the team finished fourth internationally.</p>
           <div class="figures"><div><strong>4th</strong><span>international finish</span></div><div><strong>27%</strong><span>projected frame mass reduction</span></div><div><strong>&lt; 0.5 mm</strong><span>displacement limit</span></div></div>
           <p><a class="link" href="projects/iam3d-drone.html">Read the case study <span class="arr" aria-hidden="true">↗</span></a></p>
@@ -147,8 +141,8 @@
 
     <article class="work-note panel" data-reveal>
       <div>
-        <div class="work-meta"><b>04</b><span>Powertrain &amp; ergonomics</span><span>Aztec Electric Racing</span></div>
         <h3><a href="projects/powertrain-testbench.html">Powertrain testbench and pedal controls</a></h3>
+<p class="byline">Aztec Electric Racing · August 2022 – May 2023</p>
       </div>
       <div class="stack-s"><p>A functional test platform with electrical, mechanical and hydraulic systems, used to wire, calibrate and troubleshoot before full-vehicle integration.</p><p><a class="link" href="projects/powertrain-testbench.html">Read the case study <span class="arr" aria-hidden="true">↗</span></a></p></div>
     </article>
@@ -159,7 +153,6 @@
   <div class="wrap">
     <div class="work-lead" data-reveal>
       <div class="work-copy">
-        <p class="label"><b>03</b> Leadership</p>
         <h2 id="h-aer" style="font-size:clamp(2.3rem,5vw,4.2rem);letter-spacing:-.025em">Aztec Electric <em style="color:var(--gold-deep)">Racing.</em></h2>
         <p>I joined in 2022 as a powertrain and ergonomics engineer, then served as President and Energy Storage Team Lead from 2023 to 2026. The team’s first tractive battery, its first accumulator inspection pass and its first powertrain testbench all came out of that stretch.</p>
         <div class="figures"><div><strong>250+</strong><span>team members led</span></div><div><strong>First</strong><span>accumulator inspection pass</span></div><div><strong>$200K+</strong><span>funding and support secured</span></div></div>
@@ -173,31 +166,27 @@
 <section class="sec" id="experience" aria-labelledby="h-exp">
   <div class="wrap">
     <header class="sec-head" data-reveal>
-      <div><p class="label"><b>04</b> Experience</p><h2 id="h-exp">Six roles, <em>at a glance.</em></h2></div>
-      <div><p class="sec-intro">Industry internships, a part-time EV engineering role, and three leadership roles. Each opens to its full list of responsibilities.</p><a class="link" href="experience.html">Full experience <span class="arr" aria-hidden="true">↗</span></a></div>
+      <div><h2 id="h-exp">Seven roles, <em>at a glance.</em></h2></div>
+      <div><p class="sec-intro">Internships, a contract EV engineering role, undergraduate research and three leadership roles. Each opens to its full list of responsibilities.</p><a class="link" href="experience.html">Full experience <span class="arr" aria-hidden="true">↗</span></a></div>
     </header>
-    <div class="timeline-mini" data-reveal-group><a class="tl-row" href="experience.html#spacex" data-reveal><time>May – August 2026</time><h3>SpaceX</h3><p>Supplier Development Engineer Intern</p><span class="arr" aria-hidden="true">↗</span></a><a class="tl-row" href="experience.html#the-thermal-club" data-reveal><time>February 2026 – present</time><h3>The Thermal Club</h3><p>EV Systems Engineer</p><span class="arr" aria-hidden="true">↗</span></a><a class="tl-row" href="experience.html#aztec-electric-racing" data-reveal><time>July 2023 – June 2026</time><h3>Aztec Electric Racing</h3><p>President · Energy Storage Team Lead · Powertrain &amp; Ergonomics Engineer</p><span class="arr" aria-hidden="true">↗</span></a><a class="tl-row" href="experience.html#muslim-tech-collaborative" data-reveal><time>July 2024 – present</time><h3>Muslim Tech Collaborative</h3><p>Founder &amp; President</p><span class="arr" aria-hidden="true">↗</span></a><a class="tl-row" href="experience.html#nasa" data-reveal><time>June – August 2023</time><h3>NASA · Kennedy Space Center</h3><p>Integrated Management System Intern</p><span class="arr" aria-hidden="true">↗</span></a><a class="tl-row" href="experience.html#asme-sdsu" data-reveal><time>August 2023 – May 2024</time><h3>ASME · SDSU</h3><p>Project Manager</p><span class="arr" aria-hidden="true">↗</span></a></div>
+    <div class="timeline-mini" data-reveal-group><a class="tl-row" href="experience.html#the-thermal-club" data-reveal><time>February 2026 – present</time><h3>The Thermal Club</h3><p>EV Systems Engineer</p><span class="arr" aria-hidden="true">↗</span></a><a class="tl-row" href="experience.html#muslim-tech-collaborative" data-reveal><time>July 2024 – present</time><h3>Muslim Tech Collaborative</h3><p>Founder &amp; President</p><span class="arr" aria-hidden="true">↗</span></a><a class="tl-row" href="experience.html#sdsu-research" data-reveal><time>Current</time><h3>Lingping Kong Research Group</h3><p>Undergraduate research in advanced energy systems</p><span class="arr" aria-hidden="true">↗</span></a><a class="tl-row" href="experience.html#spacex" data-reveal><time>May – August 2026</time><h3>SpaceX</h3><p>Supplier Development Engineer Intern</p><span class="arr" aria-hidden="true">↗</span></a><a class="tl-row" href="experience.html#aztec-electric-racing" data-reveal><time>July 2023 – June 2026</time><h3>Aztec Electric Racing</h3><p>President · Energy Storage Team Lead · Powertrain &amp; Ergonomics Engineer</p><span class="arr" aria-hidden="true">↗</span></a><a class="tl-row" href="experience.html#asme-sdsu" data-reveal><time>August 2023 – May 2024</time><h3>ASME · SDSU</h3><p>Project Manager</p><span class="arr" aria-hidden="true">↗</span></a><a class="tl-row" href="experience.html#nasa" data-reveal><time>June – August 2023</time><h3>NASA · Kennedy Space Center</h3><p>Integrated Management System Intern</p><span class="arr" aria-hidden="true">↗</span></a></div>
   </div>
 </section>
 
 <section class="sec" id="capabilities" aria-labelledby="h-caps">
   <div class="wrap">
     <header class="sec-head" data-reveal>
-      <div><p class="label"><b>05</b> Capabilities</p><h2 id="h-caps">Tools and <em>methods.</em></h2></div>
-      <p class="sec-intro">Grouped as on my résumé: management, engineering and manufacturing, and software.</p>
+      <div><h2 id="h-caps">Tools and <em>methods.</em></h2></div>
+      <p class="sec-intro">Grouped as on my résumé.</p>
     </header>
-    <div class="caps" data-reveal-group>
-      <div class="cap panel" data-reveal><h3>Management</h3><ul><li>Supplier auditing and quality assessment</li><li>Root-cause analysis, 8D</li><li>Program and project management</li><li>Supply-chain logistics</li><li>Budgeting and cost reports</li><li>Cross-functional leadership</li></ul></div>
-      <div class="cap panel" data-reveal><h3>Engineering and manufacturing</h3><ul><li>High-voltage systems and BMS</li><li>Battery validation and testing</li><li>Machining and fabrication</li><li>Circuit analysis and PCB design</li><li>GD&amp;T</li><li>Automotive and EV systems</li></ul></div>
-      <div class="cap panel" data-reveal><h3>Software and tools</h3><ul><li>NX and Teamcenter</li><li>SolidWorks</li><li>ANSYS FEA</li><li>MATLAB and Simulink</li><li>Python, C, Java</li><li>AI agent tooling, Microsoft Office</li></ul></div>
-    </div>
+    <div class="caps" data-reveal-group><div class="cap panel" data-reveal><h3>Management</h3><ul><li>Supplier auditing and quality assessment</li><li>Root-cause analysis (8D)</li><li>Program and project management</li><li>Supply-chain logistics</li><li>Budgeting and cost reports</li><li>Cross-functional leadership</li></ul></div><div class="cap panel" data-reveal><h3>Engineering and manufacturing</h3><ul><li>High-voltage battery and BMS design</li><li>Battery validation and testing</li><li>Machining and fabrication</li><li>Circuit analysis and wiring-harness design</li><li>GD&amp;T</li><li>DFM</li><li>Automotive and EV systems integration</li></ul></div><div class="cap panel" data-reveal><h3>Software and tools</h3><ul><li>NX and Teamcenter</li><li>SolidWorks</li><li>ANSYS FEA</li><li>MATLAB and Simulink</li><li>Python, C, Java</li></ul></div></div>
   </div>
 </section>
 
 <section class="sec tight" aria-labelledby="h-cta">
   <div class="wrap">
     <div class="cta" data-reveal>
-      <div><p class="label">Open to roles</p><h2 id="h-cta">EV, aerospace <em>and manufacturing.</em></h2></div>
+      <div><h2 id="h-cta">EV, aerospace <em>and manufacturing.</em></h2></div>
       <div><p>Battery systems, test engineering, supplier development and systems engineering are all in scope. Email is the fastest way to reach me.</p>
         <div class="cta-actions"><a class="btn btn-gold" href="mailto:muhammad.u.anjum@gmail.com">Email me <span class="arr" aria-hidden="true">↗</span></a><a class="btn btn-line" href="Muhammad-Anjum-Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a><a class="btn btn-line" href="https://www.linkedin.com/in/muhammad-u-anjum/" target="_blank" rel="noopener">LinkedIn</a></div>
       </div>
@@ -209,9 +198,9 @@
   <footer class="site-footer">
     <div class="wrap">
       <div class="foot">
-        <div><a class="brand" href="index.html" aria-label="Muhammad Anjum, home"><span class="brand-mark" aria-hidden="true">MA</span><span class="brand-name"><strong>Muhammad Anjum</strong><span>Aerospace · EV systems · Manufacturing</span></span></a><p>Aerospace and EV systems engineering, from supplier audits to high-voltage battery builds.</p></div>
+        <div><a class="wordmark" href="index.html" aria-label="Muhammad Anjum, home"><span class="wm-first">Muhammad</span><span class="wm-last">Anjum<svg class="wm-sign" viewBox="0 0 120 14" aria-hidden="true" focusable="false"><path d="M2 9.5C15 3.5 27 12.5 43 7.5S71 2.5 87 8.5s21 2 31-4.5" pathLength="1"/></svg></span></a><p>Aerospace and EV systems engineering, from supplier audits to high-voltage battery builds.</p></div>
         <nav class="foot-links" aria-label="Footer">
-          <div><p class="foot-h">Portfolio</p><a href="projects.html">Work</a><a href="experience.html">Experience</a><a href="experience/aztec-electric-racing.html">Aztec Electric Racing</a><a href="about.html">About</a></div>
+          <div><p class="foot-h">Portfolio</p><a href="projects.html">Work</a><a href="experience.html">Experience</a><a href="experience/aztec-electric-racing.html">Aztec Electric Racing</a><a href="experience/sdsu-research.html">SDSU research</a><a href="about.html">About</a></div>
           <div><p class="foot-h">Case studies</p><a href="projects/vehicle-conversion.html">Tesla-powered Triumph Stag</a><a href="projects/tractive-accumulator.html">352.8 V tractive accumulator</a><a href="projects/iam3d-drone.html">IAM3D competition drone</a><a href="projects/powertrain-testbench.html">Powertrain testbench and pedal controls</a></div>
           <div><p class="foot-h">Contact</p><a href="mailto:muhammad.u.anjum@gmail.com">Email</a><a href="https://www.linkedin.com/in/muhammad-u-anjum/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/muhammad-anjum" target="_blank" rel="noopener">GitHub</a><a href="Muhammad-Anjum-Resume.pdf" target="_blank" rel="noopener">Résumé (PDF)</a></div>
         </nav>
