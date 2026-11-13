@@ -33,8 +33,17 @@ The site uses only facts from the 9/28/2026 résumé, the previous site and the 
 - Commissioning results: first drive, measured performance, current status. The page says the project is active and makes no performance claim.
 - Photos of the finished car, and any mechanical fabrication you did.
 
-**IAM3D drone**
-- Flight-test results, competition photos, team size, and what you personally owned beyond project management.
+**IAM3D drone and ASME role page**
+- Course performance: run times, attempts, payload results, what failed or was repaired and why. The page only claims the fourth-place finish.
+- Dates for the photographs (field test, hotel room, arrival) and what the soldering and hotel-room work was for. Captions describe only what is visible.
+- Team size, subteam structure, meeting cadence, tracking tools used, schedule and budget figures, and anything you personally designed or built. The role page lists management duties from your résumé and brief without specifics.
+- Whether the résumé's "four-part plan" is the report's research / design / manufacturing / testing phases. The role page presents the phases next to the plan without equating them.
+- Confirm "EFx" (used on the sign and in the research reference) versus "E-Fest" (your wording).
+- Report inconsistencies to be aware of: the ESC matrix scores the Castle Talon above the chosen SpeedyBee (the report text says the SpeedyBee scored highest); the battery is "Version 3.0" in the BOM and "Version 4.0" in the text. The page avoids both claims.
+- The printed guards at the arm ends are visible in the photos but not described in the report.
+- The lessons-learned section is drafted from the report; edit it to match your own reflection.
+- Removed `final-payload-assembly`: the old caption called it the manufactured assembly, but the image is an unlabeled CAD view.
+- Originals are in `src/originals/iam3d/` (full resolution, metadata and location stripped).
 
 **SpaceX, NASA, Muslim Tech Collaborative**
 - Anything you can share publicly (SpaceX work is confidential, so only non-sensitive outcomes). NASA: screenshots or examples of the document-control tools. MTC: events, photos, partner employers you're allowed to name.
@@ -48,7 +57,7 @@ The site uses only facts from the 9/28/2026 résumé, the previous site and the 
 - **Languages and education start date (Aug 2022)** are not on the new résumé. They stay from the earlier site; delete them if you'd rather the site match the résumé exactly.
 
 - **"$200K+ funding and support secured"** appears on the previous site but not on the résumé.
-- **ASME · SDSU Project Manager (Aug 2023 – May 2024)** appears on the previous site but not on the résumé.
+- **ASME · SDSU Project Manager (Aug 2023 – May 2024)** is not on the résumé; it comes from the previous site, the design report cover and your brief.
 - **Aztec dates.** The résumé lists President | Energy Storage Team Lead as 07/2023 to 06/2026 (three years). You described the energy-storage lead role as about two years. The site uses the résumé dates.
 - **"3 teams adopted the review process"** is derived from the résumé line "adopted by supplier development, quality, and design engineering teams".
 - **Stag cooling and commissioning paragraphs** carried over from the previous page. They read as general engineering practice (hose support, bend radius, air traps, commissioning order). Keep them only if they describe what you actually did.

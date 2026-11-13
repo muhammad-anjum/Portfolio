@@ -235,9 +235,19 @@
     "projects": [
       "iam3d-drone"
     ],
-    "page": false,
+    "page": true,
     "start": "2023-08",
-    "end": "2024-05"
+    "end": "2024-05",
+    "pageTitle": "ASME at SDSU — IAM3D Project Manager",
+    "image": "iam3d/photos/team-walking",
+    "imageAlt": "Team members in matching Aztec Air sweatshirts walking down a corridor",
+    "imageMax": "360px",
+    "heroLinks": [
+      {
+        "label": "Read the IAM3D engineering case study",
+        "href": "projects/iam3d-drone.html"
+      }
+    ]
   },
   {
     "slug": "sdsu-research",

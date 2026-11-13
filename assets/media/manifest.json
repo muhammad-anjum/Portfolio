@@ -227,20 +227,6 @@
    }
   ]
  },
- "iam3d/final-payload-assembly": {
-  "w": 1600,
-  "h": 1347,
-  "variants": [
-   {
-    "file": "iam3d/final-payload-assembly-640.jpg",
-    "width": 640
-   },
-   {
-    "file": "iam3d/final-payload-assembly-1100.jpg",
-    "width": 1100
-   }
-  ]
- },
  "iam3d/harmonic-analysis": {
   "w": 1600,
   "h": 1022,
@@ -580,6 +566,228 @@
    {
     "file": "thermal-club/vehicle-systems-bay-overview-1100.jpg",
     "width": 1100
+   }
+  ]
+ },
+ "iam3d/photos/competition-table": {
+  "w": 1800,
+  "h": 2400,
+  "ext": "jpg",
+  "variants": [
+   {
+    "file": "iam3d/photos/competition-table-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "iam3d/photos/competition-table-1100.jpg",
+    "width": 1100
+   },
+   {
+    "file": "iam3d/photos/competition-table-1600.jpg",
+    "width": 1600
+   }
+  ],
+  "avif": [
+   {
+    "file": "iam3d/photos/competition-table-640.avif",
+    "width": 640
+   },
+   {
+    "file": "iam3d/photos/competition-table-1100.avif",
+    "width": 1100
+   },
+   {
+    "file": "iam3d/photos/competition-table-1600.avif",
+    "width": 1600
+   },
+   {
+    "file": "iam3d/photos/competition-table.avif",
+    "width": 1800
+   }
+  ]
+ },
+ "iam3d/photos/drone-on-pavement": {
+  "w": 1800,
+  "h": 2400,
+  "ext": "jpg",
+  "variants": [
+   {
+    "file": "iam3d/photos/drone-on-pavement-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "iam3d/photos/drone-on-pavement-1100.jpg",
+    "width": 1100
+   },
+   {
+    "file": "iam3d/photos/drone-on-pavement-1600.jpg",
+    "width": 1600
+   }
+  ],
+  "avif": [
+   {
+    "file": "iam3d/photos/drone-on-pavement-640.avif",
+    "width": 640
+   },
+   {
+    "file": "iam3d/photos/drone-on-pavement-1100.avif",
+    "width": 1100
+   },
+   {
+    "file": "iam3d/photos/drone-on-pavement-1600.avif",
+    "width": 1600
+   },
+   {
+    "file": "iam3d/photos/drone-on-pavement.avif",
+    "width": 1800
+   }
+  ]
+ },
+ "iam3d/photos/field-test-damaged-drone": {
+  "w": 2400,
+  "h": 1800,
+  "ext": "jpg",
+  "variants": [
+   {
+    "file": "iam3d/photos/field-test-damaged-drone-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "iam3d/photos/field-test-damaged-drone-1100.jpg",
+    "width": 1100
+   },
+   {
+    "file": "iam3d/photos/field-test-damaged-drone-1600.jpg",
+    "width": 1600
+   }
+  ],
+  "avif": [
+   {
+    "file": "iam3d/photos/field-test-damaged-drone-640.avif",
+    "width": 640
+   },
+   {
+    "file": "iam3d/photos/field-test-damaged-drone-1100.avif",
+    "width": 1100
+   },
+   {
+    "file": "iam3d/photos/field-test-damaged-drone-1600.avif",
+    "width": 1600
+   },
+   {
+    "file": "iam3d/photos/field-test-damaged-drone.avif",
+    "width": 2400
+   }
+  ]
+ },
+ "iam3d/photos/hotel-room-assembly": {
+  "w": 2400,
+  "h": 1800,
+  "ext": "jpg",
+  "variants": [
+   {
+    "file": "iam3d/photos/hotel-room-assembly-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "iam3d/photos/hotel-room-assembly-1100.jpg",
+    "width": 1100
+   },
+   {
+    "file": "iam3d/photos/hotel-room-assembly-1600.jpg",
+    "width": 1600
+   }
+  ],
+  "avif": [
+   {
+    "file": "iam3d/photos/hotel-room-assembly-640.avif",
+    "width": 640
+   },
+   {
+    "file": "iam3d/photos/hotel-room-assembly-1100.avif",
+    "width": 1100
+   },
+   {
+    "file": "iam3d/photos/hotel-room-assembly-1600.avif",
+    "width": 1600
+   },
+   {
+    "file": "iam3d/photos/hotel-room-assembly.avif",
+    "width": 2400
+   }
+  ]
+ },
+ "iam3d/photos/soldering-close-up": {
+  "w": 1800,
+  "h": 2400,
+  "ext": "jpg",
+  "variants": [
+   {
+    "file": "iam3d/photos/soldering-close-up-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "iam3d/photos/soldering-close-up-1100.jpg",
+    "width": 1100
+   },
+   {
+    "file": "iam3d/photos/soldering-close-up-1600.jpg",
+    "width": 1600
+   }
+  ],
+  "avif": [
+   {
+    "file": "iam3d/photos/soldering-close-up-640.avif",
+    "width": 640
+   },
+   {
+    "file": "iam3d/photos/soldering-close-up-1100.avif",
+    "width": 1100
+   },
+   {
+    "file": "iam3d/photos/soldering-close-up-1600.avif",
+    "width": 1600
+   },
+   {
+    "file": "iam3d/photos/soldering-close-up.avif",
+    "width": 1800
+   }
+  ]
+ },
+ "iam3d/photos/team-walking": {
+  "w": 1800,
+  "h": 2400,
+  "ext": "jpg",
+  "variants": [
+   {
+    "file": "iam3d/photos/team-walking-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "iam3d/photos/team-walking-1100.jpg",
+    "width": 1100
+   },
+   {
+    "file": "iam3d/photos/team-walking-1600.jpg",
+    "width": 1600
+   }
+  ],
+  "avif": [
+   {
+    "file": "iam3d/photos/team-walking-640.avif",
+    "width": 640
+   },
+   {
+    "file": "iam3d/photos/team-walking-1100.avif",
+    "width": 1100
+   },
+   {
+    "file": "iam3d/photos/team-walking-1600.avif",
+    "width": 1600
+   },
+   {
+    "file": "iam3d/photos/team-walking.avif",
+    "width": 1800
    }
   ]
  }

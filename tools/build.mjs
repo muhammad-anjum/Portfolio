@@ -25,16 +25,24 @@ function imageTag(root, key, { alt = "", sizes = "(min-width: 1080px) 880px, 100
   const m = manifest[key]
   if (!m) throw new Error(`Unknown image: ${key}`)
   const base = `${root}assets/media/projects/`
-  const srcset = [...m.variants.map(v => `${base}${v.file} ${v.width}w`), `${base}${key}.webp ${m.w}w`].join(", ")
+  const ext = m.ext || "webp"
+  const srcset = [...m.variants.map(v => `${base}${v.file} ${v.width}w`), `${base}${key}.${ext} ${m.w}w`].join(", ")
   const load = priority ? 'loading="eager" fetchpriority="high"' : `loading="${loading}"`
-  return `<img src="${base}${key}.webp" srcset="${srcset}" sizes="${sizes}" width="${m.w}" height="${m.h}" alt="${esc(alt)}" ${load} decoding="async">`
+  const fallback = m.variants.length > 1 ? `${base}${m.variants[1].file}` : `${base}${key}.${ext}`
+  const img = `<img src="${ext === "jpg" ? fallback : `${base}${key}.webp`}" srcset="${srcset}" sizes="${sizes}" width="${m.w}" height="${m.h}" alt="${esc(alt)}" ${load} decoding="async">`
+  if (!m.avif) return img
+  const avifSet = m.avif.map(v => `${base}${v.file} ${v.width}w`).join(", ")
+  return `<picture><source type="image/avif" srcset="${avifSet}" sizes="${sizes}">${img}</picture>`
 }
+
+/* Largest delivered file for a key, used by the lightbox and social cards */
+const fullFile = key => `assets/media/projects/${key}.${manifest[key].ext || "webp"}`
 
 function figure(root, key, a) {
   const m = manifest[key]
   const ar = (m.w / m.h).toFixed(3)
   const cls = ["fig", a.cls].filter(Boolean).join(" ")
-  const zoom = `${root}assets/media/projects/${key}.webp`
+  const zoom = `${root}${fullFile(key)}`
   const step = a.step ? `<span class="step"><b>${esc(a.step.split("|")[0])}</b>${esc(a.step.split("|")[1] || "")}</span>` : ""
   return `<figure class="${cls}" style="--ar:${ar}">${step}<button class="fig-btn" type="button" data-zoom="${zoom}" aria-label="Enlarge figure: ${esc(a.alt)}">${imageTag(root, key, { alt: a.alt, sizes: a.sizes })}</button><figcaption>${a.cap || ""}</figcaption></figure>`
 }
@@ -296,8 +304,8 @@ ${bodyHtml}
 </section>`
   return layout({
     root, title: `${p.title} — ${site.name}`, description: p.description, key: "projects", canonical: `projects/${p.slug}.html`, body,
-    ogImage: p.image ? `${site.domain}/assets/media/projects/${p.image}.webp` : undefined,
-    jsonld: [{ "@context": "https://schema.org", "@type": "TechArticle", headline: p.title, description: p.description, author: { "@type": "Person", name: site.name, url: site.domain + "/" }, image: p.image ? `${site.domain}/assets/media/projects/${p.image}.webp` : undefined, mainEntityOfPage: `${site.domain}/projects/${p.slug}.html` }]
+    ogImage: p.image ? `${site.domain}/${fullFile(p.image)}` : undefined,
+    jsonld: [{ "@context": "https://schema.org", "@type": "TechArticle", headline: p.title, description: p.description, author: { "@type": "Person", name: site.name, url: site.domain + "/" }, image: p.image ? `${site.domain}/${fullFile(p.image)}` : undefined, mainEntityOfPage: `${site.domain}/projects/${p.slug}.html` }]
   })
 }
 for (const p of projects) emit(`projects/${p.slug}.html`, caseStudy(p))
@@ -311,11 +319,12 @@ function rolePage(e) {
   <nav class="crumbs" aria-label="Breadcrumb"><a href="${root}experience.html">Experience</a><i>/</i><span>${esc(e.org)}</span></nav>
   <div class="case-top${e.image ? "" : " no-fig"}">
     <div class="enter" style="--d:0">
-      <h1>${esc(e.org)}</h1>
+      <h1>${esc(e.pageTitle || e.org)}</h1>
       <p class="byline">${esc(e.context)}</p>
       <div style="margin-top:20px;display:grid;gap:8px">${roleLine(e)}</div>
       <p class="lede">${esc(e.summary)}</p>
       <div class="tags">${e.tags.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div>
+      ${(e.heroLinks || []).length ? `<p class="hero-links">${e.heroLinks.map(l => `<a class="link" href="${root}${l.href}">${esc(l.label)} ${arrow}</a>`).join("")}</p>` : ""}
       ${(e.links || []).length ? `<p class="hero-links">${e.links.map(l => `<a class="link" href="${l.href}" target="_blank" rel="noopener">${esc(l.label)} ${arrow}</a>`).join("")}</p>` : ""}
     </div>
     ${e.image ? `<div class="enter" style="--d:2;${e.imageMax ? `max-width:${e.imageMax};justify-self:end;width:100%` : ""}"><div class="mount"><div class="frame" style="aspect-ratio:${(manifest[e.image].w / manifest[e.image].h).toFixed(3)}">${imageTag(root, e.image, { alt: e.imageAlt, sizes: "(min-width: 1080px) 520px, 100vw", priority: true })}</div></div></div>` : ""}
@@ -328,7 +337,7 @@ ${expand(raw, { root })}
     <a class="panel panel-lift" href="${root}projects.html"><small>Technical depth</small><strong>Browse the case studies ${arrow}</strong></a>
   </nav>
 </section>`
-  return layout({ root, title: `${e.org} — ${site.name}`, description: e.summary, key: "experience", canonical: `experience/${e.slug}.html`, body })
+  return layout({ root, title: `${e.pageTitle || e.org} — ${site.name}`, description: e.summary, key: "experience", canonical: `experience/${e.slug}.html`, body })
 }
 for (const e of experience.filter(x => x.page)) emit(`experience/${e.slug}.html`, rolePage(e))
 
