@@ -1,0 +1,90 @@
+{
+  "programs": [
+    {
+      "id": "career",
+      "title": "Career development",
+      "lead": [
+        "Résumé-review workshops, career-preparation sessions and professional panels give students a way to test their materials and plans against what working professionals look for. Each format is meant to leave a student with something to act on: a revised résumé, a clearer picture of a role, a person to follow up with."
+      ],
+      "points": [
+        "Résumé-review workshops with practical feedback",
+        "Career preparation for internships and full-time roles",
+        "Professional panels",
+        "Conversations with working professionals"
+      ],
+      "images": []
+    },
+    {
+      "id": "industry",
+      "title": "Industry access",
+      "lead": [
+        "Company information sessions, industry panels and joint company tours put students in the same room as people doing the work, and show them more than one technical and professional path. Our chapter hosted an LPL Financial x MTC SDSU informational session in October 2025, covered in the next section."
+      ],
+      "points": [
+        "Company information sessions",
+        "Joint company tours",
+        "Industry panels",
+        "Relationships with professionals and company representatives"
+      ],
+      "images": [
+        {
+          "key": "mtc/photos/panel-wide",
+          "alt": "Four panelists seated at the front of a large conference room with a seated audience of students in the foreground",
+          "cap": "A professional panel with the audience seated around conference tables.",
+          "sizes": "(min-width: 1080px) 520px, 100vw"
+        },
+        {
+          "key": "mtc/photos/panel-close",
+          "alt": "Four panelists seated in a row, one speaking into a microphone, with students seated in the foreground",
+          "cap": "The same panel from closer to the front of the room.",
+          "sizes": "(min-width: 1080px) 520px, 100vw"
+        }
+      ]
+    },
+    {
+      "id": "community",
+      "title": "Community and belonging",
+      "lead": [
+        "Not everything the chapter does is career-driven. Social events and regular contact give Muslim students interested in technology a place to meet and support each other, across majors and years. Those relationships are what keep members involved after a single event or recruiting cycle."
+      ],
+      "points": [
+        "Social events",
+        "Peer relationships across majors",
+        "A campus space for Muslim students interested in technology",
+        "Connections that last beyond one event"
+      ],
+      "images": []
+    },
+    {
+      "id": "service",
+      "title": "Community technology and service",
+      "lead": [
+        "The chapter works with local masajid and Muslim community organizations to find volunteer opportunities and to match student skills with community needs. Some of that work is building products, such as websites, for organizations that may not have a technical team of their own.",
+        "This is the part of the chapter that points outward: it helps students find opportunities, and it gives them a way to use their skills for others."
+      ],
+      "points": [
+        "Volunteer opportunities with local masajid and community organizations",
+        "Websites and other technical products for community partners",
+        "Support for organizations without dedicated technical teams"
+      ],
+      "images": []
+    }
+  ],
+  "events": [
+    {
+      "id": "lpl-financial-info-session",
+      "title": "LPL Financial x MTC SDSU informational session",
+      "date": "2025-10-15",
+      "dateLabel": "Wednesday, October 15, 2025",
+      "category": "Industry access",
+      "partner": "LPL Financial",
+      "description": "An informational session hosted by the chapter with LPL Financial.",
+      "role": "",
+      "images": ["mtc/photos/room-setup", "mtc/photos/lpl-session", "mtc/photos/chapter-group"],
+      "link": "",
+      "outcome": "",
+      "featured": true
+    }
+  ],
+  "projects": []
+}

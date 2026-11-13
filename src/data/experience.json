@@ -139,8 +139,8 @@
       }
     ],
     "location": "San Diego, California",
-    "context": "Student professional-development network",
-    "summary": "Founded a professional-development network for Muslim students and grew it to 30+ active members, with employer partnerships and funding behind its panels and workshops.",
+    "context": "Founder-led campus chapter",
+    "summary": "I founded MTC at SDSU to connect Muslim students with professional development, technical projects, industry access, and opportunities to serve the broader community through technology.",
     "bullets": [
       "Founded and scaled a professional-development network for Muslim students from the ground up.",
       "Directed all club operations: organization, outreach, marketing, recruitment and funding strategy.",
@@ -157,9 +157,58 @@
       "Employer partnerships"
     ],
     "projects": [],
-    "page": false,
+    "page": true,
     "start": "2024-07",
-    "end": "present"
+    "end": "present",
+    "theme": "mtc",
+    "rail": true,
+    "progress": true,
+    "heroWide": true,
+    "h1": "Muslim Tech Collaborative at SDSU",
+    "pageTitle": "Founder & President — Muslim Tech Collaborative at SDSU",
+    "heroStat": {
+      "value": "30+",
+      "label": "active members in the network"
+    },
+    "image": "mtc/photos/chapter-group",
+    "imageAlt": "Chapter members and guests standing and seated in a classroom in front of the San Diego State University Muslim Tech Collaborative banner, with desks and food in the foreground",
+    "cardImage": "mtc/photos/chapter-group",
+    "ogImage": "mtc/photos/chapter-group",
+    "links": [
+      {
+        "label": "National MTC website",
+        "href": "https://mtc.so/"
+      }
+    ],
+    "heroLinks": [
+      {
+        "label": "All experience",
+        "href": "experience.html"
+      }
+    ],
+    "facts": [
+      [
+        "Role",
+        "Founder & President"
+      ],
+      [
+        "Organization",
+        "Muslim Tech Collaborative, SDSU chapter"
+      ],
+      [
+        "Period",
+        "July 2024 – present"
+      ],
+      [
+        "Chapter",
+        "30+ active members"
+      ],
+      [
+        "Location",
+        "San Diego, California"
+      ]
+    ],
+    "summaryCard": "Founded the SDSU chapter of the Muslim Tech Collaborative and grew it to 30+ active members, with employer partnerships and funding behind its panels, workshops and community service."
   },
   {
     "slug": "nasa",

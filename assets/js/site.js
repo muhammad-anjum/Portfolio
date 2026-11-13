@@ -117,6 +117,48 @@
     sections.forEach(s => spy.observe(s))
   }
 
+
+  /* Reading progress (role pages that opt in) */
+  const progress = document.querySelector("[data-progress] i")
+  if (progress) {
+    let ticking = false
+    const update = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight
+      progress.style.transform = `scaleX(${max > 0 ? Math.min(1, Math.max(0, window.scrollY / max)) : 0})`
+      ticking = false
+    }
+    window.addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(update) } }, { passive: true })
+    window.addEventListener("resize", update, { passive: true })
+    update()
+  }
+
+  /* Tabs: all panels stay visible without JavaScript */
+  document.querySelectorAll("[data-tabs]").forEach(root => {
+    const tabs = [...root.querySelectorAll('[role="tab"]')]
+    const panels = tabs.map(t => document.getElementById(t.getAttribute("aria-controls")))
+    const select = (index, focus) => {
+      tabs.forEach((t, i) => {
+        const on = i === index
+        t.setAttribute("aria-selected", String(on))
+        t.tabIndex = on ? 0 : -1
+        panels[i].hidden = !on
+      })
+      if (focus) tabs[index].focus()
+    }
+    root.classList.add("is-ready")
+    select(0, false)
+    tabs.forEach((t, i) => {
+      t.addEventListener("click", () => select(i, false))
+      t.addEventListener("keydown", event => {
+        const last = tabs.length - 1
+        const next = { ArrowRight: i === last ? 0 : i + 1, ArrowLeft: i === 0 ? last : i - 1, Home: 0, End: last }[event.key]
+        if (next === undefined) return
+        event.preventDefault()
+        select(next, true)
+      })
+    })
+  })
+
   /* Lightbox for figures */
   const dialog = document.querySelector("[data-lightbox]")
   if (dialog) {

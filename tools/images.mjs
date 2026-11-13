@@ -42,26 +42,22 @@ for (const file of sources.sort()) {
   manifest[key] = { w, h, variants }
 }
 
-/* Photographs: upright, metadata-stripped JPG masters in a "photos" folder. Each gets JPG
-   fallbacks plus AVIF variants (written with macOS sips; ffmpeg here has no AVIF/WebP encoder).
+/* Photographs: upright, metadata-stripped JPG masters in a "photos" folder. Each gets
+   responsive JPG variants. (ffmpeg here cannot write WebP or AVIF, and AVIF from macOS sips
+   rendered unreliably in Chromium, so it is not used.)
    Full-resolution originals are kept in src/originals. */
 const PHOTO_WIDTHS = [640, 1100, 1600]
 const photos = walk(mediaDir).filter(f => extname(f) === ".jpg" && f.includes("/photos/") && !/-\d+\.jpg$/.test(f))
 for (const file of photos.sort()) {
   const key = relative(mediaDir, file).replace(/\.jpg$/, "")
   const { w, h } = probe(file)
-  const variants = [], avif = []
+  const variants = []
   for (const width of PHOTO_WIDTHS) {
     const jpg = file.replace(/\.jpg$/, `-${width}.jpg`)
     if (!existsSync(jpg)) execFileSync("ffmpeg", ["-hide_banner", "-v", "error", "-y", "-i", file, "-map_metadata", "-1", "-vf", `scale=${width}:-2:flags=lanczos`, "-q:v", "3", jpg])
     variants.push({ file: `${key}-${width}.jpg`, width })
   }
-  for (const width of [...PHOTO_WIDTHS, w]) {
-    const out = file.replace(/\.jpg$/, width === w ? ".avif" : `-${width}.avif`)
-    if (!existsSync(out)) execFileSync("sips", ["-s", "format", "avif", "-s", "formatOptions", "58", ...(width === w ? [] : ["--resampleWidth", String(width)]), file, "--out", out], { stdio: "ignore" })
-    avif.push({ file: `${key}${width === w ? "" : `-${width}`}.avif`, width })
-  }
-  manifest[key] = { w, h, ext: "jpg", variants, avif }
+  manifest[key] = { w, h, ext: "jpg", variants }
 }
 
 writeFileSync(join(root, "assets/media/manifest.json"), JSON.stringify(manifest, null, 1) + "\n")

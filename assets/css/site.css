@@ -632,3 +632,60 @@ picture { display: contents; }
 }
 .fig.portrait { max-width: 340px; width: 100%; }
 .case-split:not(.flip) > .fig.portrait { justify-self: end; }
+
+/* MTC role page: page-scoped accent drawn from the chapter banner and seal */
+.theme-mtc { --mtc: #7a2434; --gold-deep: #7a2434; }
+.case-top.wide h1 { font-size: clamp(2.6rem, 6vw, 5rem); max-width: 18ch; }
+.case-top.wide .lede { max-width: 56ch; }
+.hero-wide { margin-top: clamp(28px, 4vw, 48px); }
+.hero-stat { margin-top: 24px; display: flex; align-items: baseline; gap: 14px; }
+.hero-stat strong { font-family: var(--f-display); font-weight: 400; font-size: clamp(2.2rem, 4vw, 3.2rem); line-height: 1; letter-spacing: -0.02em; color: var(--mtc, var(--gold-deep)); }
+.hero-stat span { font-size: 0.95rem; color: var(--muted); }
+.read-progress { position: fixed; z-index: 60; left: 0; right: 0; top: 0; height: 3px; pointer-events: none; }
+.read-progress i { display: block; height: 100%; background: var(--mtc, var(--gold)); transform-origin: left; transform: scaleX(0); }
+.role-photo { display: block; max-width: 440px; }
+.role-photo .frame { display: block; }
+.role-photo img { transition: transform 900ms var(--ease); }
+.role:hover .role-photo img { transform: scale(1.02); }
+.fig.lead { flex-grow: 1.9; }
+.event-meta { margin-top: clamp(20px, 2.4vw, 32px); display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 0 28px; }
+.event-meta > div { padding: 12px 0; border-top: 1px solid var(--line); }
+.event-meta dt { font-family: var(--f-mono); font-size: 0.64rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); }
+.event-meta dd { margin: 3px 0 0; font-size: 0.95rem; font-weight: 500; line-height: 1.35; }
+.chain { margin-top: clamp(24px, 3vw, 40px); display: grid; counter-reset: link; }
+.chain li { position: relative; display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(16px, 3vw, 40px); padding: 18px 0 18px 36px; border-top: 1px solid var(--line); align-items: baseline; counter-increment: link; }
+.chain li:last-child { border-bottom: 1px solid var(--line); }
+.chain li::before { content: counter(link); position: absolute; left: 0; top: 19px; width: 22px; height: 22px; display: grid; place-items: center; border-radius: 50%; border: 1px solid var(--gold-deep); color: var(--gold-deep); font-family: var(--f-mono); font-size: 0.66rem; }
+.chain strong { font-family: var(--f-display); font-weight: 400; font-size: 1.25rem; line-height: 1.2; }
+.chain span { color: var(--ink-soft); }
+.results-list { margin-top: clamp(22px, 2.6vw, 34px); max-width: 64ch; }
+.tabs { margin-top: clamp(24px, 3vw, 40px); }
+.tablist { display: none; }
+.tabs.is-ready .tablist { display: flex; flex-wrap: wrap; gap: 6px; padding: 5px; border-radius: 999px; background: linear-gradient(180deg, var(--white), var(--raise)); border: 1px solid var(--line); box-shadow: var(--inset-hi); width: fit-content; max-width: 100%; }
+.tablist button { padding: 9px 16px; border: 0; border-radius: 999px; background: none; font: inherit; font-size: 0.9rem; font-weight: 600; color: var(--muted); cursor: pointer; transition: background var(--t-fast), color var(--t-fast); }
+.tablist button:hover { color: var(--ink); }
+.tablist button[aria-selected="true"] { background: var(--mtc, var(--ink)); color: #fff; }
+.tablist button:focus-visible { outline: 2px solid var(--mtc, var(--ink)); outline-offset: 2px; }
+.tabpanel { margin-top: clamp(24px, 3vw, 40px); animation: panel-in var(--t-med, 360ms) var(--ease) both; }
+.tabs.is-ready .tabpanel + .tabpanel { margin-top: 0; }
+.tabpanel h3 { font-size: clamp(1.6rem, 2.6vw, 2.2rem); letter-spacing: -0.02em; }
+.tabpanel .prose { margin-top: 14px; }
+.tabpanel .bullets { margin-top: 20px; max-width: 64ch; }
+.tabs:not(.is-ready) .tabpanel + .tabpanel { margin-top: clamp(40px, 5vw, 64px); }
+@keyframes panel-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.event-list { margin-top: clamp(24px, 3vw, 40px); display: grid; gap: 20px; }
+.event-card { padding: clamp(22px, 2.6vw, 34px); display: grid; gap: 12px; }
+@media (max-width: 760px) {
+  .chain li { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .tabs.is-ready .tablist { border-radius: 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tabpanel { animation: none; }
+  .role-photo img, .role:hover .role-photo img { transition: none; transform: none; }
+}
+@media (min-width: 900px) {
+  /* Wide hero: trim empty ceiling, keep every person in frame (bottom-anchored) */
+  .hero-wide .frame { aspect-ratio: 16 / 9 !important; }
+  .hero-wide img { object-position: 50% 100%; }
+}
+.role-photo .mount, .role-photo .frame { display: block; }

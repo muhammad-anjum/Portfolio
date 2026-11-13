@@ -45,6 +45,16 @@ The site uses only facts from the 9/28/2026 résumé, the previous site and the 
 - Removed `final-payload-assembly`: the old caption called it the manufactured assembly, but the image is an unlabeled CAD view.
 - Originals are in `src/originals/iam3d/` (full resolution, metadata and location stripped).
 
+**Muslim Tech Collaborative role page** (`src/experience/muslim-tech-collaborative.html`, data in `src/data/mtc.json`)
+- Founding month and year, leadership-team size and officer structure, number of events, average or largest attendance, volunteer or service hours.
+- Names of company-tour partners, collaborating student organizations, and the masajid or community organizations you work with.
+- Details of websites or products delivered (client, scope, technologies, your role, result, screenshots, testimonials). Add them to `projects` in `mtc.json`; the page renders them automatically. Add future events to `events` the same way.
+- Testimonials from members, professionals or partners, and future chapter goals.
+- The LPL date comes from the slide ("Wednesday, October 15th"); the year 2025 comes from the photo files. Confirm.
+- Items in the "My role" section beyond the résumé (leadership team, calendar, speaker coordination, follow-up, scoping community projects) come from your brief. Check each one is accurate.
+- The panel photos (`panel-wide`, `panel-close`) are uncaptioned as to event and place. A panelist's jacket shows an LPL Financial logo, but the page does not claim they are the LPL session.
+- Originals are in `src/originals/mtc/` (full resolution, metadata and location stripped).
+
 **SpaceX, NASA, Muslim Tech Collaborative**
 - Anything you can share publicly (SpaceX work is confidential, so only non-sensitive outcomes). NASA: screenshots or examples of the document-control tools. MTC: events, photos, partner employers you're allowed to name.
 - The NASA tools project was listed on the old Projects page without a case study. It is not on the new Work page; add it to `projects.json` if you write it up.

@@ -586,24 +586,6 @@
     "file": "iam3d/photos/competition-table-1600.jpg",
     "width": 1600
    }
-  ],
-  "avif": [
-   {
-    "file": "iam3d/photos/competition-table-640.avif",
-    "width": 640
-   },
-   {
-    "file": "iam3d/photos/competition-table-1100.avif",
-    "width": 1100
-   },
-   {
-    "file": "iam3d/photos/competition-table-1600.avif",
-    "width": 1600
-   },
-   {
-    "file": "iam3d/photos/competition-table.avif",
-    "width": 1800
-   }
   ]
  },
  "iam3d/photos/drone-on-pavement": {
@@ -622,24 +604,6 @@
    {
     "file": "iam3d/photos/drone-on-pavement-1600.jpg",
     "width": 1600
-   }
-  ],
-  "avif": [
-   {
-    "file": "iam3d/photos/drone-on-pavement-640.avif",
-    "width": 640
-   },
-   {
-    "file": "iam3d/photos/drone-on-pavement-1100.avif",
-    "width": 1100
-   },
-   {
-    "file": "iam3d/photos/drone-on-pavement-1600.avif",
-    "width": 1600
-   },
-   {
-    "file": "iam3d/photos/drone-on-pavement.avif",
-    "width": 1800
    }
   ]
  },
@@ -660,24 +624,6 @@
     "file": "iam3d/photos/field-test-damaged-drone-1600.jpg",
     "width": 1600
    }
-  ],
-  "avif": [
-   {
-    "file": "iam3d/photos/field-test-damaged-drone-640.avif",
-    "width": 640
-   },
-   {
-    "file": "iam3d/photos/field-test-damaged-drone-1100.avif",
-    "width": 1100
-   },
-   {
-    "file": "iam3d/photos/field-test-damaged-drone-1600.avif",
-    "width": 1600
-   },
-   {
-    "file": "iam3d/photos/field-test-damaged-drone.avif",
-    "width": 2400
-   }
   ]
  },
  "iam3d/photos/hotel-room-assembly": {
@@ -696,24 +642,6 @@
    {
     "file": "iam3d/photos/hotel-room-assembly-1600.jpg",
     "width": 1600
-   }
-  ],
-  "avif": [
-   {
-    "file": "iam3d/photos/hotel-room-assembly-640.avif",
-    "width": 640
-   },
-   {
-    "file": "iam3d/photos/hotel-room-assembly-1100.avif",
-    "width": 1100
-   },
-   {
-    "file": "iam3d/photos/hotel-room-assembly-1600.avif",
-    "width": 1600
-   },
-   {
-    "file": "iam3d/photos/hotel-room-assembly.avif",
-    "width": 2400
    }
   ]
  },
@@ -734,24 +662,6 @@
     "file": "iam3d/photos/soldering-close-up-1600.jpg",
     "width": 1600
    }
-  ],
-  "avif": [
-   {
-    "file": "iam3d/photos/soldering-close-up-640.avif",
-    "width": 640
-   },
-   {
-    "file": "iam3d/photos/soldering-close-up-1100.avif",
-    "width": 1100
-   },
-   {
-    "file": "iam3d/photos/soldering-close-up-1600.avif",
-    "width": 1600
-   },
-   {
-    "file": "iam3d/photos/soldering-close-up.avif",
-    "width": 1800
-   }
   ]
  },
  "iam3d/photos/team-walking": {
@@ -771,23 +681,138 @@
     "file": "iam3d/photos/team-walking-1600.jpg",
     "width": 1600
    }
-  ],
-  "avif": [
+  ]
+ },
+ "mtc/photos/chapter-group": {
+  "w": 2400,
+  "h": 1800,
+  "ext": "jpg",
+  "variants": [
    {
-    "file": "iam3d/photos/team-walking-640.avif",
+    "file": "mtc/photos/chapter-group-640.jpg",
     "width": 640
    },
    {
-    "file": "iam3d/photos/team-walking-1100.avif",
+    "file": "mtc/photos/chapter-group-1100.jpg",
     "width": 1100
    },
    {
-    "file": "iam3d/photos/team-walking-1600.avif",
+    "file": "mtc/photos/chapter-group-1600.jpg",
     "width": 1600
+   }
+  ]
+ },
+ "mtc/photos/event-materials": {
+  "w": 2400,
+  "h": 1800,
+  "ext": "jpg",
+  "variants": [
+   {
+    "file": "mtc/photos/event-materials-640.jpg",
+    "width": 640
    },
    {
-    "file": "iam3d/photos/team-walking.avif",
-    "width": 1800
+    "file": "mtc/photos/event-materials-1100.jpg",
+    "width": 1100
+   },
+   {
+    "file": "mtc/photos/event-materials-1600.jpg",
+    "width": 1600
+   }
+  ]
+ },
+ "mtc/photos/lpl-session": {
+  "w": 2400,
+  "h": 1800,
+  "ext": "jpg",
+  "variants": [
+   {
+    "file": "mtc/photos/lpl-session-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "mtc/photos/lpl-session-1100.jpg",
+    "width": 1100
+   },
+   {
+    "file": "mtc/photos/lpl-session-1600.jpg",
+    "width": 1600
+   }
+  ]
+ },
+ "mtc/photos/panel-close": {
+  "w": 2400,
+  "h": 1600,
+  "ext": "jpg",
+  "variants": [
+   {
+    "file": "mtc/photos/panel-close-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "mtc/photos/panel-close-1100.jpg",
+    "width": 1100
+   },
+   {
+    "file": "mtc/photos/panel-close-1600.jpg",
+    "width": 1600
+   }
+  ]
+ },
+ "mtc/photos/panel-wide": {
+  "w": 2400,
+  "h": 1600,
+  "ext": "jpg",
+  "variants": [
+   {
+    "file": "mtc/photos/panel-wide-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "mtc/photos/panel-wide-1100.jpg",
+    "width": 1100
+   },
+   {
+    "file": "mtc/photos/panel-wide-1600.jpg",
+    "width": 1600
+   }
+  ]
+ },
+ "mtc/photos/room-setup": {
+  "w": 2400,
+  "h": 1800,
+  "ext": "jpg",
+  "variants": [
+   {
+    "file": "mtc/photos/room-setup-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "mtc/photos/room-setup-1100.jpg",
+    "width": 1100
+   },
+   {
+    "file": "mtc/photos/room-setup-1600.jpg",
+    "width": 1600
+   }
+  ]
+ },
+ "mtc/photos/tote-bags": {
+  "w": 2400,
+  "h": 1800,
+  "ext": "jpg",
+  "variants": [
+   {
+    "file": "mtc/photos/tote-bags-640.jpg",
+    "width": 640
+   },
+   {
+    "file": "mtc/photos/tote-bags-1100.jpg",
+    "width": 1100
+   },
+   {
+    "file": "mtc/photos/tote-bags-1600.jpg",
+    "width": 1600
    }
   ]
  }

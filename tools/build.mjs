@@ -12,6 +12,7 @@ const site = json("src/data/site.json")
 const projects = json("src/data/projects.json")
 const experience = json("src/data/experience.json")
 const manifest = json("assets/media/manifest.json")
+const mtc = json("src/data/mtc.json")
 const bySlug = list => Object.fromEntries(list.map(x => [x.slug, x]))
 const P = bySlug(projects)
 const E = bySlug(experience)
@@ -76,7 +77,8 @@ function roleCard(root, e) {
     <h3>${esc(e.org)}</h3>
     ${roleLine(e)}
     <p class="role-context">${esc(e.context)}</p>
-    <p class="role-sum">${esc(e.summary)}</p>
+    <p class="role-sum">${esc(e.summaryCard || e.summary)}</p>
+    ${e.cardImage ? `<a class="role-photo" href="${root}experience/${e.slug}.html" tabindex="-1" aria-hidden="true"><span class="mount"><span class="frame" style="aspect-ratio:${(manifest[e.cardImage].w / manifest[e.cardImage].h).toFixed(3)}">${imageTag(root, e.cardImage, { alt: "", sizes: "(min-width: 900px) 440px, 100vw" })}</span></span></a>` : ""}
     <div class="tags">${e.tags.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div>
     <details><summary>Responsibilities and ownership</summary><ul class="bullets">${e.bullets.map(b => `<li>${esc(b)}</li>`).join("")}</ul></details>
     ${links.length ? `<div class="role-links">${links.join("")}</div>` : ""}
@@ -106,7 +108,7 @@ function experienceGroups(root) {
 
 function experienceMini(root) {
   return `<div class="timeline-mini" data-reveal-group>${sortedRoles().map(e => {
-    const href = `${root}experience.html#${e.slug}`
+    const href = e.page ? `${root}experience/${e.slug}.html` : `${root}experience.html#${e.slug}`
     return `<a class="tl-row" href="${href}" data-reveal><time>${esc(e.roles[0].period)}</time><h3>${esc(e.org)}</h3><p>${esc(e.roles.map(r => r.title).join(" · "))}</p><span class="arr" aria-hidden="true">↗</span></a>`
   }).join("")}</div>`
 }
@@ -130,6 +132,36 @@ function resultsStrip(slug) {
   return `<div class="panel scope" style="grid-template-columns:repeat(${items.length},minmax(0,1fr))">${items.map(r => `<div><strong>${esc(r.value)}</strong><span>${esc(r.label)}</span></div>`).join("")}</div>`
 }
 
+
+/* ---------- MTC role page blocks (data in src/data/mtc.json) ---------- */
+function mtcPrograms(root) {
+  const tabs = mtc.programs.map((p, i) => `<button type="button" role="tab" id="tab-${p.id}" aria-controls="panel-${p.id}" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}">${esc(p.title)}</button>`).join("")
+  const panels = mtc.programs.map(p => {
+    const imgs = (p.images || []).map(im => figure(root, im.key, { alt: im.alt, cap: esc(im.cap), sizes: im.sizes, cls: im.cls }))
+    const media = imgs.length ? `<div class="sec-media${imgs.length > 1 ? " row" : ""}">${imgs.join("")}</div>` : ""
+    return `<div class="tabpanel" role="tabpanel" id="panel-${p.id}" aria-labelledby="tab-${p.id}"><h3>${esc(p.title)}</h3><div class="prose">${p.lead.map(t => `<p>${esc(t)}</p>`).join("")}</div><ul class="bullets">${p.points.map(t => `<li>${esc(t)}</li>`).join("")}</ul>${media}</div>`
+  }).join("")
+  return `<div class="tabs" data-tabs><div class="tablist" role="tablist" aria-label="Chapter program areas">${tabs}</div>${panels}</div>`
+}
+
+function mtcEventMeta(id) {
+  const ev = mtc.events.find(x => x.id === id)
+  const rows = [["Event", ev.title], ["Date", ev.dateLabel || ev.date], ["Partner", ev.partner], ["Host", "MTC SDSU"], ["Outcome", ev.outcome]].filter(r => r[1])
+  return `<dl class="event-meta">${rows.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl>`
+}
+
+function mtcEvents(root) {
+  const list = mtc.events.filter(x => !x.featured)
+  if (!list.length) return ""
+  return `<div class="event-list">${list.map(ev => `<article class="panel event-card"><h3>${esc(ev.title)}</h3><p class="byline">${esc([ev.dateLabel || ev.date, ev.category, ev.partner].filter(Boolean).join(" · "))}</p><p>${esc(ev.description)}</p>${ev.role ? `<p><strong>My role.</strong> ${esc(ev.role)}</p>` : ""}${ev.outcome ? `<p><strong>Outcome.</strong> ${esc(ev.outcome)}</p>` : ""}${(ev.images || []).map(k => figure(root, k, { alt: ev.title, cap: "" })).join("")}${ev.link ? `<a class="link" href="${esc(ev.link)}" target="_blank" rel="noopener">Learn more ${arrow}</a>` : ""}</article>`).join("")}</div>`
+}
+
+function mtcProjects(root) {
+  if (!mtc.projects.length) return ""
+  const field = (label, v) => v ? `<div><dt>${label}</dt><dd>${esc(Array.isArray(v) ? v.join(", ") : v)}</dd></div>` : ""
+  return `<div class="event-list">${mtc.projects.map(pr => `<article class="panel event-card"><h3>${esc(pr.title)}</h3>${pr.partner ? `<p class="byline">${esc(pr.partner)}</p>` : ""}<dl class="event-meta">${field("Need", pr.need)}${field("Scope", pr.scope)}${field("Student team", pr.team)}${field("Technologies", pr.technologies)}${field("My role", pr.role)}${field("Delivered", pr.result)}${field("Continuing support", pr.support)}</dl>${(pr.images || []).map(k => figure(root, k, { alt: pr.title, cap: "" })).join("")}${pr.testimonial ? `<blockquote>${esc(pr.testimonial)}</blockquote>` : ""}${pr.link ? `<a class="link" href="${esc(pr.link)}" target="_blank" rel="noopener">View project ${arrow}</a>` : ""}</article>`).join("")}</div>`
+}
+
 /* ---------- Macro expansion ---------- */
 function expand(text, ctx) {
   const { root } = ctx
@@ -149,7 +181,11 @@ function expand(text, ctx) {
       skills: () => skillsBlock(),
       ownership: () => ownership(arg),
       "role-projects": () => roleProjects(root, arg),
-      results: () => resultsStrip(arg)
+      results: () => resultsStrip(arg),
+      "mtc-programs": () => mtcPrograms(root),
+      "mtc-event-meta": () => mtcEventMeta(arg),
+      "mtc-events": () => mtcEvents(root),
+      "mtc-projects": () => mtcProjects(root)
     }[name]?.() ?? (() => { throw new Error(`Unknown block: ${name}`) })()))
 }
 
@@ -314,30 +350,56 @@ for (const p of projects) emit(`projects/${p.slug}.html`, caseStudy(p))
 function rolePage(e) {
   const root = "../"
   const [, raw] = frontMatter(read(`src/experience/${e.slug}.html`))
-  const body = `
-<section class="case-hero wrap">
-  <nav class="crumbs" aria-label="Breadcrumb"><a href="${root}experience.html">Experience</a><i>/</i><span>${esc(e.org)}</span></nav>
-  <div class="case-top${e.image ? "" : " no-fig"}">
-    <div class="enter" style="--d:0">
-      <h1>${esc(e.pageTitle || e.org)}</h1>
+  const wide = Boolean(e.heroWide && e.image)
+  const mount = sizes => `<div class="mount"><div class="frame" style="aspect-ratio:${(manifest[e.image].w / manifest[e.image].h).toFixed(3)}">${imageTag(root, e.image, { alt: e.imageAlt, sizes, priority: true })}</div></div>`
+  const stat = e.heroStat ? `<p class="hero-stat"><strong>${esc(e.heroStat.value)}</strong><span>${esc(e.heroStat.label)}</span></p>` : ""
+  const heroText = `<div class="enter" style="--d:0">
+      <h1>${esc(e.h1 || e.pageTitle || e.org)}</h1>
       <p class="byline">${esc(e.context)}</p>
       <div style="margin-top:20px;display:grid;gap:8px">${roleLine(e)}</div>
       <p class="lede">${esc(e.summary)}</p>
-      <div class="tags">${e.tags.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div>
-      ${(e.heroLinks || []).length ? `<p class="hero-links">${e.heroLinks.map(l => `<a class="link" href="${root}${l.href}">${esc(l.label)} ${arrow}</a>`).join("")}</p>` : ""}
-      ${(e.links || []).length ? `<p class="hero-links">${e.links.map(l => `<a class="link" href="${l.href}" target="_blank" rel="noopener">${esc(l.label)} ${arrow}</a>`).join("")}</p>` : ""}
-    </div>
-    ${e.image ? `<div class="enter" style="--d:2;${e.imageMax ? `max-width:${e.imageMax};justify-self:end;width:100%` : ""}"><div class="mount"><div class="frame" style="aspect-ratio:${(manifest[e.image].w / manifest[e.image].h).toFixed(3)}">${imageTag(root, e.image, { alt: e.imageAlt, sizes: "(min-width: 1080px) 520px, 100vw", priority: true })}</div></div></div>` : ""}
+      ${stat}
+      ${wide ? "" : `<div class="tags">${e.tags.map(t => `<span class="tag">${esc(t)}</span>`).join("")}</div>`}
+      ${(e.heroLinks || []).length || (e.links || []).length ? `<p class="hero-links">${(e.heroLinks || []).map(l => `<a class="link" href="${root}${l.href}">${esc(l.label)} ${arrow}</a>`).join("")}${(e.links || []).map(l => `<a class="link" href="${l.href}" target="_blank" rel="noopener">${esc(l.label)} ${arrow}</a>`).join("")}</p>` : ""}
+    </div>`
+  const hero = `<section class="case-hero wrap">
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="${root}experience.html">Experience</a><i>/</i><span>${esc(e.org)}</span></nav>
+  <div class="case-top${e.image && !wide ? "" : " no-fig"}${wide ? " wide" : ""}">
+    ${heroText}
+    ${e.image && !wide ? `<div class="enter" style="--d:2;${e.imageMax ? `max-width:${e.imageMax};justify-self:end;width:100%` : ""}">${mount("(min-width: 1080px) 520px, 100vw")}</div>` : ""}
   </div>
-</section>
-${expand(raw, { root })}
+  ${wide ? `<div class="hero-wide enter" style="--d:2">${mount("(min-width: 1080px) 1200px, 100vw")}</div>` : ""}
+</section>`
+  let content
+  if (e.rail) {
+    let n = 0
+    const toc = []
+    const bodyHtml = expand(raw, { root }).replace(/<section class="case-sec" id="([^"]+)" data-label="([^"]+)">/g, (_, id, label) => {
+      n += 1
+      toc.push({ id, label, num: String(n).padStart(2, "0") })
+      return `<section class="case-sec" id="${id}" aria-label="${esc(label)}">`
+    })
+    content = `<div class="wrap case-grid">
+  <aside class="rail" aria-label="About this role">
+    <div><h2>Role facts</h2><dl class="facts">${(e.facts || []).map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v)}</dd></div>`).join("")}</dl></div>
+    <div><h2>On this page</h2><nav class="toc" data-toc aria-label="Sections">${toc.map(t => `<a href="#${t.id}"><span>${t.num}</span>${t.label}</a>`).join("")}</nav></div>
+  </aside>
+  <div class="case-body">
+${bodyHtml}
+  </div>
+</div>`
+  } else content = expand(raw, { root })
+  const body = `${e.theme ? `<div class="theme-${e.theme}">` : ""}${e.progress ? '<div class="read-progress" data-progress aria-hidden="true"><i></i></div>' : ""}
+${hero}
+${content}
 <section class="wrap sec tight">
   <nav class="pager" aria-label="More experience">
     <a class="panel panel-lift" href="${root}experience.html"><small>All roles</small><strong>Back to experience</strong></a>
     <a class="panel panel-lift" href="${root}projects.html"><small>Technical depth</small><strong>Browse the case studies ${arrow}</strong></a>
   </nav>
-</section>`
-  return layout({ root, title: `${e.pageTitle || e.org} — ${site.name}`, description: e.summary, key: "experience", canonical: `experience/${e.slug}.html`, body })
+</section>${e.theme ? "\n</div>" : ""}`
+  const og = e.ogImage ? `${site.domain}/assets/media/projects/${e.ogImage}-1600.jpg` : undefined
+  return layout({ root, title: `${e.pageTitle || e.org} — ${site.name}`, description: e.summary, key: "experience", canonical: `experience/${e.slug}.html`, body, ogImage: og })
 }
 for (const e of experience.filter(x => x.page)) emit(`experience/${e.slug}.html`, rolePage(e))
 
